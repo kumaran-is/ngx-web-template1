@@ -1,0 +1,33 @@
+.menu-fill-remaining-space1 {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex-grow: 0.5;
+}
+
+.menu-fill-remaining-space2 {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.toolbar {
+  max-height: 50px;
+  min-height: 50px;
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+.toolbar button,
+.toolbar a {
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.menu-active {
+  color:#FFFFFF;
+}
+
+.toolbar a:hover {
+  color:#ff4081;
+}
