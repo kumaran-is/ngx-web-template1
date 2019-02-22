@@ -1,0 +1,31 @@
+.footer {
+  padding: 15px 5px;
+  background-color:#f7f7f7;
+  .row {
+    .links {
+      padding: 10px 20px;
+    }
+    .icon-links {
+      padding: 10px 5px;
+    }
+    a {
+      transition: padding 0.5s;
+      display: inline-block;
+      color: #000000;
+      text-decoration: none;
+      &:hover {
+        color: #3f51b5;
+      }
+    }
+    .copyright {
+      font-style: italic;
+      font-size: 12px;
+      color: #596b7d;
+    }
+    .version {
+      font-style: italic;
+      font-size: 10px;
+      color: #596b7d;
+    }
+  }
+}

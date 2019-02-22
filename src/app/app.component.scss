@@ -1,0 +1,14 @@
+.go-to-top {
+  position: fixed;
+  bottom: 70px;
+  float: right;
+  right: 10px;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.go-to-top-icon {
+  color: white;
+}
+

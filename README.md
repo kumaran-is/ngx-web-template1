@@ -1,5 +1,7 @@
 # Angular NgRx Web Application Template
 
+[![Known Vulnerabilities](https://snyk.io/test/github/kumaran-is/ngrx-web-template1/badge.svg)](https://snyk.io/test/github/kumaran-is/ngrx-web-template1)
+
 This is a bare bone 3 row layout Angular website using Angular, Angular materila, NgRx, Angular Flex-Layout, RxJS.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1
