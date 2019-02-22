@@ -16,7 +16,7 @@
     "dev-serve": "npm run app-version && ng serve -o",
     "prod-serve": "npm run app-version && ng serve --prod -o",
     "test": "ng test --watch=false --browsers=ChromeHeadless",
-    "lint": "ng lint",
+    "lint": "ng lint && npm run app-version",
     "lint:styles": "stylelint ./src/**/*.scss",
     "scss-lint": "scss-lint",
     "e2e": "ng e2e",
@@ -87,7 +87,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "ng lint",
-      "pre-push": "ng lint && npm run app-version"
+      "pre-push": "ng lint"
     }
   }
 }
