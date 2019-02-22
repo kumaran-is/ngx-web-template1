@@ -1,6 +1,6 @@
 {
   "name": "ngrx-web-template1",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -87,7 +87,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "ng lint",
-      "pre-push": "ng lint"
+      "pre-push": "ng lint && npm run app-version"
     }
   }
 }
