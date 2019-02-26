@@ -11,8 +11,6 @@
 }
 
 .header {
-  max-height: 50px;
-  min-height: 50px;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
