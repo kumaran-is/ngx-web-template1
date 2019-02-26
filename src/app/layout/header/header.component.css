@@ -10,12 +10,12 @@
   flex: 1 1 auto;
 }
 
-.toolbar {
+header {
   max-height: 50px;
   min-height: 50px;
-  position: fixed;
-  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
-  z-index: 2;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
 }
 
 .toolbar button,
