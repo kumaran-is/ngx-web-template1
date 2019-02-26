@@ -5,8 +5,12 @@
         <span class="mat-title" >ngrx-shopping-cart</span>
       </a>
       <span class="menu-fill-remaining-space1"></span>
-      <a mat-button [routerLink]="['/home']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Home</a>
+      <a mat-button class="first-center-nav-menu" [routerLink]="['/home']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Home</a>
+      <a mat-button [routerLink]="['/menu1']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Menu1</a>
+      <a mat-button class="last-center-nav-menu"  [routerLink]="['/menu2']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Menu2</a>
       <span class="menu-fill-remaining-space2"></span>
+      <a mat-button [routerLink]="['/sign-in']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Sign-in</a>
+      <a mat-button [routerLink]="['/help']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Help</a>
       <a mat-icon-button  [routerLink]="['/cart']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >
         <mat-icon>shopping_cart</mat-icon>
       </a>
