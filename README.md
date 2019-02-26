@@ -26,6 +26,7 @@ Library | Version | Notes
 [NPM](https://nodejs.org/) |6.4.1 | Recommended NPM version
 [Angular](https://angular.io/) | ~7.2.x | JavaScript-based open-source front-end SPA framework
 [Angular CLI](https://github.com/angular/angular-cli) | 7.3.1 | Set of development tools for Angular
+[Angular Flex-layout](https://github.com/angular/flex-layout) | 7.0.0-beta.23 | Provides a sophisticated layout API using Flexbox CSS + mediaQuery for Angular applications
 [RxJS](https://rxjs-dev.firebaseapp.com/)| ~6.4.0 | JavaScript library for reactive programming using Observables
 [@ngrx/store](https://ngrx.io/)| ~7.2.0 | Manage reactive state for Angular
 [@ngrx/effects](https://ngrx.io/)| ~7.2.0 | Implement side-effects like http requests, logging, notifications
