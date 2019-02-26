@@ -10,7 +10,7 @@
   flex: 1 1 auto;
 }
 
-header {
+.header {
   max-height: 50px;
   min-height: 50px;
   position: fixed; /* Set the navbar to fixed position */
