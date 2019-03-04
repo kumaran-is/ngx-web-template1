@@ -1,6 +1,6 @@
-# Angular NgRx Web Application Template
+# Angular NgRx Web Application Starter Project
 
-[![Known Vulnerabilities](https://snyk.io/test/github/kumaran-is/ngrx-web-template1/badge.svg)](https://snyk.io/test/github/kumaran-is/ngrx-web-template1)
+[![Known Vulnerabilities](https://snyk.io/test/github/kumaran-is/ngrx-web-starter1/badge.svg)](https://snyk.io/test/github/kumaran-is/ngrx-web-starter1)
 
 This is a bare bone 3 row layout Angular website using Angular, Angular materila, NgRx, Angular Flex-Layout, RxJS.
 
@@ -38,13 +38,13 @@ Library | Version | Notes
 
 ## Quick Start
 
-To launch the demo application, you can try below steps yourself on your computer, or launch the application on StackBlitz, by [clicking here](https://stackblitz.com/github/kumaran-is/ngrx-web-template1-cart).
+To launch the demo application, you can try below steps yourself on your computer, or launch the application on StackBlitz, by [clicking here](https://stackblitz.com/github/kumaran-is/ngrx-web-starter1).
 
 1. Clone repository and checkout the `master` branch
 
     ```bash
-    git clone https://github.com/kumaran-is/ngrx-web-template1.git
-    cd ngrx-shopping-cart
+    git clone https://github.com/kumaran-is/ngrx-web-starter1.git
+    cd ngrx-web-starter1
     git checkout master
     ```
 
@@ -143,4 +143,4 @@ Before submitting a Pull Request for the  repository make sure to check the foll
 
 ## Issue Tracker
 
-* [Issue tracker](https://github.com/kumaran-is/ngrx-web-template1/issues?state=open)
+* [Issue tracker](https://github.com/kumaran-is/ngrx-web-starter1/issues?state=open)
