@@ -107,7 +107,7 @@
         }
       }
     },
-    "ngrx-web-template1-e2e": {
+    "ngrx-web-starter1-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
