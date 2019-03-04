@@ -1,5 +1,5 @@
 {
-  "name": "ngrx-web-template1",
+  "name": "ngrx-web-starter1",
   "version": "0.0.2",
   "scripts": {
     "ng": "ng",
@@ -21,8 +21,8 @@
     "scss-lint": "scss-lint",
     "e2e": "ng e2e",
     "outdated": "npm outdated --depth 0",
-    "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -n \"ngrx-web-template1 documentation\"  --theme \"Vagrant\" -s -o ",
-    "stats": "ng build --prod --base-href=./ --stats-json && webpack-bundle-analyzer dist/ngrx-web-template1/stats.json",
+    "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -n \"ngrx-web-starter1 documentation\"  --theme \"Vagrant\" -s -o ",
+    "stats": "ng build --prod --base-href=./ --stats-json && webpack-bundle-analyzer dist/ngrx-web-starter1/stats.json",
     "conventional-changelog": "conventional-changelog",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
