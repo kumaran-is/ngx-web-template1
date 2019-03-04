@@ -8,8 +8,8 @@
 * Clone the repo and checkout the PR branch
 
   ```
-  git clone https://github.com/kumaran-is/ngrx-web-template1.git
-  cd ngrx-web-template1
+  git clone https://github.com/kumaran-is/ngrx-web-starter1.git
+  cd ngrx-web-starter1
   git fetch
   git pull
   git checkout feature/<NEW BRANCH NAME>
