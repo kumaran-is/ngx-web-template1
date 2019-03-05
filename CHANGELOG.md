@@ -1,3 +1,16 @@
+<a name="v0.0.3"></a>
+## 0.0.3 (2019-03-04)
+
+#### Bug Fixes
+* NA
+
+#### Features
+* Published angular application to github page using [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages) [[PR 3](https://github.com/kumaran-is/ngrx-web-starter1/pull/3)]
+
+
+#### Breaking Changes
+* NA
+
 <a name="v0.0.2"></a>
 ## 0.0.2 (2019-02-22)
 

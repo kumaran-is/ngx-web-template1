@@ -6,17 +6,23 @@ This is a bare bone 3 row layout Angular website using Angular, Angular materila
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1
 
-## Webpack Bundle Analysis and Statistics
+There are 2 ways you can launch the application :
 
-This repository is integrated with packtracker.io, which provids webpack bundle analysis and statistics on every pull request basis and establish performance budgets for your asset profile. To view the webpack bundle analysis and statistics, visit [packtracker.io](https://app.packtracker.io/organizations/86)
+1. Application is hosted on `Github Pages`, you can launch the application on your browser directly, by [clicking here](https://kumaran-is.github.io/ngrx-web-starter1).
+
+2. Launch the application on [StackBlitz](https://stackblitz.com/), by [clicking here](https://stackblitz.com/github/kumaran-is/ngrx-web-starter1). [StackBlitz](https://stackblitz.com/) is a online code editor built on top of vscode editor, where you can edit and see your changes on the fly.
 
 **Table of contents:**
 
 1. [Prerequisites and Installation](#prerequisites-and-installation)
-2. [Quick Start](#quick-start)
-3. [Build Tasks and Commands](#build-tasks-and-commands)
-4. [Changelog](#changelog)
-5. [Issue Tracker](#issue-tracker)
+1. [Quick Start](#quick-start)
+1. [Build Tasks and Commands](#build-tasks-and-commands)
+1. [Profiling the Build](#profiling-the-build)
+1. [Webpack Bundle Analysis and Statistics](#webpack-bundle-analysis-and-statistics)
+1. [Publish Angular Application to Github Pages](#publish-angular-application-to-github-pages)
+1. [GitHub Working Agreement](#github-working-agreement)
+1. [Changelog](#changelog)
+1. [Issue Tracker](#issue-tracker)
 
 ## Prerequisites and Installation
 
@@ -25,20 +31,19 @@ Library | Version | Notes
 [Node](https://nodejs.org/) | 10.15.0 | Recommended NodeJS version
 [NPM](https://nodejs.org/) |6.4.1 | Recommended NPM version
 [Angular](https://angular.io/) | ~7.2.x | JavaScript-based open-source front-end SPA framework
-[Angular CLI](https://github.com/angular/angular-cli) | 7.3.1 | Set of development tools for Angular
+[Angular CLI](https://github.com/angular/angular-cli) | ~7.3.0 | Set of development tools for Angular
 [Angular Flex-layout](https://github.com/angular/flex-layout) | 7.0.0-beta.23 | Provides a sophisticated layout API using Flexbox CSS + mediaQuery for Angular applications
 [RxJS](https://rxjs-dev.firebaseapp.com/)| ~6.4.0 | JavaScript library for reactive programming using Observables
-[@ngrx/store](https://ngrx.io/)| ~7.2.0 | Manage reactive state for Angular
-[@ngrx/effects](https://ngrx.io/)| ~7.2.0 | Implement side-effects like http requests, logging, notifications
-[@ngrx/store-devtools](https://ngrx.io/)| ~7.2.0 |  Development tool to monitor and debug NGRX actions, state, effects and also enables a powerful time-travelling debugger
-[@ngrx/entity](https://ngrx.io/)| ~7.2.0 | Manage state and CRUD operations for object collection and array
-[@ngrx/router-store](https://ngrx.io/)| ~7.2.0 | Connects the Angular Router to ngrx store to manage state for angular router
-[ngrx-store-freeze](https://github.com/brandonroberts/ngrx-store-freeze)| ~0.2.4 | Meta-reducer that prevents state from being mutated
-
+[@ngrx/store](https://ngrx.io/)| ~7.3.0 | Manage reactive state for Angular
+[@ngrx/effects](https://ngrx.io/)| ~7.3.0 | Implement side-effects like http requests, logging, notifications
+[@ngrx/store-devtools](https://ngrx.io/)| ~7.3.0 |  Development tool to monitor and debug NGRX actions, state, effects and also enables a powerful time-travelling debugger
+[@ngrx/entity](https://ngrx.io/)| ~7.3.0 | Manage state and CRUD operations for object collection and array
+[@ngrx/router-store](https://ngrx.io/)| ~7.3.0 | Connects the Angular Router to ngrx store to manage state for angular router
+[ngrx-store-freeze](https://github.com/brandonroberts/ngrx-store-freeze)| ~0.2.0 | Meta-reducer that prevents state from being mutated
 
 ## Quick Start
 
-To launch the demo application, you can try below steps yourself on your computer, or launch the application on StackBlitz, by [clicking here](https://stackblitz.com/github/kumaran-is/ngrx-web-starter1).
+To launch the application on your computer, you can try below steps:
 
 1. Clone repository and checkout the `master` branch
 
@@ -71,21 +76,25 @@ To launch the demo application, you can try below steps yourself on your compute
 
 ## Build Tasks and Commands
 
-## Code scaffolding
+### Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+### Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular Official Site for Angular CLI Overview and Commands](https://angular.io/cli).
 
 ## Profiling the Build
 
@@ -97,9 +106,44 @@ The more the application grows, the slower the build gets. Angular CLI version 7
 4. Select chrome-profiler-events.json
 5. For more detail refer the [link](https://blog.mgechev.com/2019/02/06/5-angular-cli-features/)
 
-## Further help
+## Webpack Bundle Analysis and Statistics
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This repository is integrated with packtracker.io, which provids webpack bundle analysis and statistics on every pull request basis and establish performance budgets for your asset profile. To view the webpack bundle analysis and statistics, visit [packtracker.io](https://app.packtracker.io/organizations/86)
+
+## Publish Angular Application to Github Pages
+
+`Github Pages` is a Github feature that allows you to deploy any static website or web application or Angular application from your `gh-pages` branch to `Github Pages` for free
+
+Using [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages) library, you can easily publish your angular application to `Github Pages`.
+
+1. Install [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages) as a devDependency to your project
+
+    ```bash
+    npm install angular-cli-ghpages --save-dev
+    ```
+
+1. Add below npm script to your `package.json`
+
+    ```bash
+    "scripts": {
+      ....
+      .....
+      "prod-build": "ng build --prod --base-href=./",
+      "git-publish": "npm run prod-build && npx angular-cli-ghpages --dir=dist/ngrx-web-starter1 --branch=gh-pages"
+    }
+    ```
+
+1. Publish your application from `gh-pages` branch to `Github Pages`. Branch `gh-pages` is automatically created for you. Command below,
+first runs production build, automatically commits and pushes the changes from 'dist' folder to `gh-pages` branch and deploys it to `Github Pages`.
+Branch `gh-pages` act as a staging folder for deployment.
+
+    ```bash
+    npm run git-publish
+    ```
+
+1. Launch your application on browser by navigating to `https://username.github.io/repo-name/`. Example to launch this application click this link <https://kumaran-is.github.io/ngrx-web-starter1>
+
+1. For more detail and options, refer the official [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages) github.
 
 ## GitHub Working Agreement
 
