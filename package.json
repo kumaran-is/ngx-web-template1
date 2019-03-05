@@ -24,7 +24,8 @@
     "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -n \"ngrx-web-starter1 documentation\"  --theme \"Vagrant\" -s -o ",
     "stats": "ng build --prod --base-href=./ --stats-json && webpack-bundle-analyzer dist/ngrx-web-starter1/stats.json",
     "conventional-changelog": "conventional-changelog",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "git-publish": "npm run prod-build && npx angular-cli-ghpages --dir=dist/ngrx-web-starter1 --branch=gh-pages"
   },
   "private": true,
   "dependencies": {
@@ -60,6 +61,7 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~10.12.0",
+    "angular-cli-ghpages": "~0.5.3",
     "codelyzer": "~4.5.0",
     "conventional-changelog-cli": "~2.0.11",
     "husky": "~1.3.1",
