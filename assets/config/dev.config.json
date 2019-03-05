@@ -1,0 +1,5 @@
+{
+  "env": "development",
+  "webAPIURL": "http://dev.sample.com/api",
+  "port": 4000
+}
