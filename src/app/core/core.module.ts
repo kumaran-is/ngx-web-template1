@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { ApiPrefixInterceptor } from '@core/interceptors/api-prefix.interceptor';
+import { ErrorHandlerInterceptor } from '@core/interceptors/error-handler.interceptor';
 
 @NgModule({
   imports: [
@@ -8,7 +10,12 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
     HttpClientModule
   ],
   exports: [
-    HttpClientModule
+    HttpClientModule,
+  ],
+  providers: [
+    // order for interceptors matters
+    ApiPrefixInterceptor,
+    ErrorHandlerInterceptor,
   ]
 })
 export class CoreModule {
