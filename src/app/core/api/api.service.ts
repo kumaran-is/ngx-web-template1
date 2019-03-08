@@ -1,6 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,36 +9,40 @@ import { environment } from '@env/environment';
 export class APIService {
   constructor(private http: HttpClient) {}
 
-  public getData(path: string) {
+  public get(
+    path: string,
+    params: HttpParams = new HttpParams()
+  ): Observable<any> {
     return this.http.get(
-      this.createCompleteURLPath(path, environment.webAPIUrl)
+      this.createCompleteURLPath(environment.webAPIUrl, path),
+      { params }
     );
   }
 
-  public create(path: string, body) {
+  public post(path: string, body): Observable<any> {
     return this.http.post(
-      this.createCompleteURLPath(path, environment.webAPIUrl),
+      this.createCompleteURLPath(environment.webAPIUrl, path),
       body,
       this.generateHeaders()
     );
   }
 
-  public update(path: string, body) {
+  public put(path: string, body): Observable<any> {
     return this.http.put(
-      this.createCompleteURLPath(path, environment.webAPIUrl),
+      this.createCompleteURLPath(environment.webAPIUrl, path),
       body,
       this.generateHeaders()
     );
   }
 
-  public delete(path: string) {
+  public delete(path: string): Observable<any> {
     return this.http.delete(
-      this.createCompleteURLPath(path, environment.webAPIUrl)
+      this.createCompleteURLPath(environment.webAPIUrl, path)
     );
   }
 
-  private createCompleteURLPath(path: string, envAddress: string) {
-    return `${envAddress}/${path}`;
+  private createCompleteURLPath(envAPIUrl: string, path: string) {
+    return `${envAPIUrl}/${path}`;
   }
 
   private generateHeaders() {
