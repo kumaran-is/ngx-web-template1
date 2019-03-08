@@ -8,36 +8,36 @@ import { environment } from '@env/environment';
 export class RepositoryService {
   constructor(private http: HttpClient) {}
 
-  public getData(route: string) {
+  public getData(path: string) {
     return this.http.get(
-      this.createCompleteRoute(route, environment.webAPIUrl)
+      this.createCompleteURLPath(path, environment.webAPIUrl)
     );
   }
 
-  public create(route: string, body) {
+  public create(path: string, body) {
     return this.http.post(
-      this.createCompleteRoute(route, environment.webAPIUrl),
+      this.createCompleteURLPath(path, environment.webAPIUrl),
       body,
       this.generateHeaders()
     );
   }
 
-  public update(route: string, body) {
+  public update(path: string, body) {
     return this.http.put(
-      this.createCompleteRoute(route, environment.webAPIUrl),
+      this.createCompleteURLPath(path, environment.webAPIUrl),
       body,
       this.generateHeaders()
     );
   }
 
-  public delete(route: string) {
+  public delete(path: string) {
     return this.http.delete(
-      this.createCompleteRoute(route, environment.webAPIUrl)
+      this.createCompleteURLPath(path, environment.webAPIUrl)
     );
   }
 
-  private createCompleteRoute(route: string, envAddress: string) {
-    return `${envAddress}/${route}`;
+  private createCompleteURLPath(path: string, envAddress: string) {
+    return `${envAddress}/${path}`;
   }
 
   private generateHeaders() {
