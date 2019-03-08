@@ -5,7 +5,7 @@ import { environment } from '@env/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class RepositoryService {
+export class APIService {
   constructor(private http: HttpClient) {}
 
   public getData(path: string) {
