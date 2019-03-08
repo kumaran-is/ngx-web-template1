@@ -22,7 +22,7 @@
     "scss-lint": "scss-lint",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "prettier": "prettier --write \"./{src,e2e}/**/*.{ts,js,scss}\"",
-    "prettier:check": "prettier --list-different \"./{src,e2e}/**/*.{ts,js,scss}\"",
+    "prettier:check": "prettier --debug-check --list-different \"./{src,e2e}/**/*.{ts,js,scss}\"",
     "outdated": "npm outdated --depth 0",
     "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -n \"ngrx-web-starter1 documentation\"  --theme \"Vagrant\" -s -o ",
     "stats": "ng build --prod --base-href=./ --stats-json && webpack-bundle-analyzer dist/ngrx-web-starter1/stats.json",
@@ -94,15 +94,7 @@
     "webpack-bundle-analyzer": "~3.0.3"
   },
   "prettier": {
-    "singleQuote": true,
-    "overrides": [
-      {
-        "files": "*.scss",
-        "options": {
-          "singleQuote": false
-        }
-      }
-    ]
+    "singleQuote": true
   },
   "husky": {
     "hooks": {
