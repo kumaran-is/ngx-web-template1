@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { ErrorHandlerInterceptor } from '@core/interceptors/error-handler.interceptor';
+import { ProfilerInterceptor } from '@core/interceptors/profiler.interceptor';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { ErrorHandlerInterceptor } from '@core/interceptors/error-handler.interc
   ],
   providers: [
     // order for interceptors matters
-    ErrorHandlerInterceptor
+    ErrorHandlerInterceptor,
+    ProfilerInterceptor
   ]
 })
 export class CoreModule {

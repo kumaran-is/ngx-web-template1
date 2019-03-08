@@ -1,10 +1,9 @@
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-
-import { environment } from '@env/environment';
 import { Logger } from '@core/logger/logger.service';
+import { environment } from '@env/environment';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 const log = new Logger('ErrorHandlerInterceptor');
 
@@ -15,16 +14,24 @@ const log = new Logger('ErrorHandlerInterceptor');
 export class ErrorHandlerInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(request).pipe(catchError(error => this.errorHandler(error)));
+    return next.handle(request).pipe(
+      retry(2),
+      catchError((error: HttpErrorResponse) => {
+        if (error.status !== 401) {
+           // 401 handled in auth.interceptor
+          this.errorHandler(error);
+        }
+        return throwError(error);
+      })
+    );
   }
 
   // Customize the default error handler here if needed
-  private errorHandler(response: HttpEvent<any>): Observable<HttpEvent<any>> {
+  private errorHandler(error: HttpErrorResponse): void {
     if (!environment.production) {
       // Do something with the error
-      log.error('Request error', response);
+      log.error('Request error', error);
     }
-    throw response;
   }
 
 }
