@@ -19,8 +19,8 @@ export interface State {
 }
 
 /*
-* Representation of app-level state
-*/
+ * Representation of app-level state
+ */
 export interface AppState {
   router: RouterReducerState<RouterState>;
   config: AppConfigState;
@@ -30,7 +30,6 @@ export const reducers: ActionReducerMap<AppState> = {
   router: routerReducer,
   config: appConfigReducer
 };
-
 
 /**
  * Compose a map of meta reducers.
@@ -43,11 +42,7 @@ export const reducers: ActionReducerMap<AppState> = {
  * current state. Useful for debugging during development
  */
 
-export const metaReducers: MetaReducer<any, any>[] = [
-  clearStoreMetaReducer
-];
+export const metaReducers: MetaReducer<any, any>[] = [clearStoreMetaReducer];
 if (!environment.production) {
   metaReducers.unshift(storeFreeze, logStoreMetaReducer);
 }
-
-

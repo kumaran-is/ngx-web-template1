@@ -5,4 +5,3 @@ export const environment = {
   version: '0.0.4',
   configFilePath: 'assets/config/prod.config.json'
 };
-

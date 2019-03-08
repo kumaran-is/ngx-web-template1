@@ -6,5 +6,12 @@ import * as RootStoreActions from '@app/root-store/root-store.actions';
 import { RootStoreModule } from '@app/root-store/root-store.module';
 import * as RouterStoreSelectors from '@app/root-store/router-store/router.selectors';
 
-export { isActionNameUnique, AppConfigActions, AppInitSelectors, State, RootStoreActions, RootStoreModule, RouterStoreSelectors };
-
+export {
+  isActionNameUnique,
+  AppConfigActions,
+  AppInitSelectors,
+  State,
+  RootStoreActions,
+  RootStoreModule,
+  RouterStoreSelectors
+};

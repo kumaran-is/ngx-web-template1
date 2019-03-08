@@ -13,9 +13,6 @@ import { SharedModule } from '@shared/shared.module';
     HeaderComponent,
     PageNotFoundComponent
   ],
-  imports: [
-    RouterModule,
-    SharedModule
-  ]
+  imports: [RouterModule, SharedModule]
 })
-export class LayoutModule { }
+export class LayoutModule {}

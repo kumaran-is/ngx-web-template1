@@ -5,13 +5,8 @@ import { ErrorHandlerInterceptor } from '@core/interceptors/error-handler.interc
 import { ProfilerInterceptor } from '@core/interceptors/profiler.interceptor';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule
-  ],
-  exports: [
-    HttpClientModule,
-  ],
+  imports: [CommonModule, HttpClientModule],
+  exports: [HttpClientModule],
   providers: [
     // order for interceptors matters
     ErrorHandlerInterceptor,

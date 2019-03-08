@@ -9,10 +9,8 @@ export interface AppConfigState {
   error?: string | null;
 }
 
-
 export const initialState: AppConfigState = {
   config: [],
   isLoading: false,
   error: null
 };
-

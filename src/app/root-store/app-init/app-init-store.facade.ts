@@ -7,8 +7,7 @@ import * as AppConfigActions from './app-config.actions';
   providedIn: 'root'
 })
 export class AppInitStoreFacade {
-
-  constructor( private store$: Store<State>) { }
+  constructor(private store$: Store<State>) {}
 
   public loadAppConfig(): Promise<any> {
     return new Promise((resolve, reject) => {
@@ -20,6 +19,8 @@ export class AppInitStoreFacade {
   }
 }
 
-export function initApplication(appInitStoreFacade: AppInitStoreFacade): () => Promise<any> {
+export function initApplication(
+  appInitStoreFacade: AppInitStoreFacade
+): () => Promise<any> {
   return (): Promise<any> => appInitStoreFacade.loadAppConfig();
 }

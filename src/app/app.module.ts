@@ -31,4 +31,3 @@ export class AppModule {
     console.log('Routes: ', JSON.stringify(router.config, undefined, 4));
   }
 }
-

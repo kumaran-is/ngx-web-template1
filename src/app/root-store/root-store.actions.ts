@@ -17,7 +17,4 @@ export class LogoutToHome implements Action {
   constructor() {}
 }
 
-export type Union
-= LogoutToClearStore
-| LogoutToHome;
-
+export type Union = LogoutToClearStore | LogoutToHome;

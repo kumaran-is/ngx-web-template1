@@ -5,11 +5,13 @@ import { Inject, Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DocumentService {
-
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   public setGoToTopButtonPosition(id: string): void {
-    if (this.document.body.scrollTop > 20 || this.document.documentElement.scrollTop > 20) {
+    if (
+      this.document.body.scrollTop > 20 ||
+      this.document.documentElement.scrollTop > 20
+    ) {
       this.document.getElementById(id).style.display = 'block';
     } else {
       this.document.getElementById(id).style.display = 'none';
@@ -19,5 +21,4 @@ export class DocumentService {
   public scrollUp(): void {
     this.document.body.scrollTop = this.document.documentElement.scrollTop = 0;
   }
-
 }

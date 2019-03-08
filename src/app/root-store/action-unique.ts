@@ -1,7 +1,7 @@
 /* Define a function that ensures that each action is unique. This prevents any
 double actions being dispatched in the future */
 
-const uniqueActionMap: {[actionName: string]: boolean} = {};
+const uniqueActionMap: { [actionName: string]: boolean } = {};
 
 function verifyActionType(actionName: string): void {
   // Ensures actions have unique names
