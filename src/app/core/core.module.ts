@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { ApiPrefixInterceptor } from '@core/interceptors/api-prefix.interceptor';
 import { ErrorHandlerInterceptor } from '@core/interceptors/error-handler.interceptor';
 
 @NgModule({
@@ -14,8 +13,7 @@ import { ErrorHandlerInterceptor } from '@core/interceptors/error-handler.interc
   ],
   providers: [
     // order for interceptors matters
-    ApiPrefixInterceptor,
-    ErrorHandlerInterceptor,
+    ErrorHandlerInterceptor
   ]
 })
 export class CoreModule {
