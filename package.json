@@ -19,8 +19,8 @@
     "e2e": "ng e2e",
     "lint": "ng lint && npm run app-version",
     "stylelint": "stylelint ./src/**/*.scss",
-    "prettier": "prettier --write \"./{src,e2e}/**/*.{ts,js,scss}\"",
-    "prettier-styles": "prettier-stylelint --write \"src/**/*.{css,scss}\" ",
+    "fix-lint": "prettier --write \"./{src,e2e}/**/*.{ts,js,scss}\"",
+    "fix-stylelint": "prettier-stylelint --write \"src/**/*.{css,scss}\" ",
     "stylelint-check": "stylelint-config-prettier-check",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "prettier-check": "prettier --debug-check --list-different \"./{src,e2e}/**/*.{ts,js,scss}\"",
@@ -102,8 +102,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run lint"
+      "pre-commit": "npm run lint && npm run stylelint",
+      "pre-push": "npm run lint && npm run stylelint"
     }
   }
 }
