@@ -1,17 +1,18 @@
 .container {
-  background-color: #ffffff;
-  /* the parent container has been set up to fill the entire viewport */
-  min-height: 100hv;
   position: absolute;
   top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+
+  /* the parent container has been set up to fill the entire viewport */
+  min-height: 100hv;
+  background-color: #fff;
 }
 
 main {
   padding-top: 80px;
-  padding-left: 0.25em;
   padding-right: 0.25em;
   padding-bottom: 0.25em;
+  padding-left: 0.25em;
 }

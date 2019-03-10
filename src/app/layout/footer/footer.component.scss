@@ -9,22 +9,22 @@
       padding: 10px 5px;
     }
     a {
-      transition: padding 0.5s;
       display: inline-block;
-      color: #000000;
+      color: #000;
       text-decoration: none;
+      transition: padding 0.5s;
       &:hover {
         color: #3f51b5;
       }
     }
     .copyright {
-      font-style: italic;
       font-size: 12px;
+      font-style: italic;
       color: #596b7d;
     }
     .version {
-      font-style: italic;
       font-size: 10px;
+      font-style: italic;
       color: #596b7d;
     }
   }

@@ -18,11 +18,12 @@
     "test": "ng test --watch=false --browsers=ChromeHeadless",
     "e2e": "ng e2e",
     "lint": "ng lint && npm run app-version",
-    "lint:styles": "stylelint ./src/**/*.scss",
-    "scss-lint": "scss-lint",
-    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "stylelint": "stylelint ./src/**/*.scss",
     "prettier": "prettier --write \"./{src,e2e}/**/*.{ts,js,scss}\"",
-    "prettier:check": "prettier --debug-check --list-different \"./{src,e2e}/**/*.{ts,js,scss}\"",
+    "prettier-styles": "prettier-stylelint --write \"src/**/*.{css,scss}\" ",
+    "stylelint-check": "stylelint-config-prettier-check",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json",
+    "prettier-check": "prettier --debug-check --list-different \"./{src,e2e}/**/*.{ts,js,scss}\"",
     "outdated": "npm outdated --depth 0",
     "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -n \"ngrx-web-starter1 documentation\"  --theme \"Vagrant\" -s -o ",
     "stats": "ng build --prod --base-href=./ --stats-json && webpack-bundle-analyzer dist/ngrx-web-starter1/stats.json",
@@ -77,6 +78,7 @@
     "karma-jasmine-html-reporter": "~0.2.2",
     "ngrx-store-freeze": "~0.2.0",
     "prettier": "~1.16.4",
+    "prettier-stylelint": "~0.4.2",
     "pretty-quick": "~1.10.0",
     "protractor": "~5.4.2",
     "replace-in-file": "~3.4.3",
@@ -85,6 +87,8 @@
     "source-map-explorer": "~1.7.0",
     "stylelint": "~9.10.0",
     "stylelint-config-prettier": "~5.0.0",
+    "stylelint-config-primer": "~5.0.0",
+    "stylelint-config-standard": "~18.2.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.13.0",
     "tslint-config-prettier": "~1.18.0",
@@ -98,8 +102,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && ng lint",
-      "pre-push": "pretty-quick --staged && ng lint"
+      "pre-commit": "pretty-quick --staged && npm run prettier-styles && npm run lint && npm run stylelint",
+      "pre-push": "pretty-quick --staged && npm run prettier-styles && npm run lint && npm run stylelint"
     }
   }
 }
