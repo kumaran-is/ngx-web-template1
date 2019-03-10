@@ -1,5 +1,9 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier",
+    "stylelint-config-primer"
+  ],
   "rules": {
     "indentation": "tab",
     "selector-max-type": 2,
