@@ -5,8 +5,6 @@
 // -------------------------------------------------------------------------------------------------------------------
 @charset 'UTF-8';
 
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
 // 1. Configurations and helpers
 @import 'helpers/variables', 'helpers/functions', 'helpers/mixins';
 
@@ -21,12 +19,3 @@
 
 // 5. Themes
 @import 'themes/theme-variables', 'themes/themes';
-
-html,
-body {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
