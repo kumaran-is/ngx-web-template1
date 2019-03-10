@@ -6,7 +6,20 @@
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-@import 'themes/theme-variables';
+// 1. Configurations and helpers
+@import 'helpers/variables', 'helpers/functions', 'helpers/mixins';
+
+// 2. Vendors
+@import 'vendors/material';
+
+// 3. Base Stuff
+@import 'base/base', 'base/fonts', 'base/reset', 'base/typography';
+
+// 4. Components
+@import 'components/button', 'components/form';
+
+// 5. Themes
+@import 'themes/theme-variables', 'themes/themes';
 
 html,
 body {
