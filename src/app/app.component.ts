@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.documentService.setGoToTopButtonPosition('goTop');
+    this.documentService.setGoToTopButtonPosition('go-top');
   }
 
   public goToTop() {
@@ -50,6 +50,6 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   public onWindowScroll() {
-    this.documentService.setGoToTopButtonPosition('goTop');
+    this.documentService.setGoToTopButtonPosition('go-top');
   }
 }
