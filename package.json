@@ -102,8 +102,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run prettier-styles && npm run lint && npm run stylelint",
-      "pre-push": "pretty-quick --staged && npm run prettier-styles && npm run lint && npm run stylelint"
+      "pre-commit": "pretty-quick --staged && npm run lint",
+      "pre-push": "pretty-quick --staged && npm run lint"
     }
   }
 }
