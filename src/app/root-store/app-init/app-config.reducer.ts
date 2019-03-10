@@ -2,7 +2,7 @@ import { AppConfigState, initialState } from './app-config-state.interface';
 import { ActionTypes, Union } from './app-config.actions';
 
 export function appConfigReducer(
-  state = initialState,
+  state: AppConfigState = initialState,
   action: Union
 ): AppConfigState {
   switch (action.type) {
