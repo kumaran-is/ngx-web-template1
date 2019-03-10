@@ -7,13 +7,31 @@
   "rules": {
     "array-type": false,
     "arrow-parens": false,
+    "arrow-return-shorthand": true,
+    "callable-types": true,
+    "class-name": true,
+    "comment-format": [
+      true,
+      "check-space"
+    ],
+    "curly": true,
     "deprecation": {
       "severity": "warn"
     },
+    "eofline": true,
+    "forin": true,
     "import-blacklist": [
       true,
       "rxjs/Rx"
     ],
+    "import-spacing": true,
+    "indent": [
+      true,
+      "spaces"
+    ],
+    "interface-over-type-literal": true,
+    "jsdoc-format": true,
+    "label-position": true,
     "interface-name": false,
     "max-classes-per-file": false,
     "max-line-length": [
@@ -25,13 +43,23 @@
       true,
       {
         "order": [
-          "static-field",
-          "instance-field",
-          "static-method",
-          "instance-method"
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
         ]
       }
     ],
+    "no-arg": true,
+    "no-bitwise": true,
     "no-consecutive-blank-lines": false,
     "no-console": [
       true,
@@ -41,14 +69,30 @@
       "timeEnd",
       "trace"
     ],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-variable": [
+      true,
+      "check-parameters"
+    ],
+    "no-duplicate-super": true,
     "no-empty": false,
+    "no-empty-interface": true,
+    "no-eval": true,
     "no-inferrable-types": [
       true,
       "ignore-params"
     ],
+    "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
+    "no-shadowed-variable": true,
+    "no-string-literal": false,
+    "no-string-throw": true,
     "no-switch-case-fall-through": true,
+    "no-trailing-whitespace": true,
+    "no-unnecessary-initializer": true,
+    "no-unused-expression": true,
     "no-use-before-declare": true,
     "no-var-requires": false,
     "object-literal-key-quotes": [
