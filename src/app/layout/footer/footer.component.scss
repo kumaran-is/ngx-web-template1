@@ -1,8 +1,4 @@
-//colors
-$color_black_haze_approx: #f7f7f7;
-$black: #000;
-$color_cerulean_blue_approx: #3f51b5;
-$color_shuttle_gray_approx: #596b7d;
+@import 'src/styles/themes/theme-variables';
 
 .footer {
   padding: 15px 5px;

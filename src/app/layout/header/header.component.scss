@@ -1,6 +1,4 @@
-// colors
-$white: #fff;
-$color_violet_red_approx: #ff4081;
+@import 'src/styles/themes/theme-variables';
 
 .header {
   position: fixed; /* Set the navbar to fixed position */

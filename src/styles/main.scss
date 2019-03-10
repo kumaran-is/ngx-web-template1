@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+// -------------------------------------------------------------------------------------------------------------------
+// Entry point of global application style. You can add global styles to this file, and also import other style files
+// Component-specific style should not go here and be included directly as part of the components.
+// -------------------------------------------------------------------------------------------------------------------
+
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@import 'themes/theme-variables';
 
 html,
 body {
