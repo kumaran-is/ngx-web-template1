@@ -19,6 +19,7 @@
     "e2e": "ng e2e",
     "lint": "ng lint && npm run app-version",
     "stylelint": "stylelint ./src/**/*.scss",
+    "analyze": "npm run stylelint && npm run lint",
     "fix-lint": "prettier --write \"./{src,e2e}/**/*.{ts,js,scss}\"",
     "fix-stylelint": "prettier-stylelint --write \"src/**/*.{css,scss}\" ",
     "stylelint-check": "stylelint-config-prettier-check",
