@@ -102,8 +102,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run lint",
-      "pre-push": "pretty-quick --staged && npm run lint"
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
     }
   }
 }

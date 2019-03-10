@@ -7,14 +7,14 @@
 * 2. Default font size set to be 16px
 */
 html {
-  box-sizing: border-box;
-  font-size: 16px;
+	box-sizing: border-box;
+	font-size: 16px;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body,
@@ -27,8 +27,8 @@ h6,
 p,
 ol,
 ul {
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 }
 
 /**
@@ -36,13 +36,13 @@ ul {
 */
 ol,
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 /**
 * 1. Images are responsive by default.
 */
 img {
-  max-width: 100%;
-  height: auto;
+	max-width: 100%;
+	height: auto;
 }

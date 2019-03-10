@@ -1,33 +1,33 @@
 .header {
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
+	width: 100%; /* Full width */
 }
 
 .first-center-nav-menu {
-  /* Every toolbar row uses a flexbox row layout.
+	/* Every toolbar row uses a flexbox row layout.
   When you use margin-left:auto on a flex-item,
   the value auto will take up any empty spaces available on the left */
-  margin-left: auto;
+	margin-left: auto;
 }
 
 .last-center-nav-menu {
-  /* Every toolbar row uses a flexbox row layout.
+	/* Every toolbar row uses a flexbox row layout.
   When you use margin-right:auto on a flex-item,
   the value auto will take up any empty spaces available on the right */
 
-  margin-right: auto;
+	margin-right: auto;
 }
 
 .toolbar button,
 .toolbar a {
-  font-weight: 400;
+	font-weight: 400;
 }
 
 .menu-active {
-  color: #fff;
+	color: #fff;
 }
 
 .toolbar a:hover {
-  color: #ff4081;
+	color: #ff4081;
 }
