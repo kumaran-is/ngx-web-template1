@@ -1,13 +1,14 @@
+//colors
+$white: #fff;
+
 .container {
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-
-	/* the parent container has been set up to fill the entire viewport */
 	min-height: 100hv;
-	background-color: #fff;
+	background-color: $white;
 }
 
 main {
