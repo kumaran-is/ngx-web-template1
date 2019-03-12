@@ -56,11 +56,6 @@
                   "maximumWarning": "50kb",
                   "maximumError": "100kb"
                 }, {
-                  "type": "all",
-                  "baseline": "700kb",
-                  "maximumWarning": "50kb",
-                  "maximumError": "100kb"
-                }, {
                   "type": "bundle",
                   "name": "runtime",
                   "baseline": "2kb",
