@@ -8,24 +8,8 @@ import { EMPTY, Observable, throwError } from 'rxjs';
 export class ErrorHandlerService {
   constructor() {}
 
-  public handleError(error: any): Observable<any> {
-    // log the error and continue
-    console.error('Error caught, continuing ', error);
-    /* handles error and"bubble" up error to the invoking subscriber with new
-      observable with error and executes catch method of invoking subscriber  */
-    // return _throw(error.json().data ||
-    // new Error('Error while making ProductsService call'));
-    /* handles error and "bubble" up to subscriber with new observable with
-          empty array and executes next() method of invoking subscriber */
-    // return Observable.of<any[]>([]);
-    /* create an Observable that emits no items but terminates normal,
-      this will "bubble"" up to subscriber, since empty no Next() is invoked,
-      just invokes only finally method i.e. complete */
-    return EMPTY;
-  }
-
   public handleErrorAndReturnEmptyObservable(
-    error: HttpErrorResponse | any
+    error: Error | HttpErrorResponse | any
   ): Observable<any> {
     this.parseAndLogError(error);
     return EMPTY;
