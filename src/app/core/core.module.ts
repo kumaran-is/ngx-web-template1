@@ -19,7 +19,9 @@ export class CoreModule {
   singleton service */
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
     if (parentModule) {
-      throw new Error('CoreModule is already loaded. Import only in AppModule');
+      throw new Error(
+        'CoreModule has already been loaded. Import CoreModule only in AppModule'
+      );
     }
   }
 }
