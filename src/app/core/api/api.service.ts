@@ -10,11 +10,7 @@ import { retryWhen } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class APIService {
-  constructor(
-    private http: HttpClient,
-    private coreConstants: CoreConstants,
-    private retryService: RetryService
-  ) {}
+  constructor(private http: HttpClient, private retryService: RetryService) {}
 
   public get(path: string, params?: any): Observable<any> {
     return this.http.get(
@@ -68,7 +64,7 @@ export class APIService {
 
   private generateHeaders() {
     return {
-      headers: new HttpHeaders(this.coreConstants.HTTP_HEADERS)
+      headers: new HttpHeaders(CoreConstants.HTTP_HEADERS)
     };
   }
 
