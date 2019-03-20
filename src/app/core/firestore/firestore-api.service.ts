@@ -12,7 +12,7 @@ export class FirestoreAPIService {
    * @param  path 'collection'
    * @param  optional query paramter 'query'
    * @returns Observable<any> Returns an Observable of data as a array of JSON objects with snapshot metadata
-   * Returns a collection of documents as JSON objects with snapshot metadata for given path and query paramters
+   * Returns a collection of documents as JSON objects with snapshot metadata for given path and query parameters
    */
   public collection$(path: string, query?: any) {
     return this.angularFirestore
@@ -20,7 +20,7 @@ export class FirestoreAPIService {
       .snapshotChanges()
       .pipe(
         map(response => {
-          // response is a array of documents, using array map function to extract indivial documents
+          // response is a array of documents, using array map function to extract individual documents
           return response.map(doc => {
             const data: any = doc.payload.doc.data();
             const id = doc.payload.doc.id;
@@ -33,10 +33,10 @@ export class FirestoreAPIService {
   /**
    * @param path 'docs/docID'
    * @returns Observable<any> Returns an Observable of data as a JSON object
-   * with metadata (the underyling DatabaseReference and snapshot key):
+   * with metadata (the under lying DatabaseReference and snapshot key):
    * Returns a document as JSON object with snapshot metadata for given doc path
    */
-  public docWithMetatData$(path: string): Observable<any> {
+  public docWithMetaData$(path: string): Observable<any> {
     return this.angularFirestore
       .doc<any>(path)
       .snapshotChanges()
@@ -100,7 +100,7 @@ export class FirestoreAPIService {
 
   /**
    * @param  instance of class model
-   * @returns JavaScript object compatability with firestore
+   * @returns JavaScript object compatibility with firestore
    * Deletes document from Firestore
    */
   private mapToObject(object: any): any {
