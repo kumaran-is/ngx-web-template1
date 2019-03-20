@@ -8,7 +8,15 @@ export const environment = {
   // version is automatically updated during build from package.json
   version: '0.0.4',
   configFilePath: 'assets/config/dev.config.json',
-  envName: 'DEV'
+  envName: 'DEV',
+  firestore: {
+    apiKey: '<your-key>',
+    authDomain: '<your-project-authdomain>',
+    databaseURL: '<your-database-URL>',
+    projectId: '<your-project-id>',
+    storageBucket: '<your-storage-bucket>',
+    messagingSenderId: '<your-messaging-sender-id>'
+  }
 };
 
 /*
