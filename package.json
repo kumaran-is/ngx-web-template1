@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-proxy": "ng serve --proxy-config proxy.conf.js",
     "app-version": "node ./app.version.js",
     "build": "npm run app-version && ng build --base-href=./",
     "m-build": "npm run app-version && ng build --es5BrowserSupport=false --base-href=./",
