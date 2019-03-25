@@ -1,5 +1,6 @@
 @import '~styles/themes/theme-variables';
 @import '~styles/themes/themes';
+
 .header {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
@@ -29,6 +30,7 @@
   a {
     font-weight: 400;
   }
+
 }
 
 /* fix the height of navigation bar */
@@ -39,3 +41,11 @@ mat-toolbar {
     height: 50px !important;
   }
 }
+
+
+/* Sample: To access color variable and apply to the element/
+$accent: map-get($app-theme, accent);
+.menu-active {
+  color: mat-color($accent);
+}
+*/
