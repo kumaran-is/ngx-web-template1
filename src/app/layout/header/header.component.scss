@@ -21,6 +21,7 @@
 }
 
 .toolbar {
+
   button {
     font-weight: 400;
   }
@@ -30,3 +31,8 @@
   }
 }
 
+/* fix the height of navigation bar */
+mat-toolbar {
+  height: 50px !important;
+  min-height: 50px !important;
+}
