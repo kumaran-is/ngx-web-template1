@@ -1,6 +1,13 @@
 /* Pre-built Themes */
 // @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
+/*
+Primary - Main colors most widely used across all screens and components.
+Accent - Also known as the secondary color. Used for floating action buttons and interactive elements.
+Warn - Colors to convey error state.
+Foreground - Used for text and icons.
+Background - Colors used for element backgrounds. */
+
 /* custom Theme using Material color Palette */
 // Helper functions(toolbox) for custom theme
 @import '~@angular/material/theming';
@@ -21,6 +28,10 @@
       color:mat-color($accent);
     }
   }
+
+  .menu-active {
+    color: mat-color($accent);
+  }
 }
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
@@ -34,12 +45,22 @@ $app-accent:  mat-palette($mat-green, A700, A400, A700);
 $app-primary2: mat-palette($mat-indigo);
 $app-accent2:  mat-palette($mat-amber, A200, A100, A400);
 
+// Theme 3
+$app-primary3: mat-palette($mat-yellow, A700, A400, A700);
+$app-accent3:  mat-palette($mat-deep-purple, A700, A400, A700);
+
+// Theme 4
+$app-primary4: mat-palette($mat-teal, 500, A400, A700);
+$app-accent4:  mat-palette($mat-orange, A700, A400, A700);
+
 $app-warn:    mat-palette($mat-red);
 
 // Create the theme(dark or light) object (a Sass map containing all of the palettes).
 // dark or light variants theme function  @function mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red))
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 $app-theme2: mat-light-theme($app-primary2, $app-accent2, $app-warn);
+$app-theme3: mat-light-theme($app-primary3, $app-accent3, $app-warn);
+$app-theme4: mat-light-theme($app-primary4, $app-accent4, $app-warn);
 //app-theme: mat-dark-theme(app-primary, $app-accent, $app-warn);
 
 // Include theme styles for core and each component used in your app.
@@ -53,3 +74,12 @@ $app-theme2: mat-light-theme($app-primary2, $app-accent2, $app-warn);
   @include global-theme-color($app-theme2);
 }
 
+.theme3 {
+  @include angular-material-theme($app-theme3);
+  @include global-theme-color($app-theme3);
+}
+
+.theme4 {
+  @include angular-material-theme($app-theme4);
+  @include global-theme-color($app-theme4);
+}
