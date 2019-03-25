@@ -1,1 +1,55 @@
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/* Pre-built Themes */
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* custom Theme using Material color Palette */
+// Helper functions(toolbox) for custom theme
+@import '~@angular/material/theming';
+// Material Mixin - mixin only once; it should not be included for each theme
+//This includes all common styles that are used by multiple components
+@include mat-core();
+
+@mixin global-theme-color($theme) {
+  // Derive primary, accent and warn color from theme
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  // use function mat-color() to extract individual colors from a palette.
+  a {
+    &:hover {
+      color:mat-color($accent);
+    }
+  }
+}
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// Available color palettes: https://material.io/design/color/
+// function mat-palette($base-palette, $default: 500, $lighter: 100, $darker: 700)
+// Theme 1
+$app-primary: mat-palette($mat-blue, A700, A400, A700);
+$app-accent:  mat-palette($mat-green, A700, A400, A700);
+
+// Theme 2
+$app-primary2: mat-palette($mat-indigo);
+$app-accent2:  mat-palette($mat-amber, A200, A100, A400);
+
+$app-warn:    mat-palette($mat-red);
+
+// Create the theme(dark or light) object (a Sass map containing all of the palettes).
+// dark or light variants theme function  @function mat-dark-theme($primary, $accent, $warn: mat-palette($mat-red))
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$app-theme2: mat-light-theme($app-primary2, $app-accent2, $app-warn);
+//app-theme: mat-dark-theme(app-primary, $app-accent, $app-warn);
+
+// Include theme styles for core and each component used in your app.
+.default-theme {
+  @include angular-material-theme($app-theme);
+  @include global-theme-color($app-theme);
+}
+
+.theme2 {
+  @include angular-material-theme($app-theme2);
+  @include global-theme-color($app-theme2);
+}
+

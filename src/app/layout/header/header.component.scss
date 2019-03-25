@@ -1,5 +1,5 @@
 @import '~styles/themes/theme-variables';
-
+@import '~styles/themes/themes';
 .header {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
@@ -17,7 +17,6 @@
   /* Every toolbar row uses a flexbox row layout.
   When you use margin-right:auto on a flex-item,
   the value auto will take up any empty spaces available on the right */
-
   margin-right: auto;
 }
 
@@ -28,10 +27,6 @@
 
   a {
     font-weight: 400;
-
-    &:hover {
-      color: $color_violet_red_approx;
-    }
   }
 }
 

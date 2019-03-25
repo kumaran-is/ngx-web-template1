@@ -1,8 +1,9 @@
 @import '~styles/themes/theme-variables';
+@import '~styles/themes/themes';
 
 .footer {
   padding: 15px 5px;
-  background-color: $color_black_haze_approx;
+  background-color: $color_black_haze;
 }
 
 .links {
@@ -19,20 +20,16 @@ a {
   text-decoration: none;
   //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
   transition: padding 0.5s;
-
-  &:hover {
-    color: $color_cerulean_blue_approx;
-  }
 }
 
 .copyright {
   font-size: 12px;
   font-style: italic;
-  color: $color_shuttle_gray_approx;
+  color: $color_shuttle_gray;
 }
 
 .version {
   font-size: 10px;
   font-style: italic;
-  color: $color_shuttle_gray_approx;
+  color: $color_shuttle_gray;
 }
