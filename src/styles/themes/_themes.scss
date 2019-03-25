@@ -57,25 +57,25 @@ $app-theme-warn: mat-palette($mat-red);
 .theme2 {
   $app-theme2-primary: mat-palette($mat-indigo, A700, A100, A700);
   $app-theme2-accent:  mat-palette($mat-amber, A400, A100, A400);
-  $app-theme2: mat-light-theme($app-theme2-primary, $app-theme2-accent, $app-theme-warn);
-  @include angular-material-theme($app-theme2);
-  @include global-theme-color($app-theme2);
+  $app-theme: mat-light-theme($app-theme2-primary, $app-theme2-accent, $app-theme-warn);
+  @include angular-material-theme($app-theme);
+  @include global-theme-color($app-theme);
 }
 
 // Theme 3
 .theme3 {
   $app-theme3-primary: mat-palette($mat-yellow, A400, A100, A700);
   $app-theme3-accent:  mat-palette($mat-deep-purple, A400, A100, A700);
-  $app-theme3: mat-light-theme($app-theme3-primary, $app-theme3-accent, $app-theme-warn);
-  @include angular-material-theme($app-theme3);
-  @include global-theme-color($app-theme3);
+  $app-theme: mat-light-theme($app-theme3-primary, $app-theme3-accent, $app-theme-warn);
+  @include angular-material-theme($app-theme);
+  @include global-theme-color($app-theme);
 }
 
 // Theme 4
 .theme4 {
   $app-theme4-primary: mat-palette($mat-teal, 500, A400, A700);
   $app-theme4-accent:  mat-palette($mat-orange, A700, A400, A700);
-  $app-theme4: mat-light-theme($app-theme4-primary, $app-theme4-accent, $app-theme-warn);
-  @include angular-material-theme($app-theme4);
-  @include global-theme-color($app-theme4);
+  $app-theme: mat-light-theme($app-theme4-primary, $app-theme4-accent, $app-theme-warn);
+  @include angular-material-theme($app-theme);
+  @include global-theme-color($app-theme);
 }
