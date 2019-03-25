@@ -6,6 +6,8 @@
 
 #### Features
 * Organized an optimized and scalable folder structure and implemented best practices [[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
+* Added code for custom themes [[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
+* Fixed the height of navigation menu bar [[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
 
 #### Breaking Changes
 * NA

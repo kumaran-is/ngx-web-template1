@@ -35,4 +35,7 @@
 mat-toolbar {
   height: 50px !important;
   min-height: 50px !important;
+  mat-toolbar-row {
+    height: 50px !important;
+  }
 }
