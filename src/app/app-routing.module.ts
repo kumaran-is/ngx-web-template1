@@ -9,6 +9,11 @@ const routes: Routes = [
     component: AppShellComponent,
     children: [
       { path: 'home', component: HomeComponent },
+      {
+        path: 'auth',
+        loadChildren:
+          '@app/authentication/authentication.module#AuthenticationModule'
+      },
       { path: 'cart', loadChildren: '@app/cart/cart.module#CartModule' },
       {
         path: 'under-maintenance',
