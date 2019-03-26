@@ -15,7 +15,7 @@ Background - Colors used for element backgrounds. */
 // Theme 1
 // Include theme styles for core and each component used in your app.
 
-$app-theme-primary: mat-palette($mat-blue, A700, A400, A700);
+$app-theme-primary: mat-palette($mat-blue, 700, 400, 700);
 $app-theme-accent:  mat-palette($mat-green, A700, A400, A700);
 $app-theme-warn: mat-palette($mat-red);
 // Create the theme(dark or light) object (a Sass map containing all of the palettes).
