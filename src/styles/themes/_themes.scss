@@ -20,6 +20,9 @@
 @import 'theme4.scss';
 @import 'theme5.scss';
 @import 'theme6.scss';
+@import 'theme7.scss';
+@import 'theme8.scss';
+@import 'theme9.scss';
 
 @mixin global-theme-color($theme) {
   // Derive primary, accent and warn color from theme
@@ -63,7 +66,7 @@
   @include global-theme-color($app-theme3);
 }
 
-// Theme 4
+// Theme 4 using custom palette
 .theme4 {
   @include angular-material-theme($app-theme4);
   @include global-theme-color($app-theme4);
@@ -79,4 +82,22 @@
 .theme6 {
   @include angular-material-theme($app-theme6);
   @include global-theme-color($app-theme6);
+}
+
+// Theme 7 using custom palette
+.theme7 {
+  @include angular-material-theme($app-theme7);
+  @include global-theme-color($app-theme7);
+}
+
+// Theme 8 using custom palette
+.theme8 {
+  @include angular-material-theme($app-theme8);
+  @include global-theme-color($app-theme8);
+}
+
+// Theme 9 using custom palette
+.theme9 {
+  @include angular-material-theme($app-theme9);
+  @include global-theme-color($app-theme9);
 }

@@ -103,20 +103,20 @@ $mat-custom-blue: (
 );
 
 $mat-custom-yellow: (
-     50 : #fffbe1,
-    100 : #fff5b3,
-    200 : #ffef81,
-    300 : #ffe84f,
-    400 : #ffe329,
-    500 : #ffde03,
-    600 : #ffda03,
-    700 : #ffd502,
-    800 : #ffd102,
-    900 : #ffc801,
-    A100 : #ffffff,
-    A200 : #fffcf2,
-    A400 : #fff0bf,
-    A700 : #ffe9a6,
+  50 : #fffae1,
+  100 : #fff2b3,
+  200 : #ffea81,
+  300 : #ffe24e,
+  400 : #ffdb28,
+  500 : #ffd502,
+  600 : #ffd002,
+  700 : #ffca01,
+  800 : #ffc401,
+  900 : #ffba01,
+  A100 : #ffffff,
+  A200 : #fffbf2,
+  A400 : #ffebbf,
+  A700 : #ffe4a6,
     contrast: (
 	    50: $dark-primary-text,
 	    100: $dark-primary-text,
@@ -300,7 +300,7 @@ $mat-custom-orange-tiger: (
     )
 );
 
-$mat-cust-quetzal-green: (
+$mat-custom-quetzal-green: (
     50 : #e0eeed,
     100 : #b3d4d3,
     200 : #80b7b6,
@@ -333,7 +333,7 @@ $mat-cust-quetzal-green: (
     )
 );
 
-$mat-cust-emerald: (
+$mat-custom-emerald: (
     50 : #e0f3ef,
     100 : #b3e1d6,
     200 : #80cdbb,
@@ -366,7 +366,7 @@ $mat-cust-emerald: (
     )
 );
 
-$mat-cust-greenery: (
+$mat-custom-greenery: (
     50 : #f1f6e9,
     100 : #dbe7c9,
     200 : #c4d8a5,
@@ -399,7 +399,7 @@ $mat-cust-greenery: (
     )
 );
 
-$md-custom-blue-izis: (
+$mat-custom-blue-izis: (
     50 : #ebecf4,
     100 : #cecfe4,
     200 : #adafd3,
@@ -432,7 +432,7 @@ $md-custom-blue-izis: (
     )
 );
 
-$mat-lime-punch: (
+$mat-custom-lime-punch: (
     50 : #f7fae8,
     100 : #ecf3c6,
     200 : #dfeba0,
@@ -564,3 +564,101 @@ $mat-custom-green-flash: (
     )
 );
 
+$mat-custom-evening-blue: (
+    50 : #e5e5e8,
+    100 : #bfbfc5,
+    200 : #95949f,
+    300 : #6a6978,
+    400 : #4a495b,
+    500 : #2a293e,
+    600 : #252438,
+    700 : #1f1f30,
+    800 : #191928,
+    900 : #0f0f1b,
+    A100 : #5e5eff,
+    A200 : #2b2bff,
+    A400 : #0000f7,
+    A700 : #0000de,
+    contrast: (
+        50 : $dark-primary-text,
+        100 : $dark-primary-text,
+        200 : $dark-primary-text,
+        300 : $light-primary-text,
+        400 : $light-primary-text,
+        500 : $light-primary-text,
+        600 : $light-primary-text,
+        700 : $light-primary-text,
+        800 : $light-primary-text,
+        900 : $light-primary-text,
+        A100 : $light-primary-text,
+        A200 : $light-primary-text,
+        A400 : $light-primary-text,
+        A700 : $light-primary-text,
+    )
+);
+
+$mat-custom-mimosa: (
+    50 : #fdf7ea,
+    100 : #faeccb,
+    200 : #f7e0a8,
+    300 : #f4d385,
+    400 : #f1c96a,
+    500 : #efc050,
+    600 : #edba49,
+    700 : #ebb240,
+    800 : #e8aa37,
+    900 : #e49c27,
+    A100 : #ffffff,
+    A200 : #fff8ed,
+    A400 : #ffe3ba,
+    A700 : #ffd9a1,
+    contrast: (
+        50 : $dark-primary-text,
+        100 : $dark-primary-text,
+        200 : $dark-primary-text,
+        300 : $dark-primary-text,
+        400 : $dark-primary-text,
+        500 : $dark-primary-text,
+        600 : $dark-primary-text,
+        700 : $dark-primary-text,
+        800 : $dark-primary-text,
+        900 : $dark-primary-text,
+        A100 : $dark-primary-text,
+        A200 : $dark-primary-text,
+        A400 : $dark-primary-text,
+        A700 : $dark-primary-text,
+    )
+);
+
+$mat-custom-navy-peony: (
+    50 : #e4e7ec,
+    100 : #bdc4cf,
+    200 : #919daf,
+    300 : #64758e,
+    400 : #435876,
+    500 : #223a5e,
+    600 : #1e3456,
+    700 : #192c4c,
+    800 : #142542,
+    900 : #0c1831,
+    A100 : #6d99ff,
+    A200 : #3a75ff,
+    A400 : #0751ff,
+    A700 : #0047ec,
+    contrast: (
+        50 : $dark-primary-text,
+        100 : $dark-primary-text,
+        200 : $dark-primary-text,
+        300 : $dark-primary-text,
+        400 : $light-primary-text,
+        500 : $light-primary-text,
+        600 : $light-primary-text,
+        700 : $light-primary-text,
+        800 : $light-primary-text,
+        900 : $light-primary-text,
+        A100 : $dark-primary-text,
+        A200 : $light-primary-text,
+        A400 : $light-primary-text,
+        A700 : $light-primary-text,
+    )
+);
