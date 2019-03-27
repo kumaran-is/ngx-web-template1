@@ -18,6 +18,8 @@
 @import 'theme2.scss';
 @import 'theme3.scss';
 @import 'theme4.scss';
+@import 'theme5.scss';
+@import 'theme6.scss';
 
 @mixin global-theme-color($theme) {
   // Derive primary, accent and warn color from theme
@@ -65,4 +67,16 @@
 .theme4 {
   @include angular-material-theme($app-theme4);
   @include global-theme-color($app-theme4);
+}
+
+// Theme 5 using custom palette
+.theme5 {
+  @include angular-material-theme($app-theme5);
+  @include global-theme-color($app-theme5);
+}
+
+// Theme 6 using custom palette (netflix theme)
+.theme6 {
+  @include angular-material-theme($app-theme6);
+  @include global-theme-color($app-theme6);
 }
