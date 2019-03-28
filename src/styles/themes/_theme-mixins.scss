@@ -21,7 +21,7 @@
   }
 }
 
-/* Use this optional mixins if you want to apply gradient color to Angular Material apps */
+/* Gradient style 3: Using 2 colors: Use this optional mixins if you want to apply gradient color to Angular Material apps */
 @mixin global-gradient-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
@@ -36,3 +36,17 @@
 
 }
 
+/* Gradient style 2: Using same color: Use this optional mixins if you want to apply gradient color to Angular Material apps */
+@mixin global-gradient-theme2($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .mat-primary  {
+    background: linear-gradient(to right, mat-color($primary, 200), mat-color($primary, 500), mat-color($primary, 700)) !important;
+  }
+
+  .mat-accent  {
+    background: linear-gradient(to right, mat-color($accent, 200), mat-color($accent, 500), mat-color($accent, 700)) !important;
+  }
+
+}
