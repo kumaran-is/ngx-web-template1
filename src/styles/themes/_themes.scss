@@ -33,6 +33,8 @@
 @import 'theme14.scss';
 @import 'theme15.scss';
 @import 'theme16.scss';
+@import 'theme17.scss';
+
 // default theme
 .default-theme {
   // Applies theme styles for all components in the library as per material design spec
@@ -135,8 +137,14 @@ which are not used
   @include global-gradient-theme($app-theme15);
 }
 
-// Theme 15 using custom palette and applying gradient colors
+// Theme 16 using custom palette and applying gradient colors
 .theme16 {
   @include angular-material-theme($app-theme16);
   @include global-gradient-theme($app-theme16);
+}
+
+// Theme 17 using custom palette and applying gradient colors
+.theme17 {
+  @include angular-material-theme($app-theme17);
+  @include global-gradient-theme($app-theme17);
 }
