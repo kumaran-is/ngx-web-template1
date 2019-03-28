@@ -23,6 +23,10 @@
 @import 'theme7.scss';
 @import 'theme8.scss';
 @import 'theme9.scss';
+@import 'theme10.scss';
+@import 'theme11.scss';
+@import 'theme12.scss';
+@import 'theme13.scss';
 
 @mixin global-theme-color($theme) {
   // Derive primary, accent and warn color from theme
@@ -100,4 +104,28 @@
 .theme9 {
   @include angular-material-theme($app-theme9);
   @include global-theme-color($app-theme9);
+}
+
+// Theme 10 using custom palette
+.theme10 {
+  @include angular-material-theme($app-theme10);
+  @include global-theme-color($app-theme10);
+}
+
+// Theme 11 using custom palette
+.theme11 {
+  @include angular-material-theme($app-theme11);
+  @include global-theme-color($app-theme11);
+}
+
+// Theme 12 using custom palette
+.theme12 {
+  @include angular-material-theme($app-theme12);
+  @include global-theme-color($app-theme12);
+}
+
+// Theme 13 using custom palette
+.theme13 {
+  @include angular-material-theme($app-theme13);
+  @include global-theme-color($app-theme13);
 }
