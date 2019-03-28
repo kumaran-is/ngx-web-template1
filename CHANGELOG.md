@@ -11,6 +11,7 @@
 * Fixed the height of navigation menu bar [[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
 * Generated initial code for authentication components and services [[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
 * Upgraded dependent and dev dependency node library versions [[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
+* Added support to apply gradient colors to theme [[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
 
 #### Breaking Changes
 * NA

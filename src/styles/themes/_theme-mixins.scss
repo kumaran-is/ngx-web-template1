@@ -26,11 +26,13 @@
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
 
-  .mat-toolbar.mat-primary {
-    background: linear-gradient(to right, mat-color($primary), mat-color($accent)) !important;
+  .mat-primary  {
+    background: linear-gradient(to right, mat-color($primary, 200), mat-color($accent, 300), mat-color($primary, 900)) !important;
   }
-  .mat-toolbar.mat-accent {
-    background: linear-gradient(to right, mat-color($accent), mat-color($primary)) !important;
+
+  .mat-accent  {
+    background: linear-gradient(to right, mat-color($accent, 200), mat-color($primary, 500), mat-color($accent, 900)) !important;
   }
+
 }
 
