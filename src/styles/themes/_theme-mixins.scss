@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// This file contains scss mixins for themes
+// -----------------------------------------------------------------------------
+
+@mixin global-custom-theme($theme) {
+  // Derive primary, accent and warn color from theme
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  // use function mat-color() to extract individual colors from a palette.
+  a {
+    &:hover {
+      color:mat-color($accent);
+    }
+  }
+
+  .menu-active {
+    color: mat-color($accent);
+  }
+}
+
+/* Use this optional mixins if you want to apply gradient color to Angular Material apps */
+@mixin global-gradient-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .mat-toolbar.mat-primary {
+    background: linear-gradient(to right, mat-color($primary), mat-color($accent)) !important;
+  }
+  .mat-toolbar.mat-accent {
+    background: linear-gradient(to right, mat-color($accent), mat-color($primary)) !important;
+  }
+}
+
