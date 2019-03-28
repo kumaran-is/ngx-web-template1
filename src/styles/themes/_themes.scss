@@ -27,6 +27,7 @@
 @import 'theme11.scss';
 @import 'theme12.scss';
 @import 'theme13.scss';
+@import 'theme14.scss';
 
 @mixin global-theme-color($theme) {
   // Derive primary, accent and warn color from theme
@@ -128,4 +129,10 @@
 .theme13 {
   @include angular-material-theme($app-theme13);
   @include global-theme-color($app-theme13);
+}
+
+// Theme 14 using custom palette
+.theme14 {
+  @include angular-material-theme($app-theme14);
+  @include global-theme-color($app-theme14);
 }
