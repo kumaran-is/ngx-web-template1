@@ -37,6 +37,10 @@
 mat-toolbar {
   height: 50px !important;
   min-height: 50px !important;
+  /* with  grey color shadow
+  box-shadow: 0 16px 26px -10px rgba(0, 188, 212, 0.56),
+0 4px 25px 0px rgba(0, 0, 0, 0.12),
+0 8px 10px -5px rgba(0, 188, 212, 0.2);*/
   mat-toolbar-row {
     height: 50px !important;
   }
