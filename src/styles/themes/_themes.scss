@@ -35,6 +35,8 @@
 @import 'theme16.scss';
 @import 'theme17.scss';
 @import 'theme18.scss';
+@import 'theme19.scss';
+@import 'theme20.scss';
 
 // default theme
 .default-theme {
@@ -154,4 +156,16 @@ which are not used
 .theme18 {
   @include angular-material-theme($app-theme18);
   @include global-gradient-theme2($app-theme18);
+}
+
+// Theme 19 using custom palette and applying gradient colors - Expedia look like theme
+.theme19 {
+  @include angular-material-theme($app-theme19);
+  @include global-gradient-theme3($app-theme19);
+}
+
+// Theme 20 using custom palette and applying gradient colors
+.theme20 {
+  @include angular-material-theme($app-theme20);
+  @include global-gradient-theme4($app-theme20);
 }
