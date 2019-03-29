@@ -37,6 +37,7 @@
 @import 'theme18.scss';
 @import 'theme19.scss';
 @import 'theme20.scss';
+@import 'theme21.scss';
 
 // default theme
 .default-theme {
@@ -169,4 +170,11 @@ which are not used
   @include angular-material-theme($app-theme20);
   @include global-gradient-theme4($app-theme20);
   @include global-custom-theme($app-theme20);
+}
+
+// Theme 21 using custom palette and applying gradient colors - firebase website like theme
+.theme21 {
+  @include angular-material-theme($app-theme21);
+  @include global-gradient-theme3($app-theme21);
+  @include global-custom-theme($app-theme21);
 }
