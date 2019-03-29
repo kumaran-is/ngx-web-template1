@@ -168,4 +168,5 @@ which are not used
 .theme20 {
   @include angular-material-theme($app-theme20);
   @include global-gradient-theme4($app-theme20);
+  @include global-custom-theme($app-theme20);
 }

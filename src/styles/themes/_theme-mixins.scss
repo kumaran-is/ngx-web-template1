@@ -69,11 +69,11 @@
   $accent: map-get($theme, accent);
 
   .mat-primary  {
-    background: linear-gradient(to right, mat-color($primary, 300) 0%, mat-color($accent, 500) 100%) !important;
+    background: linear-gradient(to right, mat-color($primary, 400) 0%, mat-color($accent, 400) 100%) !important;
   }
 
   .mat-accent  {
-    background: linear-gradient(to right, mat-color($accent, 500) 0%, mat-color($primary, 300) 100%) !important;
+    background: linear-gradient(to right, mat-color($accent, 300) 0%, mat-color($primary, 300) 100%) !important;
   }
 
 }
