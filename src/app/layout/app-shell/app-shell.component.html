@@ -1,6 +1,6 @@
 <div class="container" fxLayout="column" >
   <header role="heading">
-    <app-header [isLoading]='isLoading$ | async'></app-header>
+    <app-header [isLoading]="isLoading$ | async"></app-header>
   </header>
   <main role="main" fxLayout="row" fxLayoutAlign="center" fxFlex="1 0 auto" >
   <router-outlet></router-outlet>
