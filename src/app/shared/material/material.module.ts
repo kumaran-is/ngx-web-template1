@@ -7,9 +7,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatListModule,
-  MatProgressSpinnerModule,
-  MatSidenavModule,
+  MatProgressBarModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -21,11 +19,9 @@ import {
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatProgressSpinnerModule,
-    MatSidenavModule,
+    MatProgressBarModule,
     MatIconModule,
-    MatInputModule,
-    MatListModule
+    MatInputModule
   ],
   exports: [
     FlexLayoutModule,
@@ -34,11 +30,9 @@ import {
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatProgressSpinnerModule,
-    MatSidenavModule,
+    MatProgressBarModule,
     MatIconModule,
-    MatInputModule,
-    MatListModule
+    MatInputModule
   ]
 })
 export class MaterialModule {}
