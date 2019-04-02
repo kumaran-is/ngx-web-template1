@@ -1,4 +1,5 @@
 import { LayoutModule } from '@angular/cdk/layout';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {
@@ -21,7 +22,8 @@ import {
     MatFormFieldModule,
     MatProgressBarModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    ScrollingModule
   ],
   exports: [
     FlexLayoutModule,
@@ -32,7 +34,8 @@ import {
     MatFormFieldModule,
     MatProgressBarModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    ScrollingModule
   ]
 })
 export class MaterialModule {}
