@@ -1,13 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { FirestoreModule } from '@core/firestore/firestore.module';
+import { APIServicesModule } from '@app/api-services/api-services.module';
 import { ErrorHandlerInterceptor } from '@core/interceptors/error-handler.interceptor';
 import { ProfilerInterceptor } from '@core/interceptors/profiler.interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule, FirestoreModule, NgxSpinnerModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    APIServicesModule,
+    NgxSpinnerModule
+  ],
   exports: [HttpClientModule],
   providers: [
     // order for interceptors matters
