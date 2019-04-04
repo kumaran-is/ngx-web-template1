@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { APIServicesModule } from '@app/api-services/api-services.module';
+import { RetryService } from '@app/error-handler/retry.service';
 import { CoreConstants } from '@core/core.constants';
-import { RetryService } from '@core/error/retry.service';
 import { environment } from '@env/environment';
 import { Observable, pipe } from 'rxjs';
 import { retryWhen } from 'rxjs/operators';

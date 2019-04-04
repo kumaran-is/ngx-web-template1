@@ -2,17 +2,19 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { APIServicesModule } from '@app/api-services/api-services.module';
-import { ErrorHandlerInterceptor } from '@core/interceptors/error-handler.interceptor';
-import { ProfilerInterceptor } from '@core/interceptors/profiler.interceptor';
+import { ErrorHandlerModule } from '@app/error-handler/error-handler.module';
+import { LoggerModule } from '@app/logger/logger.module';
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule, APIServicesModule],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    APIServicesModule,
+    ErrorHandlerModule,
+    LoggerModule
+  ],
   exports: [HttpClientModule],
-  providers: [
-    // order for interceptors matters
-    ErrorHandlerInterceptor,
-    ProfilerInterceptor
-  ]
+  providers: []
 })
 export class CoreModule {
   /* make sure CoreModule is imported only by one NgModule i.e the AppModule

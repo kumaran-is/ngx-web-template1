@@ -6,7 +6,7 @@ import {
   HttpRequest
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Logger } from '@core/logger/logger.service';
+import { Logger } from '@app/logger/logger.service';
 import { environment } from '@env/environment';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
