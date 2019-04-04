@@ -3,7 +3,7 @@ import { CoreConstants } from '@core/core.constants';
 // import { UserService } from '@core/services/user.service';
 import { Subscription } from 'rxjs';
 
-export class FormValidator {
+export class FormValidators {
   constructor() {}
   /*
   static emailTakenAsyncValidator(userService: UserService): AsyncValidatorFn {
