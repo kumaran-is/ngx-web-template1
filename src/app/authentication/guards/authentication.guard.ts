@@ -9,14 +9,15 @@ import {
   UrlSegment,
   UrlTree
 } from '@angular/router';
-import { AuthService } from '@core/auth/auth.service';
+import { AuthenticationService } from '@app/authentication/services/authentication.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
-  constructor(private authService: AuthService) {}
+export class AuthenticationGuard
+  implements CanActivate, CanActivateChild, CanLoad {
+  constructor(private authenticationService: AuthenticationService) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -29,7 +30,6 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     console.log('In canActivate: ' + state.url);
     return this.isUserLoggedIn(state.url);
   }
-
   canActivateChild(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -41,7 +41,6 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     console.log('In canActivateChild: ' + state.url);
     return this.isUserLoggedIn(state.url);
   }
-
   canLoad(
     route: Route,
     segments: UrlSegment[]
@@ -56,7 +55,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
         resolve(true);
       } else {
         // Retain the attempted URL for redirection after successful login
-        // this.authService.setRedirectUrl(url);
+        // this.authenticationService.setRedirectUrl(url);
         // redirect to login page
         // this.dialogService.popupDialog('signin');
         resolve(false);
