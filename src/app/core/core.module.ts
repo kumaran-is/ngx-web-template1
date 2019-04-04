@@ -4,15 +4,9 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { APIServicesModule } from '@app/api-services/api-services.module';
 import { ErrorHandlerInterceptor } from '@core/interceptors/error-handler.interceptor';
 import { ProfilerInterceptor } from '@core/interceptors/profiler.interceptor';
-import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    APIServicesModule,
-    NgxSpinnerModule
-  ],
+  imports: [CommonModule, HttpClientModule, APIServicesModule],
   exports: [HttpClientModule],
   providers: [
     // order for interceptors matters
