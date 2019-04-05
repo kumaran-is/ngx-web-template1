@@ -17,6 +17,7 @@ html {
   box-sizing: inherit;
 }
 
+/* Reset margins and paddings on most elements */
 body,
 h1,
 h2,
@@ -26,7 +27,11 @@ h5,
 h6,
 p,
 ol,
-ul {
+ul,
+pre,
+blockquote,
+figure,
+hr {
   padding: 0;
   margin: 0;
 }
@@ -45,4 +50,58 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* Reset forms and buttons */
+input,
+textarea,
+select,
+button {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+input,
+textarea,
+button {
+  border: 1px solid gray;
+}
+
+button {
+  border-radius: 0;
+  padding: 0.75em 1em;
+  background-color: transparent;
+}
+
+button * {
+  pointer-events: none;
+}
+
+/* Easy responsive for media elements */
+embed,
+iframe,
+img,
+object,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Useful table styles */
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* Hidden */
+[hidden] {
+  display: none !important;
+}
+
+/* noscript styles */
+noscript {
+  display: block;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
