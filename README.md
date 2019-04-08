@@ -147,7 +147,7 @@ Branch `gh-pages` act as a staging folder for deployment.
 
 ## GitHub Working Agreement
 
-We will be working off the masterp branch. When working on a new feature or fixing a bug,
+We will be working off the master branch. When working on a new feature or fixing a bug,
 create a new branch out of the master branch and follow the below naming convention for the branch name.
 Remember that GitHub and MacOS are case-sensitive. Our standard will be for all branch names and file
 names to be all lower-case.
