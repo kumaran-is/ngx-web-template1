@@ -16,6 +16,7 @@
 * Implemented loading indicator to show loading progress between route changes using [Angular Material Progress Bar](https://material.angular.io/components/progress-bar/overview) and Angular Router Events [[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
 * Implemented parallax effect using SCSS [[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
 * Implemented shrinkable second row header menu bar on scrolling down/up using [Angular Material CDK](https://material.angular.io/cdk/scrolling/api) `ScrollingModule` and SCSS [[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
+* Added scrollPositionRestoration and anchorScrolling to be 'enabled' for Angular routing, so when navigating back, the page stays at the same position before you left[[PR 4](https://github.com/kumaran-is/ngrx-web-starter1/pull/4)]
 
 #### Breaking Changes
 * NA
