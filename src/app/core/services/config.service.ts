@@ -38,7 +38,7 @@ export class ConfigService {
   private handleAndThrowRemoteError(
     error: Error | HttpErrorResponse | any
   ): Observable<any> {
-    let errorMessage = 'An error occurred while loading appliation config: ';
+    let errorMessage = 'An error occurred while loading application config: ';
     // in a real world app, we may send the server to some remote logging infrastructure
     // instead of just logging it to the console
     console.error('Error caught while making remote Service call', error);
