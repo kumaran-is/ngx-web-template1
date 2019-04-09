@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ErrorHandlerModule } from '@app/error-handler/error-handler.module';
 import { timer } from 'rxjs';
 import { delay, delayWhen, scan } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: ErrorHandlerModule
+  providedIn: 'root'
 })
 export class RetryService {
   // Retry 3 times with delay of 1/2 second between each retry

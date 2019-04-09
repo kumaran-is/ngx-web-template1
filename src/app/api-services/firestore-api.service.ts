@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { APIServicesModule } from '@app/api-services/api-services.module';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable({ providedIn: APIServicesModule })
+@Injectable({ providedIn: 'root' })
 export class FirestoreAPIService {
   constructor(private angularFirestore: AngularFirestore) {}
 

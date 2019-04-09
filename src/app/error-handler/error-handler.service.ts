@@ -1,10 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ErrorHandlerModule } from '@app/error-handler/error-handler.module';
 import { EMPTY, Observable, throwError } from 'rxjs';
 
 @Injectable({
-  providedIn: ErrorHandlerModule
+  providedIn: 'root'
 })
 export class ErrorHandlerService {
   constructor() {}
