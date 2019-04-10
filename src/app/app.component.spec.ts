@@ -16,10 +16,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ngrx-web-starter1'`, () => {
+  it(`should have as title 'ngx-web-starter'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ngrx-web-starter1');
+    expect(app.title).toEqual('ngx-web-starter');
   });
 
   it('should render title in a h1 tag', () => {
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain(
-      'Welcome to ngrx-web-starter1!'
+      'Welcome to ngx-web-starter!'
     );
   });
 });

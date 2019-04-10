@@ -13,7 +13,7 @@ import { environment } from '@env/environment';
   imports: [
     CommonModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.firestore, 'ngrx-web-starter1'),
+    AngularFireModule.initializeApp(environment.firestore, 'ngx-web-starter'),
     // AngularFirestoreModule.enablePersistence(), // Enable offline support
     AngularFirestoreModule,
     AngularFireStorageModule,
