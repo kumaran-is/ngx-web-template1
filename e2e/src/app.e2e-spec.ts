@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to ngrx-web-starter1!');
+    expect(page.getTitleText()).toEqual('Welcome to ngx-web-starter!');
   });
 
   afterEach(async () => {

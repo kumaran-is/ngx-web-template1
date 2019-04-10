@@ -1,16 +1,16 @@
-# Angular NgRx Web Application Starter Project
+# Angular Ngx Web Application Starter Project
 
-[![Known Vulnerabilities](https://snyk.io/test/github/kumaran-is/ngrx-web-starter1/badge.svg)](https://snyk.io/test/github/kumaran-is/ngrx-web-starter1)
+[![Known Vulnerabilities](https://snyk.io/test/github/kumaran-is/ngx-web-starter/badge.svg)](https://snyk.io/test/github/kumaran-is/ngx-web-starter)
 
-This is a bare bone 3 row layout Angular website using Angular, Angular materila, NgRx, Angular Flex-Layout, RxJS.
+This is a bare bone 3 row layout Angular website using Angular, Angular material, NgRx, Angular Flex-Layout, RxJS.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1
 
 There are 2 ways you can launch the application :
 
-1. Application is hosted on `Github Pages`, you can launch the application on your browser directly, by [clicking here](https://kumaran-is.github.io/ngrx-web-starter1).
+1. Application is hosted on `Github Pages`, you can launch the application on your browser directly, by [clicking here](https://kumaran-is.github.io/ngx-web-starter).
 
-2. Launch the application on [StackBlitz](https://stackblitz.com/), by [clicking here](https://stackblitz.com/github/kumaran-is/ngrx-web-starter1). [StackBlitz](https://stackblitz.com/) is a online code editor built on top of vscode editor, where you can edit and see your changes on the fly.
+2. Launch the application on [StackBlitz](https://stackblitz.com/), by [clicking here](https://stackblitz.com/github/kumaran-is/ngx-web-starter). [StackBlitz](https://stackblitz.com/) is a online code editor built on top of vscode editor, where you can edit and see your changes on the fly.
 
 **Table of contents:**
 
@@ -48,8 +48,8 @@ To launch the application on your computer, you can try below steps:
 1. Clone repository and checkout the `master` branch
 
     ```bash
-    git clone https://github.com/kumaran-is/ngrx-web-starter1.git
-    cd ngrx-web-starter1
+    git clone https://github.com/kumaran-is/ngx-web-starter.git
+    cd ngx-web-starter
     git checkout master
     ```
 
@@ -129,7 +129,7 @@ Using [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages) l
       ....
       .....
       "prod-build": "ng build --prod --base-href=./",
-      "git-publish": "npm run prod-build && npx angular-cli-ghpages --dir=dist/ngrx-web-starter1 --branch=gh-pages"
+      "git-publish": "npm run prod-build && npx angular-cli-ghpages --dir=dist/ngx-web-starter --branch=gh-pages"
     }
     ```
 
@@ -141,7 +141,7 @@ Branch `gh-pages` act as a staging folder for deployment.
     npm run git-publish
     ```
 
-1. Launch your application on browser by navigating to `https://username.github.io/repo-name/`. Example to launch this application click this link <https://kumaran-is.github.io/ngrx-web-starter1>
+1. Launch your application on browser by navigating to `https://username.github.io/repo-name/`. Example to launch this application click this link <https://kumaran-is.github.io/ngx-web-starter>
 
 1. For more detail and options, refer the official [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages) github.
 
@@ -187,4 +187,4 @@ Before submitting a Pull Request for the  repository make sure to check the foll
 
 ## Issue Tracker
 
-* [Issue tracker](https://github.com/kumaran-is/ngrx-web-starter1/issues?state=open)
+* [Issue tracker](https://github.com/kumaran-is/ngx-web-starter/issues?state=open)

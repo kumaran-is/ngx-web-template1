@@ -1,6 +1,6 @@
 {
-  "name": "ngrx-web-starter1",
-  "version": "0.0.4",
+  "name": "ngx-web-starter",
+  "version": "0.0.5",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -30,11 +30,11 @@
     "accessibility": "pa11y-ci --threshold 250",
     "clean": "rimraf coverage dist tmp documentation",
     "outdated": "npm outdated --depth 0",
-    "docs": "compodoc -p src/tsconfig.app.json -n \"ngrx-web-starter1 documentation\"  --theme \"Vagrant\" -s -o ",
-    "stats": "npm run prod-build -- --stats-json && webpack-bundle-analyzer ./dist/ngrx-web-starter1/stats.json",
+    "docs": "compodoc -p src/tsconfig.app.json -n \"ngx-web-starter documentation\"  --theme \"Vagrant\" -s -o ",
+    "stats": "npm run prod-build -- --stats-json && webpack-bundle-analyzer ./dist/ngx-web-starter/stats.json",
     "conventional-changelog": "conventional-changelog",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
-    "git-publish": "npm run prod-build && npx angular-cli-ghpages --dir=dist/ngrx-web-starter1 --branch=gh-pages"
+    "git-publish": "npm run prod-build && npx angular-cli-ghpages --dir=dist/ngx-web-starter --branch=gh-pages"
   },
   "private": true,
   "dependencies": {
