@@ -1,3 +1,15 @@
+<a name="v0.0.6"></a>
+## 0.0.6 (2019-04-10)
+
+#### Bug Fixes
+* NA
+
+#### Features
+* Improved and optimized application loader indicator [[PR 6](https://github.com/kumaran-is/ngx-web-starter/pull/6)]
+
+#### Breaking Changes
+* NA
+
 <a name="v0.0.5"></a>
 ## 0.0.5 (2019-04-10)
 
