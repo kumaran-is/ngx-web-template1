@@ -1,14 +1,15 @@
 import { LayoutModule } from '@angular/cdk/layout';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {
-    MatButtonModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatSidenavModule,
-    MatToolbarModule
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatProgressBarModule,
+  MatToolbarModule
 } from '@angular/material';
 
 @NgModule({
@@ -17,22 +18,24 @@ import {
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
     MatFormFieldModule,
-    MatSidenavModule,
+    MatProgressBarModule,
     MatIconModule,
     MatInputModule,
-    MatListModule
+    ScrollingModule
   ],
   exports: [
     FlexLayoutModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
     MatFormFieldModule,
-    MatSidenavModule,
+    MatProgressBarModule,
     MatIconModule,
     MatInputModule,
-    MatListModule
+    ScrollingModule
   ]
 })
-export class MaterialModule { }
+export class MaterialModule {}

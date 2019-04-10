@@ -38,9 +38,9 @@ export class AppConfigLoadFailure implements Action {
   constructor(public payload: string) {}
 }
 
-export type Union
-= AppInitStart
-| AppInitEnd
-| AppConfigLoadRequest
-| AppConfigLoadSuccess
-| AppConfigLoadFailure;
+export type Union =
+  | AppInitStart
+  | AppInitEnd
+  | AppConfigLoadRequest
+  | AppConfigLoadSuccess
+  | AppConfigLoadFailure;

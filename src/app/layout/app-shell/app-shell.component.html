@@ -1,9 +1,9 @@
-<div class="container" fxLayout="column" >
+<div class="container" fxLayout="column"  cdkScrollable >
   <header role="heading">
-    <app-header></app-header>
+    <app-header [isLoading]="isLoading$ | async"></app-header>
   </header>
   <main role="main" fxLayout="row" fxLayoutAlign="center" fxFlex="1 0 auto" >
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
   </main>
   <footer role="contentinfo"  >
     <app-footer></app-footer>

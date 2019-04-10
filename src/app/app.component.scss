@@ -1,14 +1,14 @@
+@import '~styles/themes/theme-variables';
+
 .scroll-back-to-top-button {
   position: fixed;
-  bottom: 70px;
-  float: right;
   right: 10px;
+  bottom: 70px;
   z-index: 10;
+  float: right;
   cursor: pointer;
-  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
 .scroll-back-to-top-icon {
-  color: white;
+  color: $white;
 }
-

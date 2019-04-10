@@ -9,16 +9,16 @@ import { DocumentService } from '@core/util/document.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
   constructor(
     private documentService: DocumentService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
   ) {
-
     matIconRegistry.addSvgIcon(
       'facebook-box',
-      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/facebook-box.svg')
+      domSanitizer.bypassSecurityTrustResourceUrl(
+        'assets/icons/facebook-box.svg'
+      )
     );
     matIconRegistry.addSvgIcon(
       'github-box',
@@ -30,7 +30,9 @@ export class AppComponent implements OnInit {
     );
     matIconRegistry.addSvgIcon(
       'twitter-box',
-      domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/twitter-box.svg')
+      domSanitizer.bypassSecurityTrustResourceUrl(
+        'assets/icons/twitter-box.svg'
+      )
     );
     matIconRegistry.addSvgIcon(
       'youtube',
@@ -39,7 +41,7 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.documentService.setGoToTopButtonPosition('goTop');
+    this.documentService.setGoToTopButtonPosition('go-top');
   }
 
   public goToTop() {
@@ -48,7 +50,6 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   public onWindowScroll() {
-    this.documentService.setGoToTopButtonPosition('goTop');
+    this.documentService.setGoToTopButtonPosition('go-top');
   }
-
 }

@@ -1,31 +1,35 @@
+@import '~styles/themes/theme-variables';
+@import '~styles/themes/themes';
+
 .footer {
   padding: 15px 5px;
-  background-color:#f7f7f7;
-  .row {
-    .links {
-      padding: 10px 20px;
-    }
-    .social-icon-links {
-      padding: 10px 5px;
-    }
-    a {
-      transition: padding 0.5s;
-      display: inline-block;
-      color: #000000;
-      text-decoration: none;
-      &:hover {
-        color: #3f51b5;
-      }
-    }
-    .copyright {
-      font-style: italic;
-      font-size: 12px;
-      color: #596b7d;
-    }
-    .version {
-      font-style: italic;
-      font-size: 10px;
-      color: #596b7d;
-    }
-  }
+  background-color: $color_black_haze;
+}
+
+.links {
+  padding: 10px 20px;
+}
+
+.social-icon-links {
+  padding: 10px 5px;
+}
+
+a {
+  display: inline-block;
+  color: $black;
+  text-decoration: none;
+  //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: padding 0.5s;
+}
+
+.copyright {
+  font-size: 12px;
+  font-style: italic;
+  color: $color_shuttle_gray;
+}
+
+.version {
+  font-size: 10px;
+  font-style: italic;
+  color: $color_shuttle_gray;
 }

@@ -1,5 +1,5 @@
 <div class="header">
-  <mat-toolbar color="primary" role="navigation" class="toolbar">
+  <mat-toolbar color="primary" role="navigation" [ngClass]="{'shrink-toolbar': shrinkToolbar}" class="toolbar">
     <mat-toolbar-row>
       <a role="banner" mat-button [routerLink]="['/home']" >
         <span class="mat-title" >ngrx-web-starter1</span>
@@ -13,6 +13,13 @@
         <mat-icon>shopping_cart</mat-icon>
       </a>
     </mat-toolbar-row>
+    <mat-toolbar-row [ngClass]="{'hide-toolbar-row': shrinkToolbar}" >
+      <a mat-button class="first-center-nav-menu" [routerLink]="['/menu3']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Menu3</a>
+      <a mat-button [routerLink]="['/menu4']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Menu4</a>
+      <a mat-button [routerLink]="['/menu5']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Menu5</a>
+      <a mat-button class="last-center-nav-menu"  [routerLink]="['/menu6']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Menu6</a>
+    </mat-toolbar-row>
   </mat-toolbar>
+  <mat-progress-bar *ngIf="isLoading" color="accent" mode="indeterminate"></mat-progress-bar>
 </div>
 

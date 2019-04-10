@@ -1,20 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { ErrorHandlerInterceptor } from '@core/interceptors/error-handler.interceptor';
+import { APIServicesModule } from '@app/api-services/api-services.module';
+import { ErrorHandlerModule } from '@app/error-handler/error-handler.module';
+import { LoggerModule } from '@app/logger/logger.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule
-  ],
-  exports: [
     HttpClientModule,
+    APIServicesModule,
+    ErrorHandlerModule,
+    LoggerModule
   ],
-  providers: [
-    // order for interceptors matters
-    ErrorHandlerInterceptor
-  ]
+  exports: [HttpClientModule],
+  providers: []
 })
 export class CoreModule {
   /* make sure CoreModule is imported only by one NgModule i.e the AppModule
@@ -22,7 +22,9 @@ export class CoreModule {
   singleton service */
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
     if (parentModule) {
-      throw new Error('CoreModule is already loaded. Import only in AppModule');
+      throw new Error(
+        'CoreModule has already been loaded. Import CoreModule only in AppModule'
+      );
     }
   }
 }

@@ -1,0 +1,61 @@
+@import '~styles/themes/theme-variables';
+@import '~styles/themes/themes';
+
+.header {
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+.first-center-nav-menu {
+  /* Every toolbar row uses a flexbox row layout.
+  When you use margin-left:auto on a flex-item,
+  the value auto will take up any empty spaces available on the left */
+  margin-left: auto;
+}
+
+.mat-progress-bar {
+  height: 2px;
+}
+
+.last-center-nav-menu {
+  /* Every toolbar row uses a flexbox row layout.
+  When you use margin-right:auto on a flex-item,
+  the value auto will take up any empty spaces available on the right */
+  margin-right: auto;
+}
+
+.toolbar {
+
+  button {
+    font-weight: 500;
+  }
+
+  a {
+    font-weight: 500;
+  }
+
+}
+
+/* fix the height of navigation bar */
+mat-toolbar {
+  min-height: 50px !important;
+  mat-toolbar-row {
+    height: 50px !important;
+  }
+}
+
+.shrink-toolbar {
+  height: 50px;
+}
+
+.hide-toolbar-row {
+  display: none;
+}
+
+/* Sample: To access color variable and apply to the element/
+$accent: map-get($app-theme, accent);
+.menu-active {
+  color: mat-color($accent);
+}
+*/

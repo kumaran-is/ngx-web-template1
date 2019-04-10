@@ -1,0 +1,11 @@
+{
+  "defaults": {
+    "timeout": 10000,
+    "wait": 500
+  },
+  "urls": [
+    "http://localhost:4200",
+    "http://localhost:4200/home",
+    "http://localhost:4200/cart"
+  ]
+}

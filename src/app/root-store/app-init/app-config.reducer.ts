@@ -1,9 +1,11 @@
 import { AppConfigState, initialState } from './app-config-state.interface';
 import { ActionTypes, Union } from './app-config.actions';
 
-export function appConfigReducer(state = initialState, action: Union): AppConfigState {
+export function appConfigReducer(
+  state: AppConfigState = initialState,
+  action: Union
+): AppConfigState {
   switch (action.type) {
-
     case ActionTypes.APP_INIT_START:
       return {
         ...state,
@@ -25,7 +27,7 @@ export function appConfigReducer(state = initialState, action: Union): AppConfig
         ...state,
         isLoading: false,
         config: [],
-        error: action.payload,
+        error: action.payload
       };
 
     default:
