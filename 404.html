@@ -3,13 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <title>NgRx-Web-Starter1</title>
-  <base href="./">
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <base href="./">  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <!-- inline spinner styles to be able to display spinner right away -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-<link rel="stylesheet" href="styles.17d46d4aa54cb00b9a8a.css"></head>
-<body class="mat-body">
-  <app-root></app-root>
-<script type="text/javascript" src="runtime.b8aaa89e55707ddcdfe9.js"></script><script type="text/javascript" src="es2015-polyfills.c5dd28b362270c767b34.js" nomodule></script><script type="text/javascript" src="polyfills.8bbb231b43165d65d357.js"></script><script type="text/javascript" src="vendor.b21e0e12d3b6c5980f82.js"></script><script type="text/javascript" src="main.1d26eb6698ebfb373d47.js"></script></body>
+<link rel="stylesheet" href="styles.98d32cd671473dee2d7f.css"></head>
+<body class="default-theme mat-body">
+  <app-root>
+    <!-- loading layout replaced by app after startup -->
+    <div class="app-loading">
+      <div class="logo"></div>
+      <svg class="spinner" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+      </svg>
+    </div>
+  </app-root>
+<script type="text/javascript" src="runtime.e42d962d11223291bafc.js"></script><script type="text/javascript" src="es2015-polyfills.c5dd28b362270c767b34.js" nomodule></script><script type="text/javascript" src="polyfills.2bb040ce9de995ed8735.js"></script><script type="text/javascript" src="vendor.9813353ba9f6060d6c21.js"></script><script type="text/javascript" src="main.2423857334caa23980ac.js"></script></body>
 </html>
