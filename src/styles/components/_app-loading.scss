@@ -1,3 +1,7 @@
+@import '~styles/themes/themes';
+
+$accent: map-get($app-theme, primary);
+
 .app-loading {
   position: relative;
   display: flex;
@@ -19,7 +23,7 @@
     .path {
       stroke-dasharray: 1, 200;
       stroke-dashoffset: 0;
-      stroke: #ddd;
+      stroke: mat-color($accent);
       animation: dash 1.5s ease-in-out infinite;
       stroke-linecap: round;
     }
