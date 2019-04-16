@@ -5,7 +5,7 @@
 * NA
 
 #### Features
-* Added authentication feature using firebase authentication services [[PR 7](https://github.com/kumaran-is/ngx-web-starter/pull/7)]
+* Integrated basic firstore settings, services and  authentication feature [[PR 7](https://github.com/kumaran-is/ngx-web-starter/pull/7)]
 
 #### Breaking Changes
 * NA
