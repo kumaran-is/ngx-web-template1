@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 import { finalize, tap } from 'rxjs/operators';
 
 @Injectable()
-export class ProfilerInterceptor implements HttpInterceptor {
+export class APIRequestTimerInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(

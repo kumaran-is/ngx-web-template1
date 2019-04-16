@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ForgotPasswordComponent } from '@app/authentication/forgot-password/forgot-password.component';
-import { LoginComponent } from '@app/authentication/login/login.component';
+import { AcknowledgementDialogComponent } from '@app/authentication/acknowledgement/acknowledgement-dialog.component';
+import { ForgotPasswordDialogComponent } from '@app/authentication/forgot-password/forgot-password-dialog.component';
+import { LoginDialogComponent } from '@app/authentication/login/login-dialog.component';
 import { LogoutComponent } from '@app/authentication/logout/logout.component';
-import { ResetPasswordComponent } from '@app/authentication/reset-password/reset-password.component';
 import { SignupComponent } from '@app/authentication/signup/signup.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: '', component: LoginDialogComponent },
+  { path: 'login', component: LoginDialogComponent },
+  { path: 'forgot-password', component: ForgotPasswordDialogComponent },
+  { path: 'acknowledgement', component: AcknowledgementDialogComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'sign-up', component: SignupComponent },
-  { path: 'reset-password', component: ResetPasswordComponent }
+  { path: 'sign-up', component: SignupComponent }
 ];
 
 @NgModule({
@@ -21,10 +21,10 @@ const routes: Routes = [
 })
 export class AuthenticationRoutingModule {
   static components = [
-    ForgotPasswordComponent,
-    LoginComponent,
+    AcknowledgementDialogComponent,
+    ForgotPasswordDialogComponent,
+    LoginDialogComponent,
     LogoutComponent,
-    ResetPasswordComponent,
     SignupComponent
   ];
 }

@@ -6,11 +6,11 @@ export const environment = {
   configFilePath: 'assets/config/prod.config.json',
   envName: 'PROD',
   firestore: {
-    apiKey: '<your-key>',
-    authDomain: '<your-project-authdomain>',
-    databaseURL: '<your-database-URL>',
-    projectId: '<your-project-id>',
-    storageBucket: '<your-storage-bucket>',
-    messagingSenderId: '<your-messaging-sender-id>'
+    apiKey: 'AIzaSyDiRtJO3vLAn_I7tVdZMjddeh8Dyz-_vmY',
+    authDomain: 'halls-diary.firebaseapp.com',
+    databaseURL: 'https://halls-diary.firebaseio.com',
+    projectId: 'halls-diary',
+    storageBucket: 'halls-diary.appspot.com',
+    messagingSenderId: '670696523764'
   }
 };
