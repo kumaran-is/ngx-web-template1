@@ -1,3 +1,17 @@
+<a name="v0.0.8"></a>
+## 0.0.8 (2019-04-17)
+
+#### Bug Fixes
+* NA
+
+#### Features
+* Implemented federated identity providers like Google and  Facebook for authentication(login and signup) using firebase authentication services [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
+* Implemented authentication using user id and password using firebase authentication services [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
+* Implemented change password, forgot password, user profile etc using firebase authentication services [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
+
+#### Breaking Changes
+* NA
+
 <a name="v0.0.7"></a>
 ## 0.0.7 (2019-04-11)
 
