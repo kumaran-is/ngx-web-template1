@@ -5,7 +5,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { APIRequestTimerInterceptor } from '@app/api-services/api-request-timer.interceptor';
+import { APIResponseTimerInterceptor } from '@app/api-services/api-response-timer.interceptor';
 import { environment } from '@env/environment';
 
 @NgModule({
@@ -21,7 +21,7 @@ import { environment } from '@env/environment';
   ],
   providers: [
     // order for interceptors matters
-    APIRequestTimerInterceptor
+    APIResponseTimerInterceptor
   ]
 })
 export class APIServicesModule {}
