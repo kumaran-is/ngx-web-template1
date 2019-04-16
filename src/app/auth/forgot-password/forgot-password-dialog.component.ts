@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { IDialog } from '@app/authentication/models/dialog.interface';
-import { AuthenticationService } from '@app/authentication/services/authentication.service';
+import { IDialog } from '@app/auth/models/dialog.interface';
+import { AuthService } from '@app/auth/services/auth.service';
 
 @Component({
   selector: 'app-forgot-password-dialog',
@@ -16,7 +16,7 @@ export class ForgotPasswordDialogComponent implements OnInit {
   public forgotPasswordError: string;
 
   constructor(
-    private authenticationService: AuthenticationService,
+    private authService: AuthService,
     private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<ForgotPasswordDialogComponent>,
     @Inject('IDialog') private dialogService: IDialog,
@@ -49,7 +49,7 @@ export class ForgotPasswordDialogComponent implements OnInit {
     if (this.forgotPasswordForm.invalid) {
       return;
     }
-    this.authenticationService
+    this.authService
       .resetPassword(this.email.value)
       .then(() => {
         this.openAcknowledgementDialog();

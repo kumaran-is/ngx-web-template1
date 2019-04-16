@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
-import { Credential } from '@app/authentication/models/credential.model';
+import { Credential } from '@app/auth/models/credential.model';
 import * as firebase from 'firebase/app';
 import { Observable, of, Subscription } from 'rxjs';
 import { first, map } from 'rxjs/operators';
-import { User } from './../models/user.model';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService {
+export class AuthService {
   private loginURL: '/signin';
   private user: firebase.User;
   private authenticationStateSubscription: Subscription;

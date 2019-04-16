@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
-import { AuthenticationConstants } from '@app/authentication/authentication.constants';
-import { AuthenticationService } from '@app/authentication/services/authentication.service';
+import { AuthConstants } from '@app/auth/auth.constants';
+import { AuthService } from '@app/auth/services/auth.service';
 import { Observable } from 'rxjs';
 import {
   debounceTime,
@@ -16,8 +16,8 @@ import {
 })
 export class AuthValidatorsService {
   constructor(
-    private authenticationConstants: AuthenticationConstants,
-    private authenticationService: AuthenticationService
+    private authConstants: AuthConstants,
+    private authService: AuthService
   ) {}
 
   public matchingPasswordValidator(
@@ -96,10 +96,7 @@ export class AuthValidatorsService {
           distinctUntilChanged(),
           switchMap(
             (userName: string): Observable<boolean> => {
-              return this.authenticationService.isUserAccountTaken(
-                userName,
-                source
-              );
+              return this.authService.isUserAccountTaken(userName, source);
             }
           )
         )

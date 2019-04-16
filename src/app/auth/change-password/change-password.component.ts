@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { AuthValidatorsService } from '@app/authentication/services/auth-validators.service';
-import { AuthenticationService } from '@app/authentication/services/authentication.service';
+import { AuthValidatorsService } from '@app/auth/services/auth-validators.service';
+import { AuthService } from '@app/auth/services/auth.service';
 
 @Component({
   selector: 'app-change-password',
@@ -19,7 +19,7 @@ export class ChangePasswordComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private authenticationService: AuthenticationService,
+    private authService: AuthService,
     private formBuilder: FormBuilder,
     private authValidatorsService: AuthValidatorsService
   ) {}
@@ -92,7 +92,7 @@ export class ChangePasswordComponent implements OnInit {
     if (this.changePasswordForm.invalid) {
       return;
     } else {
-      this.authenticationService
+      this.authService
         .changePassword(this.confirmationCode, this.password.value)
         .then(() => {
           console.log('successfull changepassword');

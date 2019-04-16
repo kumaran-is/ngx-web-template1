@@ -9,7 +9,7 @@ import {
   UrlSegment,
   UrlTree
 } from '@angular/router';
-import { AuthenticationService } from '@app/authentication/services/authentication.service';
+import { AuthService } from '@app/auth/services/auth.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,7 +17,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthenticationGuard
   implements CanActivate, CanActivateChild, CanLoad {
-  constructor(private authenticationService: AuthenticationService) {}
+  constructor(private authService: AuthService) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -55,7 +55,7 @@ export class AuthenticationGuard
         resolve(true);
       } else {
         // Retain the attempted URL for redirection after successful login
-        // this.authenticationService.setRedirectUrl(url);
+        // this.authService.setRedirectUrl(url);
         // redirect to login page
         // this.dialogService.popupDialog('signin');
         resolve(false);

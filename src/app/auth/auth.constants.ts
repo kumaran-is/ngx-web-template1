@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationConstants {
+export class AuthConstants {
   constructor() {}
 
   // UI field validation regular expressions

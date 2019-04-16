@@ -7,10 +7,10 @@ import {
 } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { AuthenticationConstants } from '@app/authentication/authentication.constants';
-import { Credential } from '@app/authentication/models/credential.model';
-import { AuthenticationService } from '@app/authentication/services/authentication.service';
-import { IDialog } from '@app/authentication/services/dialog.interface';
+import { AuthConstants } from '@app/auth/auth.constants';
+import { Credential } from '@app/auth/models/credential.model';
+import { AuthService } from '@app/auth/services/auth.service';
+import { IDialog } from '@app/auth/services/dialog.interface';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +26,7 @@ export class LoginDialogComponent implements OnInit {
   // someBaseClass = '';
 
   constructor(
-    private authenticationService: AuthenticationService,
+    private authService: AuthService,
     private formBuilder: FormBuilder,
     public dialogRef: MatDialogRef<LoginDialogComponent>,
     private iconRegistry: MatIconRegistry,
@@ -34,7 +34,7 @@ export class LoginDialogComponent implements OnInit {
     private router: Router,
     @Inject('IDialog') private dialogService: IDialog,
     @Inject(MAT_DIALOG_DATA) private data: any,
-    private authenticationConstants: AuthenticationConstants
+    private authConstants: AuthConstants
   ) {
     this.dialogTitle = data.title;
     iconRegistry.addSvgIcon(
@@ -53,7 +53,7 @@ export class LoginDialogComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.pattern(this.authenticationConstants.EMAIL_REGEXP)
+          Validators.pattern(this.authConstants.EMAIL_REGEXP)
         ]
       ],
       password: ['', [Validators.required]]
@@ -89,12 +89,12 @@ export class LoginDialogComponent implements OnInit {
       const credential: Credential = new Credential();
       credential.email = this.email.value;
       credential.password = this.password.value;
-      this.authenticationService
+      this.authService
         .signInWithEmail(credential)
         .then(response => {
           console.log('successfull login', response);
           this.dialogRef.close();
-          this.authenticationService.navigateToRedirectUrlAfterAuth();
+          this.authService.navigateToRedirectUrlAfterAuth();
         })
         .catch(error => {
           this.signinError = error.message;
@@ -104,12 +104,12 @@ export class LoginDialogComponent implements OnInit {
   }
 
   public doSigninWithOAuthProvider(oAuthProvider: string) {
-    this.authenticationService
+    this.authService
       .signInWithOAuthProvider(oAuthProvider)
       .then(response => {
         console.log(`successfull login using $oAuthProvider `, response);
         this.dialogRef.close(this.signinForm.value);
-        this.authenticationService.navigateToRedirectUrlAfterAuth();
+        this.authService.navigateToRedirectUrlAfterAuth();
       })
       .catch(error => {
         this.signinError = error.message;

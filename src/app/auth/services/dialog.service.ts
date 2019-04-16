@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { Router } from '@angular/router';
-import { AcknowledgementDialogComponent } from '@app/authentication/acknowledgement/acknowledgement-dialog.component';
-import { ForgotPasswordDialogComponent } from '@app/authentication/forgot-password/forgot-password-dialog.component';
-import { LoginDialogComponent } from '@app/authentication/login/login-dialog.component';
-import { AuthenticationService } from '@app/authentication/services/authentication.service';
-import { SignupComponent } from '@app/authentication/signup/signup.component';
+import { AcknowledgementDialogComponent } from '@app/auth/acknowledgement/acknowledgement-dialog.component';
+import { ForgotPasswordDialogComponent } from '@app/auth/forgot-password/forgot-password-dialog.component';
+import { LoginDialogComponent } from '@app/auth/login/login-dialog.component';
+import { AuthService } from '@app/auth/services/auth.service';
+import { SignupComponent } from '@app/auth/signup/signup.component';
 import { IDialog } from './dialog.interface';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class DialogService implements IDialog {
   constructor(
     private matDialog: MatDialog,
     private router: Router,
-    private authenticationService: AuthenticationService
+    private authService: AuthService
   ) {}
 
   public popupDialog(dialogComponent: string) {
