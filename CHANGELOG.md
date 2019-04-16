@@ -1,3 +1,15 @@
+<a name="v0.0.7"></a>
+## 0.0.7 (2019-04-11)
+
+#### Bug Fixes
+* NA
+
+#### Features
+* Integrated basic firstore settings, services and  authentication feature [[PR 7](https://github.com/kumaran-is/ngx-web-starter/pull/7)]
+
+#### Breaking Changes
+* NA
+
 <a name="v0.0.6"></a>
 ## 0.0.6 (2019-04-10)
 

@@ -30,7 +30,7 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
           this.errorHandler(error);
         } else if (error.status === 401) {
           // auto logout if 401 response returned from api
-          // this.authenticationService.logout();
+          // this.authService.logout();
           // location.reload(true);
         }
         return throwError(error);

@@ -1,0 +1,48 @@
+<div class="login-container" >
+  <div>
+    <div class="hd-close-btn" (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </div>
+    <h1 mat-dialog-title>Login In</h1>
+  </div>
+  <mat-dialog-content>
+    <button mat-raised-button id="fb" (click)="doSigninWithOAuthProvider('facebook')" >
+      <mat-icon svgIcon="facebook"></mat-icon>
+      Facebook
+    </button>
+    &nbsp;&nbsp;
+    <button mat-raised-button id="google" (click)="doSigninWithOAuthProvider('google')" >
+      <mat-icon svgIcon="google"></mat-icon>
+      Google
+    </button>
+    <br><br><br>
+    <mat-divider></mat-divider>
+    <p class="hd-note" mat-line>or sign in with email</p>
+    <br>
+    <span class="error" *ngIf="signinError">
+      <mat-icon class="icon">error</mat-icon>
+      {{ signinError }}
+    </span>
+    <form novalidate [formGroup]="signinForm" (ngSubmit)="doSigninWithEmail()" >
+      <mat-form-field appearance="outline" >
+        <mat-label>Email</mat-label>
+        <input matInput required formControlName="email" class="field-full-width" placeholder="Email">
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-error *ngIf="email.invalid">{{ getEmailControlErrorMessage() }}</mat-error>
+      </mat-form-field> <br>
+      <mat-form-field appearance="outline" >
+        <mat-label>Password</mat-label>
+        <input matInput required formControlName="password" class="field-full-width" placeholder="Password" [type]="hide ? 'password' : 'text'" >
+        <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility' : 'visibility_off' }}</mat-icon>
+        <mat-error *ngIf="password.invalid">{{ getPasswordControlErrorMessage() }}</mat-error>
+      </mat-form-field>
+      <a  href="#" (click)="!!openForgotPasswordDialog()" class="hd-link" ><p mat-line>Forgot Your Password?</p></a>
+      <br>
+      <button mat-raised-button color="accent" type="submit">Sign In</button>
+      &nbsp;&nbsp;
+      <button mat-raised-button type="button" (click)="closeDialog()">Close</button>
+      <br><br><br>
+      <button mat-raised-button color="primary" (click)="openSignupDialog()">Don’t have an account? Sign Up</button>
+    </form>
+  </mat-dialog-content>
+</div>

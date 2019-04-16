@@ -1,6 +1,6 @@
 {
   "name": "ngx-web-starter",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -34,7 +34,8 @@
     "stats": "npm run prod-build -- --stats-json && webpack-bundle-analyzer ./dist/ngx-web-starter/stats.json",
     "conventional-changelog": "conventional-changelog",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
-    "git-publish": "npm run prod-build && npx angular-cli-ghpages --dir=dist/ngx-web-starter --branch=gh-pages"
+    "git-publish": "npm run prod-build && npx angular-cli-ghpages --dir=dist/ngx-web-starter --branch=gh-pages",
+    "audit": "npm audit"
   },
   "private": true,
   "dependencies": {
@@ -43,7 +44,7 @@
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
     "@angular/core": "~7.2.0",
-    "@angular/fire": "~5.1.2",
+    "@angular/fire": "~5.1.0",
     "@angular/flex-layout": "~7.0.0-beta.23",
     "@angular/forms": "~7.2.0",
     "@angular/material": "~7.3.1",

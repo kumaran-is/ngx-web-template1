@@ -1,0 +1,17 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.login-container > * {
+  width: 100%;
+}
+
+.login-container form > * {
+  margin: 0px 0;
+}
+
+.field-full-width {
+  width: 100%;
+}
