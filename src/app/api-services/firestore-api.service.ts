@@ -30,6 +30,17 @@ export class FirestoreAPIService {
   }
 
   /**
+   * @param  path 'collection'
+   * @param  optional query paramter 'query'
+   * @returns Observable<any> Returns an Observable of data as a array of JSON objects with snapshot metadata
+   * Returns a collection of documents as JSON objects without snapshot metadata for given path and query parameters
+   */
+  /* public collection$(path: string, query?: any) {
+    return this.angularFirestore.collection<any[]>(path, query).valueChanges();
+  }
+   */
+
+  /**
    * @param path 'docs/docID'
    * @returns Observable<any> Returns an Observable of data as a JSON object
    * with metadata (the under lying DatabaseReference and snapshot key):
