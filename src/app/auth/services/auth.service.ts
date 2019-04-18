@@ -122,9 +122,6 @@ export class AuthService {
     if (this.user) {
       if (this.user.displayName) {
         return this.user.displayName;
-      }
-      if (this.user.displayName) {
-        return this.user.displayName;
       } else if (this.user.email) {
         return this.user.email;
       } else {
