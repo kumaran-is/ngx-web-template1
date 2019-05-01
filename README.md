@@ -30,15 +30,15 @@ Library | Version | Notes
 :-------|:--------:|-------
 [Node](https://nodejs.org/) | 10.15.0 | Recommended NodeJS version
 [NPM](https://nodejs.org/) |6.4.1 | Recommended NPM version
-[Angular](https://angular.io/) | ~7.2.x | JavaScript-based open-source front-end SPA framework
-[Angular CLI](https://github.com/angular/angular-cli) | ~7.3.0 | Set of development tools for Angular
-[Angular Flex-layout](https://github.com/angular/flex-layout) | 7.0.0-beta.23 | Provides a sophisticated layout API using Flexbox CSS + mediaQuery for Angular applications
-[RxJS](https://rxjs-dev.firebaseapp.com/)| ~6.4.0 | JavaScript library for reactive programming using Observables
-[@ngrx/store](https://ngrx.io/)| ~7.3.0 | Manage reactive state for Angular
-[@ngrx/effects](https://ngrx.io/)| ~7.3.0 | Implement side-effects like http requests, logging, notifications
-[@ngrx/store-devtools](https://ngrx.io/)| ~7.3.0 |  Development tool to monitor and debug NGRX actions, state, effects and also enables a powerful time-travelling debugger
-[@ngrx/entity](https://ngrx.io/)| ~7.3.0 | Manage state and CRUD operations for object collection and array
-[@ngrx/router-store](https://ngrx.io/)| ~7.3.0 | Connects the Angular Router to ngrx store to manage state for angular router
+[Angular](https://angular.io/) | ~8.0.0-rc.2 | JavaScript-based open-source front-end SPA framework
+[Angular CLI](https://github.com/angular/angular-cli) | ~8.0.0-rc.2 | Set of development tools for Angular
+[Angular Flex-layout](https://github.com/angular/flex-layout) | ~7.0.0-beta.24 | Provides a sophisticated layout API using Flexbox CSS + mediaQuery for Angular applications
+[RxJS](https://rxjs-dev.firebaseapp.com/)| ~6.5.0 | JavaScript library for reactive programming using Observables
+[@ngrx/store](https://ngrx.io/)| ~8.0.0-beta.1 | Manage reactive state for Angular
+[@ngrx/effects](https://ngrx.io/)| ~8.0.0-beta.1 | Implement side-effects like http requests, logging, notifications
+[@ngrx/store-devtools](https://ngrx.io/)| ~8.0.0-beta.1 |  Development tool to monitor and debug NGRX actions, state, effects and also enables a powerful time-travelling debugger
+[@ngrx/entity](https://ngrx.io/)| ~8.0.0-beta.1 | Manage state and CRUD operations for object collection and array
+[@ngrx/router-store](https://ngrx.io/)| ~8.0.0-beta.1 | Connects the Angular Router to ngrx store to manage state for angular router
 [ngrx-store-freeze](https://github.com/brandonroberts/ngrx-store-freeze)| ~0.2.0 | Meta-reducer that prevents state from being mutated
 
 ## Quick Start
