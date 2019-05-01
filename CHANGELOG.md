@@ -1,3 +1,15 @@
+<a name="v0.0.10"></a>
+## 0.0.10 (2019-05-01)
+
+#### Bug Fixes
+* NA
+
+#### Features
+* Implement Authentication using Firebase Authentication sevrice [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+#### Breaking Changes
+* NA
+
 <a name="v0.0.9"></a>
 ## 0.0.9 (2019-05-01)
 
