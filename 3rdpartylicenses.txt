@@ -126,6 +126,12 @@ THE SOFTWARE.
 
 @angular/material/card
 
+@angular/material/dialog
+
+@angular/material/divider
+
+@angular/material/form-field
+
 @angular/material/icon
 
 @angular/material/progress-bar
