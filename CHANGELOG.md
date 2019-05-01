@@ -1,3 +1,15 @@
+<a name="v0.0.9"></a>
+## 0.0.9 (2019-05-01)
+
+#### Bug Fixes
+* NA
+
+#### Features
+* Upgraded to Angular 8 RC version [[PR 9](https://github.com/kumaran-is/ngx-web-starter/pull/9)]
+
+#### Breaking Changes
+* NA
+
 <a name="v0.0.8"></a>
 ## 0.0.8 (2019-04-17)
 
