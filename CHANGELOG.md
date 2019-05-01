@@ -1,3 +1,21 @@
+<a name="v0.0.8"></a>
+## 0.0.8 (2019-04-17)
+
+#### Bug Fixes
+* NA
+
+#### Features
+* Implemented OAuth providers (Google and Facebook) login/signup flow using firebase authentication services [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
+* Implemented authentication using Sign-up and sign-in with email accounts (email/password and email link) using firebase authentication services [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
+* Implemented change password, forgot password, manage user profile etc using firebase authentication services [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
+* Phone number based authentication [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
+* Prevention of account duplication (activated when "One account per email address" setting is enabled in the Firebase console. This setting is enabled by default.) [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
+* Sign-in as a guest [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
+* Ability to upgrade anonymous users through sign-in/sign-up [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
+
+#### Breaking Changes
+* NA
+
 <a name="v0.0.7"></a>
 ## 0.0.7 (2019-04-11)
 

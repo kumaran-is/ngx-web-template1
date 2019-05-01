@@ -3,10 +3,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
 import { Credential } from '@app/auth/models/credential.model';
+import { User } from '@app/auth/models/user.model';
 import * as firebase from 'firebase/app';
 import { Observable, of, Subscription } from 'rxjs';
 import { first, map } from 'rxjs/operators';
-import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -120,9 +120,6 @@ export class AuthService {
 
   public getUserName(): string {
     if (this.user) {
-      if (this.user.displayName) {
-        return this.user.displayName;
-      }
       if (this.user.displayName) {
         return this.user.displayName;
       } else if (this.user.email) {
