@@ -11,20 +11,20 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       {
         path: 'auth',
-        loadChildren: '@app/auth/auth.module#AuthModule'
+        loadChildren: () => import('@app/auth/auth.module').then(m => m.AuthModule)
       },
-      { path: 'cart', loadChildren: '@app/cart/cart.module#CartModule' },
+      { path: 'cart', loadChildren: () => import('@app/cart/cart.module').then(m => m.CartModule) },
       {
         path: 'under-maintenance',
         loadChildren:
-          '@app/under-maintenance/under-maintenance.module#UnderMaintenanceModule'
+          () => import('@app/under-maintenance/under-maintenance.module').then(m => m.UnderMaintenanceModule)
       },
       { path: '', pathMatch: 'full', redirectTo: 'home' }
     ]
   },
   {
     path: '**',
-    loadChildren: '@app/page-not-found/page-not-found.module#PageNotFoundModule'
+    loadChildren: () => import('@app/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   }
 ];
 
