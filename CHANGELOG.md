@@ -6,6 +6,7 @@
 
 #### Features
 * Implement Authentication using Firebase Authentication sevrice [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+* Update Karma config with headless chrome
 
 #### Breaking Changes
 * NA
