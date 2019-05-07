@@ -2,11 +2,12 @@
 ## 0.0.10 (2019-05-01)
 
 #### Bug Fixes
-* NA
+* Added Angular Ivy, since it throws error while building due to Angular flexlayout we disabled it temporarily [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
 #### Features
 * Implement Authentication using Firebase Authentication sevrice [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
-* Update Karma config with headless chrome
+* Update Karma config with headless chrome [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
 
 #### Breaking Changes
 * NA
