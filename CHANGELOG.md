@@ -1,3 +1,5 @@
+#Changelog
+
 <a name="v0.0.10"></a>
 ## 0.0.10 (2019-05-01)
 
@@ -7,6 +9,8 @@
 #### Features
 * Implement Authentication using Firebase Authentication sevrice [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 * Update Karma config with headless chrome [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+* Upgraded to Angular 8 RC version 8.0.0-rc.3 [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
 
 #### Breaking Changes
@@ -19,7 +23,7 @@
 * NA
 
 #### Features
-* Upgraded to Angular 8 RC version [[PR 9](https://github.com/kumaran-is/ngx-web-starter/pull/9)]
+* Upgraded to Angular 8 RC version 8.0.0-rc.2 [[PR 9](https://github.com/kumaran-is/ngx-web-starter/pull/9)]
 
 #### Breaking Changes
 * NA
