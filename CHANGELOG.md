@@ -12,6 +12,8 @@
 
 * Upgraded to Angular 8 RC version 8.0.0-rc.3 [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
+* Added proxy configuration to run SPA on local machine connecting to Web API service
+
 
 #### Breaking Changes
 * NA
