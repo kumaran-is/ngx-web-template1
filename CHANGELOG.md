@@ -12,7 +12,9 @@
 
 * Upgraded to Angular 8 RC version 8.0.0-rc.4 [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
-* Added proxy configuration to run SPA on local machine connecting to Web API service
+* Added proxy configuration to run SPA on local machine connecting to Web API service [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+* Added [font-display](https://scotch.io/bar-talk/google-fonts-now-supports-font-display?utm_content=buffer90f3e&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer), a css feature to load google fonts and icons [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
 
 #### Breaking Changes
