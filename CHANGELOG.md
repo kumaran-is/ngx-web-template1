@@ -16,6 +16,7 @@
 
 * Added [font-display](https://scotch.io/bar-talk/google-fonts-now-supports-font-display?utm_content=buffer90f3e&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer), a css feature to load google fonts and icons [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
+* Added environment configurations, build and serve scripts for latest and stage [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
 #### Breaking Changes
 * NA

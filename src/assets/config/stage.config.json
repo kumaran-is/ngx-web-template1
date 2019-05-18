@@ -1,5 +1,5 @@
 {
-  "env": "STAGE",
+  "env": "stage",
   "webAPIURL": "http://dev.sample.com/api",
   "port": 4000
 }

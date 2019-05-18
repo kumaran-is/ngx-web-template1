@@ -4,7 +4,7 @@ export const environment = {
   // version is automatically updated during build from package.json
   version: '0.0.10',
   configFilePath: 'assets/config/prod.config.json',
-  envName: 'PROD',
+  envName: 'prod',
   firestore: {
     apiKey: 'AIzaSyDiRtJO3vLAn_I7tVdZMjddeh8Dyz-_vmY',
     authDomain: 'halls-diary.firebaseapp.com',

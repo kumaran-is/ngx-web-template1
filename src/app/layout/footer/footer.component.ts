@@ -8,6 +8,7 @@ import { environment } from '@env/environment';
 })
 export class FooterComponent implements OnInit {
   public appVersion = environment.version;
+  public envName = environment.envName;
 
   constructor() {}
 

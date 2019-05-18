@@ -1,5 +1,5 @@
 {
-  "env": "LATEST",
+  "env": "latest",
   "webAPIURL": "http://dev.sample.com/api",
   "port": 4000
 }

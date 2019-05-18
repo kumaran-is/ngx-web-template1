@@ -1,5 +1,5 @@
 {
-  "env": "PROD",
+  "env": "prod",
   "webAPIURL": "http://prod.sample.com/api",
   "port": 4000
 }
