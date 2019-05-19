@@ -1,5 +1,6 @@
 {
   "env": "dev",
   "webAPIURL": "http://dev.sample.com/api",
-  "port": 4000
+  "port": 4000,
+  "enableDebug": true
 }
