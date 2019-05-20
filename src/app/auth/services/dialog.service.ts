@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { Router } from '@angular/router';
+import { StopSubscribe } from '@app/api-services/stop-subscribe';
 import { AcknowledgementDialogComponent } from '@app/auth/acknowledgement/acknowledgement-dialog.component';
 import { ForgotPasswordDialogComponent } from '@app/auth/forgot-password/forgot-password-dialog.component';
 import { LoginDialogComponent } from '@app/auth/login/login-dialog.component';
 import { AuthService } from '@app/auth/services/auth.service';
 import { SignupComponent } from '@app/auth/signup/signup.component';
-import { StopSubscribe } from '@core/services/stop-subscribe';
 import { IDialog } from './dialog.interface';
 
 @Injectable({

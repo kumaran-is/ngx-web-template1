@@ -1,6 +1,6 @@
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
 import { Component, Input, NgZone, OnInit } from '@angular/core';
-import { StopSubscribe } from '@core/services/stop-subscribe';
+import { StopSubscribe } from '@app/api-services/stop-subscribe';
 import { map } from 'rxjs/operators';
 
 @Component({
