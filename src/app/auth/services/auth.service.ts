@@ -1,27 +1,29 @@
-import { HostListener, Injectable, OnDestroy } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
 import { Credential } from '@app/auth/models/credential.model';
 import { User } from '@app/auth/models/user.model';
+import { StopSubscribe } from '@core/services/stop-subscribe';
 import * as firebase from 'firebase/app';
-import { Observable, of, Subscription } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService implements OnDestroy {
+export class AuthService extends StopSubscribe {
   private loginURL: '/signin';
   private user: firebase.User;
-  private subscriptions: Subscription = new Subscription();
   private redirectUrl: string;
 
   constructor(
     private angularFireAuth: AngularFireAuth,
     private firestoreAPIService: FirestoreAPIService,
     private router: Router
-  ) {}
+  ) {
+    super();
+  }
 
   initAuthListener() {
     this.subscriptions.add(
@@ -30,11 +32,6 @@ export class AuthService implements OnDestroy {
         error => this.onError(error)
       )
     );
-  }
-
-  @HostListener('window:beforeunload')
-  ngOnDestroy() {
-    this.subscriptions.unsubscribe();
   }
 
   public signupWithEmail(credential: Credential): Promise<any> {

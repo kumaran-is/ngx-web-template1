@@ -1,4 +1,4 @@
-import { HostListener, Injectable, OnDestroy } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { Router } from '@angular/router';
 import { AcknowledgementDialogComponent } from '@app/auth/acknowledgement/acknowledgement-dialog.component';
@@ -6,21 +6,22 @@ import { ForgotPasswordDialogComponent } from '@app/auth/forgot-password/forgot-
 import { LoginDialogComponent } from '@app/auth/login/login-dialog.component';
 import { AuthService } from '@app/auth/services/auth.service';
 import { SignupComponent } from '@app/auth/signup/signup.component';
-import { Subscription } from 'rxjs';
+import { StopSubscribe } from '@core/services/stop-subscribe';
 import { IDialog } from './dialog.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DialogService implements IDialog, OnDestroy {
+export class DialogService extends StopSubscribe implements IDialog {
   public currentDialogRef: MatDialogRef<any> = null;
-  private subscriptions: Subscription = new Subscription();
 
   constructor(
     private matDialog: MatDialog,
     private router: Router,
     private authService: AuthService
-  ) {}
+  ) {
+    super();
+  }
 
   public popupDialog(dialogComponent: string) {
     if (dialogComponent === 'login') {
@@ -54,11 +55,6 @@ export class DialogService implements IDialog, OnDestroy {
         }
       })
     );
-  }
-
-  @HostListener('window:beforeunload')
-  ngOnDestroy() {
-    this.subscriptions.unsubscribe();
   }
 
   private setDialogConfiguration(): MatDialogConfig {

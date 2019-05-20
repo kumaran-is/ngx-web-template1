@@ -1,8 +1,9 @@
-import { HostListener, Injectable, OnDestroy } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
 import { AuthConstants } from '@app/auth/auth.constants';
 import { AuthService } from '@app/auth/services/auth.service';
-import { Observable, Subscription } from 'rxjs';
+import { StopSubscribe } from '@core/services/stop-subscribe';
+import { Observable } from 'rxjs';
 import {
   debounceTime,
   distinctUntilChanged,
@@ -14,12 +15,13 @@ import {
 @Injectable({
   providedIn: 'root'
 })
-export class AuthValidatorsService implements OnDestroy {
-  private subscriptions: Subscription = new Subscription();
+export class AuthValidatorsService extends StopSubscribe {
   constructor(
     private authConstants: AuthConstants,
     private authService: AuthService
-  ) {}
+  ) {
+    super();
+  }
 
   matchingPasswordValidator(passwordKey: string, confirmPasswordKey: string) {
     return (formGroup: FormGroup): void => {
@@ -79,11 +81,6 @@ export class AuthValidatorsService implements OnDestroy {
     control: AbstractControl
   ): Observable<{ [key: string]: boolean } | null> {
     return this.checkUser(control, 'email');
-  }
-
-  @HostListener('window:beforeunload')
-  ngOnDestroy() {
-    this.subscriptions.unsubscribe();
   }
 
   private checkUser(
