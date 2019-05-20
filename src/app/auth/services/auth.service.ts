@@ -1,20 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
 import { Credential } from '@app/auth/models/credential.model';
 import { User } from '@app/auth/models/user.model';
 import * as firebase from 'firebase/app';
-import { Observable, of, Subscription } from 'rxjs';
-import { first, map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { first, map, takeWhile } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnDestroy {
   private loginURL: '/signin';
   private user: firebase.User;
-  private authenticationStateSubscription: Subscription;
+  private subscriptions = true;
   private redirectUrl: string;
 
   constructor(
@@ -23,16 +23,18 @@ export class AuthService {
     private router: Router
   ) {}
 
-  public initAuthListener() {
-    this.authenticationStateSubscription = this.angularFireAuth.authState.subscribe(
-      user => this.authenticationChangeState(user),
-      error => this.onError(error)
-    );
+  initAuthListener() {
+    this.angularFireAuth.authState
+      .pipe(takeWhile(() => this.subscriptions))
+      .subscribe(
+        user => this.authenticationChangeState(user),
+        error => this.onError(error)
+      );
   }
 
-  public destroyAuthListener() {
-    if (this.authenticationStateSubscription) {
-      this.authenticationStateSubscription.unsubscribe();
+  ngOnDestroy() {
+    if (!!this.subscriptions) {
+      this.subscriptions = false;
     }
   }
 

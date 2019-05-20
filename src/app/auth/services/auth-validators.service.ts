@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
 import { AuthConstants } from '@app/auth/auth.constants';
 import { AuthService } from '@app/auth/services/auth.service';
@@ -8,22 +8,21 @@ import {
   distinctUntilChanged,
   filter,
   map,
-  switchMap
+  switchMap,
+  takeWhile
 } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthValidatorsService {
+export class AuthValidatorsService implements OnDestroy {
+  private subscriptions = true;
   constructor(
     private authConstants: AuthConstants,
     private authService: AuthService
   ) {}
 
-  public matchingPasswordValidator(
-    passwordKey: string,
-    confirmPasswordKey: string
-  ) {
+  matchingPasswordValidator(passwordKey: string, confirmPasswordKey: string) {
     return (formGroup: FormGroup): void => {
       const passwordInput = formGroup.get(passwordKey);
       const confirmPasswordInput = formGroup.get(confirmPasswordKey);
@@ -77,10 +76,16 @@ export class AuthValidatorsService {
   }
   */
 
-  public usernameTakenValidator(
+  usernameTakenValidator(
     control: AbstractControl
   ): Observable<{ [key: string]: boolean } | null> {
     return this.checkUser(control, 'email');
+  }
+
+  ngOnDestroy() {
+    if (!!this.subscriptions) {
+      this.subscriptions = false;
+    }
   }
 
   private checkUser(
@@ -98,7 +103,8 @@ export class AuthValidatorsService {
             (userName: string): Observable<boolean> => {
               return this.authService.isUserAccountTaken(userName, source);
             }
-          )
+          ),
+          takeWhile(() => this.subscriptions)
         )
         .subscribe(
           response => {

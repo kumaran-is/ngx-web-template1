@@ -1,16 +1,17 @@
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
-import { Component, Input, NgZone, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { Component, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
+import { map, takeWhile } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  @Input() public isLoading: boolean;
-  public shrinkToolbar = false;
+export class HeaderComponent implements OnInit, OnDestroy {
+  @Input() isLoading: boolean;
+  shrinkToolbar = false;
   private readonly SHRINK_TOP_SCROLL_POSITION = 15;
+  private subscriptions = true;
 
   constructor(
     private scrollDispatcher: ScrollDispatcher,
@@ -20,7 +21,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.scrollDispatcher
       .scrolled()
-      .pipe(map((event: CdkScrollable) => this.getScrollPosition(event)))
+      .pipe(
+        map((event: CdkScrollable) => this.getScrollPosition(event)),
+        takeWhile(() => this.subscriptions)
+      )
       .subscribe(scrollTop =>
         this.ngZone.run(
           () =>
@@ -35,6 +39,12 @@ export class HeaderComponent implements OnInit {
       return event.getElementRef().nativeElement.scrollTop;
     } else {
       return window.scrollY;
+    }
+  }
+
+  ngOnDestroy() {
+    if (!!this.subscriptions) {
+      this.subscriptions = false;
     }
   }
 }

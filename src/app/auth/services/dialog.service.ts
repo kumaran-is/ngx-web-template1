@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { Router } from '@angular/router';
 import { AcknowledgementDialogComponent } from '@app/auth/acknowledgement/acknowledgement-dialog.component';
@@ -6,13 +6,15 @@ import { ForgotPasswordDialogComponent } from '@app/auth/forgot-password/forgot-
 import { LoginDialogComponent } from '@app/auth/login/login-dialog.component';
 import { AuthService } from '@app/auth/services/auth.service';
 import { SignupComponent } from '@app/auth/signup/signup.component';
+import { takeWhile } from 'rxjs/operators';
 import { IDialog } from './dialog.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DialogService implements IDialog {
+export class DialogService implements IDialog, OnDestroy {
   public currentDialogRef: MatDialogRef<any> = null;
+  private subscriptions = true;
 
   constructor(
     private matDialog: MatDialog,
@@ -43,13 +45,22 @@ export class DialogService implements IDialog {
       );
     }
 
-    this.currentDialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog was closed');
-      if (result !== 'close') {
-        console.log('<<<<email is >>>', result);
-        // TODO: do we need this
-      }
-    });
+    this.currentDialogRef
+      .afterClosed()
+      .pipe(takeWhile(() => this.subscriptions))
+      .subscribe(result => {
+        console.log('Dialog was closed');
+        if (result !== 'close') {
+          console.log('<<<<email is >>>', result);
+          // TODO: do we need this
+        }
+      });
+  }
+
+  ngOnDestroy() {
+    if (!!this.subscriptions) {
+      this.subscriptions = false;
+    }
   }
 
   private setDialogConfiguration(): MatDialogConfig {
