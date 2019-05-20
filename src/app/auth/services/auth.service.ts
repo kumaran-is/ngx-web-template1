@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { HostListener, Injectable, OnDestroy } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
@@ -32,6 +32,7 @@ export class AuthService implements OnDestroy {
       );
   }
 
+  @HostListener('window:beforeunload')
   ngOnDestroy() {
     if (!!this.subscriptions) {
       this.subscriptions = false;

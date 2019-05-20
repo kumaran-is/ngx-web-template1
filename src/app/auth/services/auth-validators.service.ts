@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { HostListener, Injectable, OnDestroy } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
 import { AuthConstants } from '@app/auth/auth.constants';
 import { AuthService } from '@app/auth/services/auth.service';
@@ -82,6 +82,7 @@ export class AuthValidatorsService implements OnDestroy {
     return this.checkUser(control, 'email');
   }
 
+  @HostListener('window:beforeunload')
   ngOnDestroy() {
     if (!!this.subscriptions) {
       this.subscriptions = false;

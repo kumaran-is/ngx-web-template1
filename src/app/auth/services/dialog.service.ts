@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { HostListener, Injectable, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { Router } from '@angular/router';
 import { AcknowledgementDialogComponent } from '@app/auth/acknowledgement/acknowledgement-dialog.component';
@@ -57,6 +57,7 @@ export class DialogService implements IDialog, OnDestroy {
       });
   }
 
+  @HostListener('window:beforeunload')
   ngOnDestroy() {
     if (!!this.subscriptions) {
       this.subscriptions = false;

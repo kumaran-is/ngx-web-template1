@@ -1,5 +1,12 @@
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
-import { Component, Input, NgZone, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Input,
+  NgZone,
+  OnDestroy,
+  OnInit
+} from '@angular/core';
 import { map, takeWhile } from 'rxjs/operators';
 
 @Component({
@@ -42,6 +49,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
   }
 
+  @HostListener('window:beforeunload')
   ngOnDestroy() {
     if (!!this.subscriptions) {
       this.subscriptions = false;
