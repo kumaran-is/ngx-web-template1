@@ -5,8 +5,8 @@ import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
 import { Credential } from '@app/auth/models/credential.model';
 import { User } from '@app/auth/models/user.model';
 import * as firebase from 'firebase/app';
-import { Observable, of } from 'rxjs';
-import { first, map, takeWhile } from 'rxjs/operators';
+import { Observable, of, Subscription } from 'rxjs';
+import { first, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ import { first, map, takeWhile } from 'rxjs/operators';
 export class AuthService implements OnDestroy {
   private loginURL: '/signin';
   private user: firebase.User;
-  private subscriptions = true;
+  private subscriptions: Subscription = new Subscription();
   private redirectUrl: string;
 
   constructor(
@@ -24,19 +24,17 @@ export class AuthService implements OnDestroy {
   ) {}
 
   initAuthListener() {
-    this.angularFireAuth.authState
-      .pipe(takeWhile(() => this.subscriptions))
-      .subscribe(
+    this.subscriptions.add(
+      this.angularFireAuth.authState.subscribe(
         user => this.authenticationChangeState(user),
         error => this.onError(error)
-      );
+      )
+    );
   }
 
   @HostListener('window:beforeunload')
   ngOnDestroy() {
-    if (!!this.subscriptions) {
-      this.subscriptions = false;
-    }
+    this.subscriptions.unsubscribe();
   }
 
   public signupWithEmail(credential: Credential): Promise<any> {

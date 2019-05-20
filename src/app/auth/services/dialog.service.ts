@@ -6,7 +6,7 @@ import { ForgotPasswordDialogComponent } from '@app/auth/forgot-password/forgot-
 import { LoginDialogComponent } from '@app/auth/login/login-dialog.component';
 import { AuthService } from '@app/auth/services/auth.service';
 import { SignupComponent } from '@app/auth/signup/signup.component';
-import { takeWhile } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
 import { IDialog } from './dialog.interface';
 
 @Injectable({
@@ -14,7 +14,7 @@ import { IDialog } from './dialog.interface';
 })
 export class DialogService implements IDialog, OnDestroy {
   public currentDialogRef: MatDialogRef<any> = null;
-  private subscriptions = true;
+  private subscriptions: Subscription = new Subscription();
 
   constructor(
     private matDialog: MatDialog,
@@ -45,23 +45,20 @@ export class DialogService implements IDialog, OnDestroy {
       );
     }
 
-    this.currentDialogRef
-      .afterClosed()
-      .pipe(takeWhile(() => this.subscriptions))
-      .subscribe(result => {
+    this.subscriptions.add(
+      this.currentDialogRef.afterClosed().subscribe(result => {
         console.log('Dialog was closed');
         if (result !== 'close') {
           console.log('<<<<email is >>>', result);
           // TODO: do we need this
         }
-      });
+      })
+    );
   }
 
   @HostListener('window:beforeunload')
   ngOnDestroy() {
-    if (!!this.subscriptions) {
-      this.subscriptions = false;
-    }
+    this.subscriptions.unsubscribe();
   }
 
   private setDialogConfiguration(): MatDialogConfig {

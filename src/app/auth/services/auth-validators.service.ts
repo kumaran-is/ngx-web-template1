@@ -2,21 +2,20 @@ import { HostListener, Injectable, OnDestroy } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
 import { AuthConstants } from '@app/auth/auth.constants';
 import { AuthService } from '@app/auth/services/auth.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import {
   debounceTime,
   distinctUntilChanged,
   filter,
   map,
-  switchMap,
-  takeWhile
+  switchMap
 } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthValidatorsService implements OnDestroy {
-  private subscriptions = true;
+  private subscriptions: Subscription = new Subscription();
   constructor(
     private authConstants: AuthConstants,
     private authService: AuthService
@@ -84,9 +83,7 @@ export class AuthValidatorsService implements OnDestroy {
 
   @HostListener('window:beforeunload')
   ngOnDestroy() {
-    if (!!this.subscriptions) {
-      this.subscriptions = false;
-    }
+    this.subscriptions.unsubscribe();
   }
 
   private checkUser(
@@ -94,31 +91,32 @@ export class AuthValidatorsService implements OnDestroy {
     source: string
   ): Observable<{ [key: string]: boolean } | null> {
     return new Observable((observable: any) => {
-      control.valueChanges
-        .pipe(
-          map((userName: string) => userName && userName.trim()),
-          filter((userName: string) => userName.length > 6),
-          debounceTime(500),
-          distinctUntilChanged(),
-          switchMap(
-            (userName: string): Observable<boolean> => {
-              return this.authService.isUserAccountTaken(userName, source);
+      this.subscriptions.add(
+        control.valueChanges
+          .pipe(
+            map((userName: string) => userName && userName.trim()),
+            filter((userName: string) => userName.length > 6),
+            debounceTime(500),
+            distinctUntilChanged(),
+            switchMap(
+              (userName: string): Observable<boolean> => {
+                return this.authService.isUserAccountTaken(userName, source);
+              }
+            )
+          )
+          .subscribe(
+            response => {
+              response
+                ? observable.next({ usernameTaken: true })
+                : observable.next(null);
+              observable.complete();
+            },
+            error => {
+              observable.complete();
+              console.error('Error while validating User Name taken', error);
             }
-          ),
-          takeWhile(() => this.subscriptions)
-        )
-        .subscribe(
-          response => {
-            response
-              ? observable.next({ usernameTaken: true })
-              : observable.next(null);
-            observable.complete();
-          },
-          error => {
-            observable.complete();
-            console.error('Error while validating User Name taken', error);
-          }
-        );
+          )
+      );
     });
   }
 }
