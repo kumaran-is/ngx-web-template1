@@ -18,6 +18,8 @@
 
 * Added environment configurations, build and serve scripts for latest and stage [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
+* Added rules backup file for tslint-angular, tslint-immutable/all, rxjs-tslint-rules and tslint-eslint-rules. These rules will be enabled later [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
 #### Breaking Changes
 * NA
 
