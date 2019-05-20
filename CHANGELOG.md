@@ -20,7 +20,7 @@
 
 * Added rules backup file for tslint-angular, tslint-immutable/all, rxjs-tslint-rules and tslint-eslint-rules. These rules will be enabled later [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
-* Unsubscribing RXJS during Page Refresh, Tab Close, Browser Close, Navigation Away From Page by annoting `ngDestroy` using `HostListener` [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+* Unsubscribing RXJS during Page Refresh, Tab Close, Browser Close, Navigation Away From Page by annotating `ngDestroy` using `HostListener` [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
 #### Breaking Changes
 * NA
