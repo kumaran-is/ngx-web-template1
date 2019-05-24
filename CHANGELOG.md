@@ -9,7 +9,9 @@
 
 #### Features
 
-* Implement Authentication using Firebase Authentication sevrice [[PR 11](https://github.com/kumaran-is/ngx-web-starter/pull/11)]
+* Implement Authentication using Firebase Authentication service [[PR 11](https://github.com/kumaran-is/ngx-web-starter/pull/11)]
+
+* Upgraded to Angular 8 RC version 8.0.0-rc.5 [[PR 11](https://github.com/kumaran-is/ngx-web-starter/pull/11)]
 
 #### Breaking Changes
 
