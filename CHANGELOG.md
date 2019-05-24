@@ -7,7 +7,7 @@
 * Added Angular Ivy, since it throws error while building due to Angular flexlayout we disabled it temporarily [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
 #### Features
-* Implement Authentication using Firebase Authentication sevrice [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
 * Update Karma config with headless chrome [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
 * Upgraded to Angular 8 RC version 8.0.0-rc.4 [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
