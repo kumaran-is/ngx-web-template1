@@ -2,38 +2,36 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
+import { StopSubscribe } from '@app/api-services/stop-subscribe';
 import { Credential } from '@app/auth/models/credential.model';
 import { User } from '@app/auth/models/user.model';
 import * as firebase from 'firebase/app';
-import { Observable, of, Subscription } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { first, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService extends StopSubscribe {
   private loginURL: '/signin';
   private user: firebase.User;
-  private authenticationStateSubscription: Subscription;
   private redirectUrl: string;
 
   constructor(
     private angularFireAuth: AngularFireAuth,
     private firestoreAPIService: FirestoreAPIService,
     private router: Router
-  ) {}
-
-  public initAuthListener() {
-    this.authenticationStateSubscription = this.angularFireAuth.authState.subscribe(
-      user => this.authenticationChangeState(user),
-      error => this.onError(error)
-    );
+  ) {
+    super();
   }
 
-  public destroyAuthListener() {
-    if (this.authenticationStateSubscription) {
-      this.authenticationStateSubscription.unsubscribe();
-    }
+  initAuthListener() {
+    this.subscriptions.add(
+      this.angularFireAuth.authState.subscribe(
+        user => this.authenticationChangeState(user),
+        error => this.onError(error)
+      )
+    );
   }
 
   public signupWithEmail(credential: Credential): Promise<any> {

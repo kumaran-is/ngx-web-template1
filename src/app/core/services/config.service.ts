@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@env/environment';
 import { Observable, throwError } from 'rxjs';
-import { catchError, finalize, map } from 'rxjs/operators';
+import { catchError, finalize, map, shareReplay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,6 +27,11 @@ export class ConfigService {
               return response as any;
             }
           }),
+          /*
+          shareReplay operator to build a caching behavior for the configuration
+          prevent duplicate XHR request when we call loadConfigurations again
+          */
+          shareReplay(1),
           catchError(this.handleAndThrowRemoteError.bind(this)),
           finalize(() => {
             console.log('Clean up your resource here ');

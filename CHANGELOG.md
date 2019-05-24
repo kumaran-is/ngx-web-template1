@@ -1,3 +1,30 @@
+# Changelog
+
+<a name="v0.0.10"></a>
+## 0.0.10 (2019-05-01)
+
+#### Bug Fixes
+* Added Angular Ivy, since it throws error while building due to Angular flexlayout we disabled it temporarily [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+#### Features
+
+* Update Karma config with headless chrome [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+* Upgraded to Angular 8 RC version 8.0.0-rc.4 [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+* Added proxy configuration to run SPA on local machine connecting to Web API service [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+* Added [font-display](https://scotch.io/bar-talk/google-fonts-now-supports-font-display?utm_content=buffer90f3e&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer), a css feature to load google fonts and icons [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+* Added environment configurations, build and serve scripts for latest and stage [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+* Added rules backup file for tslint-angular, tslint-immutable/all, rxjs-tslint-rules and tslint-eslint-rules. These rules will be enabled later [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+* Unsubscribing RXJS during Page Refresh, Tab Close, Browser Close, Navigation Away From Page by annotating `ngDestroy` using `HostListener` [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
+#### Breaking Changes
+* NA
+
 <a name="v0.0.9"></a>
 ## 0.0.9 (2019-05-01)
 
@@ -5,7 +32,7 @@
 * NA
 
 #### Features
-* Upgraded to Angular 8 RC version [[PR 9](https://github.com/kumaran-is/ngx-web-starter/pull/9)]
+* Upgraded to Angular 8 RC version 8.0.0-rc.2 [[PR 9](https://github.com/kumaran-is/ngx-web-starter/pull/9)]
 
 #### Breaking Changes
 * NA

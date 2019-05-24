@@ -3,12 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   webAPIUrl: 'http://localhost:8000/api/v1',
   // version is automatically updated during build from package.json
   version: '0.0.10',
-  configFilePath: 'assets/config/dev.config.json',
-  envName: 'dev',
+  configFilePath: 'assets/config/stage.config.json',
+  envName: 'stage',
   firestore: {
     apiKey: 'AIzaSyDiRtJO3vLAn_I7tVdZMjddeh8Dyz-_vmY',
     authDomain: 'halls-diary.firebaseapp.com',

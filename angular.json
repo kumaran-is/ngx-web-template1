@@ -29,10 +29,131 @@
             "styles": [
               "src/styles/main.scss"
             ],
-            "scripts": [],
-            "es5BrowserSupport": true
+            "scripts": []
           },
           "configurations": {
+            "latest": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.latest.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "baseline": "700kb",
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "runtime",
+                  "baseline": "2kb",
+                  "maximumWarning": "0.5kb",
+                  "maximumError": "1kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "main",
+                  "baseline": "30kb",
+                  "maximumWarning": " 10kb",
+                  "maximumError": "15kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "polyfills",
+                  "baseline": "40kb",
+                  "maximumWarning": "5kb",
+                  "maximumError": "10kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "styles",
+                  "baseline": "60kb",
+                  "maximumWarning": "5kb",
+                  "maximumError": "10kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "vendor",
+                  "baseline": "500kb",
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
+                }
+              ],
+              "serviceWorker": true
+            },
+            "stage": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stage.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "baseline": "700kb",
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "runtime",
+                  "baseline": "2kb",
+                  "maximumWarning": "0.5kb",
+                  "maximumError": "1kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "main",
+                  "baseline": "30kb",
+                  "maximumWarning": " 10kb",
+                  "maximumError": "15kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "polyfills",
+                  "baseline": "40kb",
+                  "maximumWarning": "5kb",
+                  "maximumError": "10kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "styles",
+                  "baseline": "60kb",
+                  "maximumWarning": "5kb",
+                  "maximumError": "10kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "vendor",
+                  "baseline": "500kb",
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
+                }
+              ],
+              "serviceWorker": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -99,9 +220,16 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngx-web-starter:build"
+            "browserTarget": "ngx-web-starter:build",
+            "proxyConfig": "proxy.conf.js"
           },
           "configurations": {
+            "latest": {
+              "browserTarget": "ngx-web-starter:build:latest"
+            },
+            "stage": {
+              "browserTarget": "ngx-web-starter:build:stage"
+            },
             "production": {
               "browserTarget": "ngx-web-starter:build:production"
             }
@@ -157,6 +285,12 @@
             "devServerTarget": "ngx-web-starter:serve"
           },
           "configurations": {
+            "latest": {
+              "devServerTarget": "ngx-web-starter:serve:latest"
+            },
+            "stage": {
+              "devServerTarget": "ngx-web-starter:serve:stage"
+            },
             "production": {
               "devServerTarget": "ngx-web-starter:serve:production"
             }

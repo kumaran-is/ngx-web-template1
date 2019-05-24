@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { Router } from '@angular/router';
+import { StopSubscribe } from '@app/api-services/stop-subscribe';
 import { AcknowledgementDialogComponent } from '@app/auth/acknowledgement/acknowledgement-dialog.component';
 import { ForgotPasswordDialogComponent } from '@app/auth/forgot-password/forgot-password-dialog.component';
 import { LoginDialogComponent } from '@app/auth/login/login-dialog.component';
@@ -11,14 +12,16 @@ import { IDialog } from './dialog.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class DialogService implements IDialog {
+export class DialogService extends StopSubscribe implements IDialog {
   public currentDialogRef: MatDialogRef<any> = null;
 
   constructor(
     private matDialog: MatDialog,
     private router: Router,
     private authService: AuthService
-  ) {}
+  ) {
+    super();
+  }
 
   public popupDialog(dialogComponent: string) {
     if (dialogComponent === 'login') {
@@ -43,13 +46,15 @@ export class DialogService implements IDialog {
       );
     }
 
-    this.currentDialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog was closed');
-      if (result !== 'close') {
-        console.log('<<<<email is >>>', result);
-        // TODO: do we need this
-      }
-    });
+    this.subscriptions.add(
+      this.currentDialogRef.afterClosed().subscribe(result => {
+        console.log('Dialog was closed');
+        if (result !== 'close') {
+          console.log('<<<<email is >>>', result);
+          // TODO: do we need this
+        }
+      })
+    );
   }
 
   private setDialogConfiguration(): MatDialogConfig {
