@@ -36,12 +36,34 @@ export class HttpAPIService {
     );
   }
 
+  public patchWithRetry(
+    path: string,
+    body: any,
+    isRetry?: boolean,
+    isRetryType?: string
+  ): Observable<any> {
+    return this.http
+      .patch(this.createCompleteURLPath(path), body, this.generateHeaders())
+      .pipe(this.applyRetry(isRetry, isRetryType));
+  }
+
   public post(path: string, body: any): Observable<any> {
     return this.http.post(
       this.createCompleteURLPath(path),
       body,
       this.generateHeaders()
     );
+  }
+
+  public postWithRetry(
+    path: string,
+    body: any,
+    isRetry?: boolean,
+    isRetryType?: string
+  ): Observable<any> {
+    return this.http
+      .post(this.createCompleteURLPath(path), body, this.generateHeaders())
+      .pipe(this.applyRetry(isRetry, isRetryType));
   }
 
   public put(path: string, body: any): Observable<any> {
@@ -52,8 +74,29 @@ export class HttpAPIService {
     );
   }
 
+  public putWithRetry(
+    path: string,
+    body: any,
+    isRetry?: boolean,
+    isRetryType?: string
+  ): Observable<any> {
+    return this.http
+      .put(this.createCompleteURLPath(path), body, this.generateHeaders())
+      .pipe(this.applyRetry(isRetry, isRetryType));
+  }
+
   public delete(path: string): Observable<any> {
     return this.http.delete(this.createCompleteURLPath(path));
+  }
+
+  public deleteWithRetry(
+    path: string,
+    isRetry?: boolean,
+    isRetryType?: string
+  ): Observable<any> {
+    return this.http
+      .delete(this.createCompleteURLPath(path))
+      .pipe(this.applyRetry(isRetry, isRetryType));
   }
 
   private createCompleteURLPath(path: string) {
