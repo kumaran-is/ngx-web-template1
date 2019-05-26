@@ -6,35 +6,33 @@ import {
   MAT_DIALOG_DATA
 } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Router } from '@angular/router';
 import { AuthConstants } from '@app/auth/auth.constants';
 import { Credential } from '@app/auth/models/credential.model';
 import { IDialog } from '@app/auth/models/dialog.interface';
+import { AuthValidatorsService } from '@app/auth/services/auth-validators.service';
 import { AuthService } from '@app/auth/services/auth.service';
 
 @Component({
-  selector: 'app-login-dialog',
-  templateUrl: './login-dialog.component.html',
-  styleUrls: ['./login-dialog.component.scss']
+  selector: 'app-sign-up-dialog',
+  templateUrl: './sign-up-dialog.component.html',
+  styleUrls: ['./sign-up-dialog.component.scss']
 })
-export class LoginDialogComponent implements OnInit {
-  public signinForm: FormGroup;
+export class SignUpDialogComponent implements OnInit {
+  public signupForm: FormGroup;
   public hide = true;
   public dialogTitle: string;
-  public signinError: any;
-  // @HostBinding('@moveInLeft')
-  // someBaseClass = '';
+  public signupError: string;
 
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<LoginDialogComponent>,
+    public dialogRef: MatDialogRef<SignUpDialogComponent>,
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
-    private router: Router,
     @Inject('IDialog') private dialogService: IDialog,
     @Inject(MAT_DIALOG_DATA) private data: any,
-    private authConstants: AuthConstants
+    private authConstants: AuthConstants,
+    private authValidatorsService: AuthValidatorsService
   ) {
     this.dialogTitle = data.title;
     iconRegistry.addSvgIcon(
@@ -48,25 +46,31 @@ export class LoginDialogComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.signinForm = this.formBuilder.group({
+    this.signupForm = this.formBuilder.group({
       email: [
         '',
         [
           Validators.required,
           Validators.pattern(this.authConstants.EMAIL_REGEXP)
-        ]
+        ],
+        this.authValidatorsService.usernameTakenValidator.bind(
+          this.authValidatorsService
+        )
       ],
-      password: ['', [Validators.required]]
+      password: [
+        '',
+        [Validators.required, Validators.minLength(6), Validators.maxLength(30)]
+      ]
     });
   }
 
   // convenience getter for easy access to form fields
   public get email() {
-    return this.signinForm.get('email');
+    return this.signupForm.get('email');
   }
 
   public get password() {
-    return this.signinForm.get('password');
+    return this.signupForm.get('password');
   }
 
   public getEmailControlErrorMessage() {
@@ -74,31 +78,39 @@ export class LoginDialogComponent implements OnInit {
       ? 'Enter your Email'
       : this.email.hasError('pattern')
       ? 'Not a valid Email'
+      : this.email.hasError('usernameTaken')
+      ? 'Account already exists with this email'
       : '';
   }
 
   public getPasswordControlErrorMessage() {
-    return this.password.hasError('required') ? 'Enter your Password' : '';
+    return this.password.hasError('required')
+      ? 'Enter your Password'
+      : this.password.hasError('minlength')
+      ? 'Should be at least 6 characters long'
+      : this.password.hasError('maxlength')
+      ? 'Should not be more than 30 characters long'
+      : '';
   }
 
-  public doSigninWithEmail() {
+  public doSignupWithEmail() {
     // stop here, don't allow to submit the form  if form is invalid
-    if (this.signinForm.invalid) {
+    if (this.signupForm.invalid) {
       return;
     } else {
       const credential: Credential = new Credential();
       credential.email = this.email.value;
       credential.password = this.password.value;
       this.authService
-        .signInWithEmail(credential)
-        .then(response => {
-          console.log('successfull login', response);
-          this.dialogRef.close();
+        .signupWithEmail(credential)
+        .then(result => {
+          console.log('Signup is successful', result);
+          this.dialogRef.close('close');
           this.authService.navigateToRedirectUrlAfterAuth();
         })
         .catch(error => {
-          this.signinError = error.message;
-          console.error('Error while signin with Email', error);
+          this.signupError = error.message;
+          console.error('Error while signup with Email', error);
         });
     }
   }
@@ -108,13 +120,13 @@ export class LoginDialogComponent implements OnInit {
       .signInWithOAuthProvider(oAuthProvider)
       .then(response => {
         console.log(`successfull login using $oAuthProvider `, response);
-        this.dialogRef.close(this.signinForm.value);
+        this.dialogRef.close(this.signupForm.value);
         this.authService.navigateToRedirectUrlAfterAuth();
       })
       .catch(error => {
-        this.signinError = error.message;
+        this.signupError = error.message;
         console.error(
-          `Error while signin using oAuthProvider Gmail $oAuthProvider`,
+          `Error while signup using oAuthProvider Gmail $oAuthProvider`,
           error
         );
       });
@@ -124,13 +136,8 @@ export class LoginDialogComponent implements OnInit {
     this.dialogRef.close('close');
   }
 
-  public openSignupDialog() {
+  public openSigninDialog() {
     this.closeDialog();
-    this.dialogService.popupDialog('signup');
-  }
-
-  public openForgotPasswordDialog() {
-    this.closeDialog();
-    this.dialogService.popupDialog('forgotpassword');
+    this.dialogService.popupDialog('signin');
   }
 }

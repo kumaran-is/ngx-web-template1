@@ -10,21 +10,26 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       {
-        path: 'auth',
-        loadChildren: () => import('@app/auth/auth.module').then(m => m.AuthModule)
+        path: 'cart',
+        loadChildren: () =>
+          import('@app/cart/cart.module').then(m => m.CartModule)
       },
-      { path: 'cart', loadChildren: () => import('@app/cart/cart.module').then(m => m.CartModule) },
       {
         path: 'under-maintenance',
-        loadChildren:
-          () => import('@app/under-maintenance/under-maintenance.module').then(m => m.UnderMaintenanceModule)
+        loadChildren: () =>
+          import('@app/under-maintenance/under-maintenance.module').then(
+            m => m.UnderMaintenanceModule
+          )
       },
       { path: '', pathMatch: 'full', redirectTo: 'home' }
     ]
   },
   {
     path: '**',
-    loadChildren: () => import('@app/page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
+    loadChildren: () =>
+      import('@app/page-not-found/page-not-found.module').then(
+        m => m.PageNotFoundModule
+      )
   }
 ];
 

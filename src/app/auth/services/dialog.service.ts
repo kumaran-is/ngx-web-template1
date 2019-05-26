@@ -5,13 +5,11 @@ import { StopSubscribe } from '@app/api-services/stop-subscribe';
 import { AcknowledgementDialogComponent } from '@app/auth/acknowledgement/acknowledgement-dialog.component';
 import { ForgotPasswordDialogComponent } from '@app/auth/forgot-password/forgot-password-dialog.component';
 import { LoginDialogComponent } from '@app/auth/login/login-dialog.component';
+import { IDialog } from '@app/auth/models/dialog.interface';
 import { AuthService } from '@app/auth/services/auth.service';
-import { SignupComponent } from '@app/auth/signup/signup.component';
-import { IDialog } from './dialog.interface';
+import { SignUpDialogComponent } from '@app/auth/sign-up/sign-up-dialog.component';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DialogService extends StopSubscribe implements IDialog {
   public currentDialogRef: MatDialogRef<any> = null;
 
@@ -31,7 +29,7 @@ export class DialogService extends StopSubscribe implements IDialog {
       );
     } else if (dialogComponent === 'signup') {
       this.currentDialogRef = this.matDialog.open(
-        SignupComponent,
+        SignUpDialogComponent,
         this.setDialogConfiguration()
       );
     } else if (dialogComponent === 'forgotpassword') {
@@ -64,7 +62,7 @@ export class DialogService extends StopSubscribe implements IDialog {
     dialogConfig.hasBackdrop = true;
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
-      title: 'Sign In'
+      title: 'Login'
     };
     return dialogConfig;
   }

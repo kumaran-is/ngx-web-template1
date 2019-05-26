@@ -1,6 +1,8 @@
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
-import { Component, Input, NgZone, OnInit } from '@angular/core';
-import { StopSubscribe } from '@app/api-services/stop-subscribe';
+import { Component, Inject, Input, NgZone, OnInit } from '@angular/core';
+import { StopSubscribe } from '@api/stop-subscribe';
+import { IDialog } from '@app/auth/models/dialog.interface';
+import { AuthService } from '@app/auth/services/auth.service';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -14,6 +16,9 @@ export class HeaderComponent extends StopSubscribe implements OnInit {
   private readonly SHRINK_TOP_SCROLL_POSITION = 15;
 
   constructor(
+    public authService: AuthService,
+    // service is injected via interface to overcome cyclic dependency
+    @Inject('IDialog') private dialogService: IDialog,
     private scrollDispatcher: ScrollDispatcher,
     private ngZone: NgZone
   ) {
@@ -41,5 +46,20 @@ export class HeaderComponent extends StopSubscribe implements OnInit {
     } else {
       return window.scrollY;
     }
+  }
+
+  openLoginDialog() {
+    this.dialogService.popupDialog('login');
+  }
+
+  doSignout() {
+    this.authService
+      .signOut()
+      .then(() => {
+        console.log('successfull logout');
+      })
+      .catch(error => {
+        console.error('Error while signout', error);
+      });
   }
 }

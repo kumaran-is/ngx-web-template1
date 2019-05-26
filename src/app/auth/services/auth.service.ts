@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { StopSubscribe } from '@api/stop-subscribe';
 import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
-import { StopSubscribe } from '@app/api-services/stop-subscribe';
 import { Credential } from '@app/auth/models/credential.model';
 import { User } from '@app/auth/models/user.model';
 import * as firebase from 'firebase/app';

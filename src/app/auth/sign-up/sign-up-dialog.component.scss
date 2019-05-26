@@ -1,14 +1,14 @@
-.signin-container {
+.signup-container {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.signin-container > * {
+.signup-container > * {
   width: 100%;
 }
 
-.signin-container form > * {
+.signup-container form > * {
   margin: 0px 0;
 }
 

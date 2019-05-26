@@ -13,8 +13,7 @@ import { LoggerModule } from '@app/logger/logger.module';
     ErrorHandlerModule,
     LoggerModule
   ],
-  exports: [HttpClientModule],
-  providers: []
+  exports: [HttpClientModule]
 })
 export class CoreModule {
   /* make sure CoreModule is imported only by one NgModule i.e the AppModule

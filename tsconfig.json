@@ -5,6 +5,7 @@
     "paths": {
       "@app/*": ["app/*"],
       "@core/*": ["app/core/*"],
+      "@api/*": ["app/api-services/*"],
       "@env/*": ["environments/*"],
       "@layout/*": ["app/layout/*"],
       "@shared/*": ["app/shared/*"],
