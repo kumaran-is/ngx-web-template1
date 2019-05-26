@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AuthService } from '@app/auth/services/auth.service';
 import { DocumentService } from '@core/util/document.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { DocumentService } from '@core/util/document.service';
 })
 export class AppComponent implements OnInit {
   constructor(
+    private authService: AuthService,
     private documentService: DocumentService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
@@ -41,6 +43,7 @@ export class AppComponent implements OnInit {
   }
 
   public ngOnInit() {
+    this.authService.initAuthListener();
     this.documentService.setGoToTopButtonPosition('go-top');
   }
 

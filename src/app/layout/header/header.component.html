@@ -10,7 +10,23 @@
       <a mat-button *ngIf="!authService.isUserAuthenticated()" (click)="openLoginDialog()" >
         <span>Login / Sign Up</span>
       </a>
-     <!-- <a mat-button [routerLink]="['/signup']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Sign Up</a> -->
+      <button *ngIf="authService.isUserAuthenticated()" mat-button #accountMenuTrigger="matMenuTrigger"
+      (mouseenter)="accountMenuTrigger.openMenu()" [matMenuTriggerFor]="accountMenu" >
+        <mat-icon class="icon">account_circle</mat-icon>
+        <span class="label">{{ authService.getUserName() | truncate : 6 }} <mat-icon class="inline-icon">arrow_drop_down</mat-icon></span>
+      </button>
+      <mat-menu #accountMenu="matMenu" overlapTrigger="false" class="menu" >
+        <ng-template matMenuContent *ngIf="authService.isUserAuthenticated()" >
+          <button mat-menu-item  [routerLink]="['/my-profile']" >
+            <mat-icon>account_box</mat-icon><span>My Profile</span>
+          </button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="doSignout()" >
+            <mat-icon>power_settings_new</mat-icon><span>Sign Out</span>
+          </button>
+        </ng-template>
+      </mat-menu>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
       <a mat-button [routerLink]="['/help']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Help</a>
       <a mat-icon-button  [routerLink]="['/cart']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >
         <mat-icon>shopping_cart</mat-icon>

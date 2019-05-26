@@ -1,0 +1,50 @@
+<div class="personal-info-container">
+  <form novalidate [formGroup]="personalInfoForm" (ngSubmit)="doModifyPersonalInfo()" >
+    <mat-card>
+      <mat-card-header>
+        <img mat-card-avatar [src]="user?.photoURL || 'assets/icons/avatar.png'" >
+        <div mat-card-avatar class="example-header-image"></div>
+      </mat-card-header>
+      <mat-card-content>
+        <br>
+        <span class="error" *ngIf="personalInfoErrorMsg">
+          <mat-icon class="icon">error</mat-icon>
+          {{ personalInfoErrorMsg }}
+        </span>
+        <span class="success" *ngIf="personalInfoSuccessMsg">
+          <mat-icon class="icon">done_filled</mat-icon>
+          {{ personalInfoSuccessMsg }}
+        </span>
+        <mat-form-field appearance="outline" >
+          <mat-label>Display Name</mat-label>
+          <input type="text" matInput required formControlName="displayName"
+            [value]="user?.displayName || '' "  placeholder="Display Name">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          <mat-error *ngIf="displayName.invalid">{{ getDisplayNameControlErrorMessage() }}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline" >
+          <mat-label>Name</mat-label>
+          <input type="text" matInput required formControlName="name"
+          [value]="user?.name || '' "  placeholder="Name">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+          <mat-error *ngIf="name.invalid">{{ getNameControlErrorMessage() }}</mat-error>
+        </mat-form-field><br>
+        <div>
+          <label>Email: </label><span>{{ user?.email || '(no email)' }} </span>
+        </div><br>
+        <mat-form-field appearance="outline" >
+          <mat-label>Phone</mat-label>
+          <span matPrefix>+91 &nbsp;</span>
+          <input type="tel" matInput maxlength="10" formControlName="phoneNumber"
+          [value]="user?.phoneNumber || '' "  placeholder="Phone">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+          <mat-error *ngIf="phoneNumber.invalid">{{ getPhoneNumberControlErrorMessage() }}</mat-error>
+        </mat-form-field>
+        <br>
+      </mat-card-content>
+      <mat-card-actions class="button">
+        <button mat-raised-button color="accent" type="submit">Modify Personal Info</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

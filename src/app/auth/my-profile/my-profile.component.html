@@ -1,0 +1,63 @@
+<div class="profile-settings">
+  <p class="hd-page-tite">Welcome Back, Kumaran</p>
+  <mat-accordion multi="false" >
+    <mat-expansion-panel class="hd-myprofile" [expanded]="true" >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>account_circle</mat-icon> &nbsp;
+          Personal Info
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
+        <app-personal-info [user]="userProfile$ | async"
+          (modifyPersonalInfo)="onModifyPersonalInfo($event)"
+          [personalInfoErrorMsg]="personalInfoErrorMsg"
+          [personalInfoSuccessMsg]="personalInfoSuccessMsg">
+        </app-personal-info>
+        </ng-template>
+    </mat-expansion-panel>
+    <mat-expansion-panel class="hd-myprofile" >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>map</mat-icon> &nbsp;
+          Address Info
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
+        <app-address-info [address]="userAddress$ | async"
+        (modifyAddressInfo)="onModifyAddressInfo($event)"
+        [addressInfoErrorMsg]="addressInfoErrorMsg"
+        [addressInfoSuccessMsg]="addressInfoSuccessMsg" >
+        </app-address-info>
+      </ng-template>
+    </mat-expansion-panel>
+    <mat-expansion-panel class="hd-myprofile" >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>payment</mat-icon> &nbsp;
+            Payment Info
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+          <app-payment-info [payment]="userPayment$ | async"
+          (modifyPaymentInfo)="onModifyPaymentInfo($event)"
+          [paymentInfoErrorMsg]="paymentInfoErrorMsg"
+          [paymentInfoSuccessMsg]="paymentInfoSuccessMsg" >
+          </app-payment-info>
+        </ng-template>
+    </mat-expansion-panel>
+    <mat-expansion-panel class="hd-myprofile" >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>fingerprint</mat-icon> &nbsp;
+            Change Password
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+            <app-update-password (updateUserPassword)="onUpdateUserPassword($event)"
+            [updatePasswordErrorMsg]="updatePasswordErrorMsg" [updatePasswordSuccessMsg]="updatePasswordSuccessMsg" >
+            </app-update-password>
+        </ng-template>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

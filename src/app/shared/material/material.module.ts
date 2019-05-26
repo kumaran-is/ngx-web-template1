@@ -10,6 +10,7 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
+  MatMenuModule,
   MatProgressBarModule,
   MatToolbarModule
 } from '@angular/material';
@@ -18,29 +19,31 @@ import {
   imports: [
     FlexLayoutModule,
     LayoutModule,
-    MatToolbarModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
     MatDividerModule,
     MatFormFieldModule,
-    MatProgressBarModule,
     MatIconModule,
     MatInputModule,
+    MatMenuModule,
+    MatProgressBarModule,
+    MatToolbarModule,
     ScrollingModule
   ],
   exports: [
     FlexLayoutModule,
     LayoutModule,
-    MatToolbarModule,
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
     MatDividerModule,
     MatFormFieldModule,
-    MatProgressBarModule,
     MatIconModule,
     MatInputModule,
+    MatMenuModule,
+    MatProgressBarModule,
+    MatToolbarModule,
     ScrollingModule
   ]
 })
