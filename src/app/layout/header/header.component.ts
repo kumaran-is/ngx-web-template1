@@ -1,5 +1,6 @@
 import { CdkScrollable, ScrollDispatcher } from '@angular/cdk/scrolling';
 import { Component, Inject, Input, NgZone, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StopSubscribe } from '@api/stop-subscribe';
 import { IDialog } from '@app/auth/models/dialog.interface';
 import { AuthService } from '@app/auth/services/auth.service';
@@ -20,7 +21,8 @@ export class HeaderComponent extends StopSubscribe implements OnInit {
     // service is injected via interface to overcome cyclic dependency
     @Inject('IDialog') private dialogService: IDialog,
     private scrollDispatcher: ScrollDispatcher,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private router: Router
   ) {
     super();
   }
@@ -57,6 +59,7 @@ export class HeaderComponent extends StopSubscribe implements OnInit {
       .signOut()
       .then(() => {
         console.log('successfull logout');
+        this.router.navigate(['/home']);
       })
       .catch(error => {
         console.error('Error while signout', error);
