@@ -17,7 +17,7 @@
       </button>
       <mat-menu #accountMenu="matMenu" overlapTrigger="false" class="menu" >
         <ng-template matMenuContent *ngIf="authService.isUserAuthenticated()" >
-          <button mat-menu-item  [routerLink]="['/my-profile']" >
+          <button mat-menu-item  [routerLink]="['/auth/my-profile']" >
             <mat-icon>account_box</mat-icon><span>My Profile</span>
           </button>
           <mat-divider></mat-divider>

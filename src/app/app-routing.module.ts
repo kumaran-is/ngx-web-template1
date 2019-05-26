@@ -10,6 +10,13 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       {
+        path: 'auth',
+        loadChildren: () =>
+          import('@app/auth/my-profile/my-profile.module').then(
+            m => m.MyProfileModule
+          )
+      },
+      {
         path: 'cart',
         loadChildren: () =>
           import('@app/cart/cart.module').then(m => m.CartModule)
