@@ -1,3 +1,10 @@
+.auth-popup-container {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+}
+
 #auth-fb {
   width: 130px;
   color:#fff;
