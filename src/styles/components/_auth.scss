@@ -1,48 +1,43 @@
-#fb {
-  background:#3B5998 no-repeat 14px 6px;
-  background-size: 47px;
+#auth-fb {
+  width: 130px;
   color:#fff;
-  width: 130px;
-  padding: 0px;
-}
-
-#google {
+  background:#3B5998;
   border: 1px solid #95989A;
-  background: #fff no-repeat 25px;
-  background-size: 25px;
-  width: 130px;
-  padding: 0px;
 }
 
-.hd-note,
-.hd-link {
-	font-style: normal;
-	font-variant-ligatures: normal;
+#auth-google {
+  width: 130px;
+  background: #fff;
+  border: 1px solid #95989A;
+}
+
+.auth-note,
+.auth-link {
+  font-size: 14px;
+  font-style: normal;
+  font-variant-ligatures: normal;
 	font-variant-caps: normal;
 	font-variant-numeric: normal;
 	font-variant-east-asian: normal;
 	font-stretch: normal;
-  font-size: 14px;
- 	line-height: 24px;
-
+  line-height: 24px;
 }
 
-.hd-note {
+.auth-note {
   font-weight: 200;
 }
 
-.hd-link {
+.auth-link {
   font-weight: 400;
   text-decoration: none;
 }
 
-.hd-close-btn {
+.auth-close-btn {
   float:right;
   cursor: pointer;
 }
 
-.hd-page-tite {
-  font-family: Roboto,"Helvetica Neue",sans-serif;
+.auth-page-tite {
   font-size: 24px;
   font-weight: 400;
   color: rgba(0,0,0,.87);

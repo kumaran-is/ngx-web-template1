@@ -1,23 +1,23 @@
 <div class="signup-container" >
   <div>
-    <div class="hd-close-btn" (click)="closeDialog()">
+    <div class="auth-close-btn" (click)="closeDialog()">
       <mat-icon>close</mat-icon>
     </div>
     <h1 mat-dialog-title>Create Your Account</h1>
   </div>
   <mat-dialog-content >
-    <button mat-raised-button id="fb" (click)="doLoginWithOAuthProvider('facebook')" >
+    <button mat-raised-button id="auth-fb" (click)="doLoginWithOAuthProvider('facebook')" >
       <mat-icon svgIcon="facebook"></mat-icon>
       Facebook
     </button>
     &nbsp;&nbsp;
-    <button mat-raised-button id="google" (click)="doLoginWithOAuthProvider('google')"  >
+    <button mat-raised-button id="auth-google" (click)="doLoginWithOAuthProvider('google')"  >
       <mat-icon svgIcon="google"></mat-icon>
       Google
     </button>
     <br><br><br>
     <mat-divider></mat-divider>
-    <p mat-line class="hd-note" >or sign up using email</p>
+    <p mat-line class="auth-note" >or sign up using email</p>
     <br>
     <span class="error" *ngIf="signupError">
       <mat-icon class="icon">error</mat-icon>

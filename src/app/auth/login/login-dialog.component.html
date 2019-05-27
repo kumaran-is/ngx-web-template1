@@ -1,23 +1,23 @@
 <div class="login-container" >
   <div>
-    <div class="hd-close-btn" (click)="closeDialog()">
+    <div class="auth-close-btn" (click)="closeDialog()">
       <mat-icon>close</mat-icon>
     </div>
     <h1 mat-dialog-title>Login</h1>
   </div>
   <mat-dialog-content>
-    <button mat-raised-button id="fb" (click)="doLoginWithOAuthProvider('facebook')" >
+    <button mat-raised-button id="auth-fb" (click)="doLoginWithOAuthProvider('facebook')" >
       <mat-icon svgIcon="facebook"></mat-icon>
       Facebook
     </button>
     &nbsp;&nbsp;
-    <button mat-raised-button id="google" (click)="doLoginWithOAuthProvider('google')" >
+    <button mat-raised-button id="auth-google" (click)="doLoginWithOAuthProvider('google')" >
       <mat-icon svgIcon="google"></mat-icon>
       Google
     </button>
     <br><br><br>
     <mat-divider></mat-divider>
-    <p class="hd-note" mat-line>or login with email</p>
+    <p class="auth-note" mat-line>or login with email</p>
     <br>
     <span class="error" *ngIf="loginError">
       <mat-icon class="icon">error</mat-icon>
@@ -36,7 +36,7 @@
         <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'visibility' : 'visibility_off' }}</mat-icon>
         <mat-error *ngIf="password.invalid">{{ getPasswordControlErrorMessage() }}</mat-error>
       </mat-form-field>
-      <a  href="#" (click)="!!openForgotPasswordDialog()" class="hd-link" ><p mat-line>Forgot Your Password?</p></a>
+      <a  href="#" (click)="!!openForgotPasswordDialog()" class="auth-link" ><p mat-line>Forgot Your Password?</p></a>
       <br>
       <button mat-raised-button color="accent" type="submit">Login In</button>
       &nbsp;&nbsp;
