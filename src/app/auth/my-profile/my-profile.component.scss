@@ -1,16 +1,20 @@
-.profile-settings {
+.auth-profile-container {
   padding: 20px;
-
 }
 
-.hd-myprofile {
+.auth-profile-section-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.auth-myprofile {
   width: 1200px;
 }
 
-.hd-myprofile .mat-expansion-panel-header-title {
+.auth-myprofile .mat-expansion-panel-header-title {
   font-size: 1.25em;
-  background: white;
-  color: #673ab7;
   font-weight: 400;
+  color: #673ab7;
+  background:#FFF;
 }
 
