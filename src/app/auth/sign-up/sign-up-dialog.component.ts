@@ -115,9 +115,9 @@ export class SignUpDialogComponent implements OnInit {
     }
   }
 
-  public doSigninWithOAuthProvider(oAuthProvider: string) {
+  public doLoginWithOAuthProvider(oAuthProvider: string) {
     this.authService
-      .signInWithOAuthProvider(oAuthProvider)
+      .loginWithOAuthProvider(oAuthProvider)
       .then(response => {
         console.log(`successfull login using $oAuthProvider `, response);
         this.dialogRef.close(this.signupForm.value);
@@ -136,8 +136,8 @@ export class SignUpDialogComponent implements OnInit {
     this.dialogRef.close('close');
   }
 
-  public openSigninDialog() {
+  public openLoginDialog() {
     this.closeDialog();
-    this.dialogService.popupDialog('signin');
+    this.dialogService.popupDialog('login');
   }
 }

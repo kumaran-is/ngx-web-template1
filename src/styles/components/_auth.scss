@@ -1,0 +1,49 @@
+#fb {
+  background:#3B5998 no-repeat 14px 6px;
+  background-size: 47px;
+  color:#fff;
+  width: 130px;
+  padding: 0px;
+}
+
+#google {
+  border: 1px solid #95989A;
+  background: #fff no-repeat 25px;
+  background-size: 25px;
+  width: 130px;
+  padding: 0px;
+}
+
+.hd-note,
+.hd-link {
+	font-style: normal;
+	font-variant-ligatures: normal;
+	font-variant-caps: normal;
+	font-variant-numeric: normal;
+	font-variant-east-asian: normal;
+	font-stretch: normal;
+  font-size: 14px;
+ 	line-height: 24px;
+
+}
+
+.hd-note {
+  font-weight: 200;
+}
+
+.hd-link {
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.hd-close-btn {
+  float:right;
+  cursor: pointer;
+}
+
+.hd-page-tite {
+  font-family: Roboto,"Helvetica Neue",sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(0,0,0,.87);
+}

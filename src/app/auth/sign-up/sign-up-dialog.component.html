@@ -6,12 +6,12 @@
     <h1 mat-dialog-title>Create Your Account</h1>
   </div>
   <mat-dialog-content >
-    <button mat-raised-button id="fb" (click)="doSigninWithOAuthProvider('facebook')" >
+    <button mat-raised-button id="fb" (click)="doLoginWithOAuthProvider('facebook')" >
       <mat-icon svgIcon="facebook"></mat-icon>
       Facebook
     </button>
     &nbsp;&nbsp;
-    <button mat-raised-button id="google" (click)="doSigninWithOAuthProvider('google')"  >
+    <button mat-raised-button id="google" (click)="doLoginWithOAuthProvider('google')"  >
       <mat-icon svgIcon="google"></mat-icon>
       Google
     </button>
@@ -42,7 +42,7 @@
       &nbsp;&nbsp;
       <button mat-raised-button type="button" (click)="closeDialog()">Close</button>
       <br><br><br>
-      <button mat-raised-button color="primary" (click)="openSigninDialog()">Already have an account? Sign In</button>
+      <button mat-raised-button color="primary" (click)="openLoginDialog()">Already have an account? Login</button>
     </form>
   </mat-dialog-content>
 </div>
