@@ -22,6 +22,23 @@ const routes: Routes = [
           import('@app/cart/cart.module').then(m => m.CartModule)
       },
       {
+        path: 'checkout',
+        loadChildren: () =>
+          import('@app/checkout/checkout.module').then(m => m.CheckoutModule)
+      },
+      {
+        path: 'payment',
+        loadChildren: () =>
+          import('@app/payment/payment.module').then(m => m.PaymentModule)
+      },
+      {
+        path: 'confirmation',
+        loadChildren: () =>
+          import('@app/confirmation/confirmation.module').then(
+            m => m.ConfirmationModule
+          )
+      },
+      {
         path: 'under-maintenance',
         loadChildren: () =>
           import('@app/under-maintenance/under-maintenance.module').then(
