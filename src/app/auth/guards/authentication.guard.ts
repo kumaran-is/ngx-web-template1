@@ -63,9 +63,8 @@ export class AuthenticationGuard
         // Retain the attempted URL for redirection after successful login
         this.authService.setRedirectUrl(url);
         console.log('>>>> Redirect URL <<<<< ', url);
-        // redirect to login page
-        this.dialogService.popupDialog('login');
-        resolve(false);
+        // show login dialog
+        return this.dialogService.popupDialog('login');
       }
     });
   }
