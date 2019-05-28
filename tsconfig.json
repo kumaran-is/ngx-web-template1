@@ -9,6 +9,7 @@
       "@env/*": ["environments/*"],
       "@layout/*": ["app/layout/*"],
       "@shared/*": ["app/shared/*"],
+      "@auth/*": ["app/auth/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
