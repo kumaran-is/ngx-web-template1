@@ -1,6 +1,23 @@
 # Changelog
 
+<a name="v0.0.12"></a>
+
+## 0.0.12 (2019-05-28)
+
+#### Bug Fixes
+
+* NA
+
+#### Features
+
+* Implement Guard for Authentication [[PR 12](https://github.com/kumaran-is/ngx-web-starter/pull/12)]
+
+#### Breaking Changes
+
+* NA
+
 <a name="v0.0.11"></a>
+
 ## 0.0.11 (2019-05-24)
 
 #### Bug Fixes
@@ -20,6 +37,7 @@
 * NA
 
 <a name="v0.0.10"></a>
+
 ## 0.0.10 (2019-05-01)
 
 #### Bug Fixes
@@ -49,6 +67,7 @@
 * NA
 
 <a name="v0.0.9"></a>
+
 ## 0.0.9 (2019-05-01)
 
 #### Bug Fixes
@@ -64,6 +83,7 @@
 * NA
 
 <a name="v0.0.8"></a>
+
 ## 0.0.8 (2019-04-17)
 
 #### Bug Fixes
@@ -85,6 +105,7 @@
 * NA
 
 <a name="v0.0.7"></a>
+
 ## 0.0.7 (2019-04-11)
 
 #### Bug Fixes
@@ -99,6 +120,7 @@
 * NA
 
 <a name="v0.0.6"></a>
+
 ## 0.0.6 (2019-04-10)
 
 #### Bug Fixes
@@ -114,6 +136,7 @@
 * NA
 
 <a name="v0.0.5"></a>
+
 ## 0.0.5 (2019-04-10)
 
 #### Bug Fixes
@@ -129,6 +152,7 @@
 * NA
 
 <a name="v0.0.4"></a>
+
 ## 0.0.4 (2019-03-07)
 
 #### Bug Fixes
@@ -156,6 +180,7 @@
 * NA
 
 <a name="v0.0.3"></a>
+
 ## 0.0.3 (2019-03-04)
 
 #### Bug Fixes
@@ -171,6 +196,7 @@
 * NA
 
 <a name="v0.0.2"></a>
+
 ## 0.0.2 (2019-02-22)
 
 #### Bug Fixes
@@ -193,6 +219,7 @@ Added following basic features[[PR 2](https://github.com/kumaran-is/ngx-web-star
 
 
 <a name="v0.0.1"></a>
+
 ## 0.0.1 (2019-02-22)
 
 #### Bug Fixes
