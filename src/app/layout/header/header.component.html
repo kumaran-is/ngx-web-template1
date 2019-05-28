@@ -7,7 +7,12 @@
       <a mat-button class="first-center-nav-menu" [routerLink]="['/home']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Home</a>
       <a mat-button [routerLink]="['/menu1']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Menu1</a>
       <a mat-button class="last-center-nav-menu"  [routerLink]="['/menu2']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Menu2</a>
-      <a mat-button *ngIf="!authService.isUserAuthenticated(); else show" (click)="openLoginDialog()" >
+      <app-login-menu
+      [isUserAuthenticated] = "authService.isUserAuthenticated()"
+      [userName] = "authService.getUserName()"
+      (signout) = "onSignout()"
+      (openLoginDialog) = "openLoginDialog()" ></app-login-menu>
+    <!--  <a mat-button *ngIf="!authService.isUserAuthenticated(); else show" (click)="openLoginDialog()" >
         <span>Login / Sign Up</span>
       </a>
       <ng-template #show>
@@ -29,6 +34,7 @@
           </ng-template>
         </mat-menu>
       </ng-template>
+    -->
 
       <a mat-button [routerLink]="['/help']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Help</a>
       <a mat-icon-button  [routerLink]="['/cart']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >

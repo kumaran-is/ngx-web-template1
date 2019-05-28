@@ -54,7 +54,7 @@ export class HeaderComponent extends StopSubscribe implements OnInit {
     this.dialogService.popupDialog('login');
   }
 
-  doSignout() {
+  onSignout() {
     this.authService
       .signOut()
       .then(() => {
