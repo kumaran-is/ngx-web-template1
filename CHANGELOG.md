@@ -13,6 +13,8 @@
 
 * Upgraded to Angular 8 RC version 8.0.0-rc.5 [[PR 11](https://github.com/kumaran-is/ngx-web-starter/pull/11)]
 
+* Added skeleton pages for checkout, payment and order confirmation [[PR 11](https://github.com/kumaran-is/ngx-web-starter/pull/11)]
+
 #### Breaking Changes
 
 * NA
