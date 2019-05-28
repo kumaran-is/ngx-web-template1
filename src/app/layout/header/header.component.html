@@ -7,25 +7,28 @@
       <a mat-button class="first-center-nav-menu" [routerLink]="['/home']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Home</a>
       <a mat-button [routerLink]="['/menu1']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Menu1</a>
       <a mat-button class="last-center-nav-menu"  [routerLink]="['/menu2']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Menu2</a>
-      <a mat-button *ngIf="!authService.isUserAuthenticated()" (click)="openLoginDialog()" >
+      <a mat-button *ngIf="!authService.isUserAuthenticated(); else show" (click)="openLoginDialog()" >
         <span>Login / Sign Up</span>
       </a>
-      <button *ngIf="authService.isUserAuthenticated()" mat-button #accountMenuTrigger="matMenuTrigger"
-      (mouseenter)="accountMenuTrigger.openMenu()" [matMenuTriggerFor]="accountMenu" >
-        <mat-icon class="icon">account_circle</mat-icon>
-        <span class="label">{{ authService.getUserName() | truncate : 6 }} <mat-icon class="inline-icon">arrow_drop_down</mat-icon></span>
-      </button>
-      <mat-menu #accountMenu="matMenu" overlapTrigger="false" class="menu" >
-        <ng-template matMenuContent *ngIf="authService.isUserAuthenticated()" >
-          <button mat-menu-item  [routerLink]="['/auth/my-profile']" >
-            <mat-icon>account_box</mat-icon><span>My Profile</span>
-          </button>
-          <mat-divider></mat-divider>
-          <button mat-menu-item (click)="doSignout()" >
-            <mat-icon>power_settings_new</mat-icon><span>Sign Out</span>
-          </button>
-        </ng-template>
-      </mat-menu>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <ng-template #show>
+        <button mat-button #accountMenuTrigger="matMenuTrigger"
+        (mouseenter)="accountMenuTrigger.openMenu()" [matMenuTriggerFor]="accountMenu" >
+          <mat-icon class="icon">account_circle</mat-icon>
+          <span class="label">{{ authService.getUserName() | truncate : 6 }}</span>
+          <mat-icon class="inline-icon">arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #accountMenu="matMenu" overlapTrigger="false" class="menu" >
+          <ng-template matMenuContent >
+            <button mat-menu-item  [routerLink]="['/auth/my-profile']" >
+              <mat-icon>account_box</mat-icon><span>My Profile</span>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="doSignout()" >
+              <mat-icon>power_settings_new</mat-icon><span>Sign Out</span>
+            </button>
+          </ng-template>
+        </mat-menu>
+      </ng-template>
 
       <a mat-button [routerLink]="['/help']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >Help</a>
       <a mat-icon-button  [routerLink]="['/cart']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >
