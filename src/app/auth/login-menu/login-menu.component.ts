@@ -1,28 +1,37 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  EventEmitter,
-  Input,
-  Output
-} from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { IDialog } from '@app/auth/models/dialog.interface';
+import { AuthService } from '@app/auth/services/auth.service';
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-login-menu',
   templateUrl: './login-menu.component.html',
   styleUrls: ['./login-menu.component.scss']
 })
 export class LoginMenuComponent {
-  @Input() public isUserAuthenticated: boolean;
-  @Input() public userName: string;
   @Output() public signout = new EventEmitter<any>();
   @Output() public openLoginDialog = new EventEmitter<any>();
 
-  public doSignout() {
-    this.signout.emit();
-  }
+  constructor(
+    public authService: AuthService,
+    private router: Router,
+    // service is injected via interface to overcome cyclic dependency
+    @Inject('IDialog') private dialogService: IDialog
+  ) {}
 
   public doOpenLoginDialog() {
-    this.openLoginDialog.emit();
+    this.dialogService.popupDialog('login');
+  }
+
+  doSignout() {
+    this.authService
+      .signOut()
+      .then(() => {
+        console.log('successfull logout');
+        this.router.navigate(['/home']);
+      })
+      .catch(error => {
+        console.error('Error while signout', error);
+      });
   }
 }

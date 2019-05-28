@@ -1,11 +1,11 @@
-<a mat-button *ngIf="!isUserAuthenticated; else show" (click)="doOpenLoginDialog()" >
+<a mat-button *ngIf="!authService.isUserAuthenticated(); else show" (click)="doOpenLoginDialog()" >
   <span>Login / Sign Up</span>
 </a>
 <ng-template #show>
   <button mat-button #accountMenuTrigger="matMenuTrigger"
   (mouseenter)="accountMenuTrigger.openMenu()" [matMenuTriggerFor]="accountMenu" >
     <mat-icon class="icon">account_circle</mat-icon>
-    <span class="label">{{ userName | truncate : 6 }}</span>
+    <span class="label">{{ authService.getUserName() | truncate : 6 }}</span>
     <mat-icon class="inline-icon">arrow_drop_down</mat-icon>
   </button>
   <mat-menu #accountMenu="matMenu" overlapTrigger="false" class="menu" >
