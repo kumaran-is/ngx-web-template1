@@ -1,0 +1,21 @@
+<div class="auth-profile-section-container">
+  <form novalidate [formGroup]="paymentInfoForm" (ngSubmit)="doModifyPaymentInfo()" >
+    <mat-card>
+      <mat-card-content>
+        <span class="error" *ngIf="paymentInfoErrorMsg">
+          <mat-icon class="icon">error</mat-icon>
+          {{ paymentInfoErrorMsg }}
+        </span>
+        <span class="success" *ngIf="paymentInfoSuccessMsg">
+          <mat-icon class="icon">done_filled</mat-icon>
+          {{ paymentInfoSuccessMsg }}
+        </span>
+        <h3>TODO: Yet To Develop</h3>
+        <br>
+      </mat-card-content>
+      <mat-card-actions class="button">
+        <button mat-raised-button color="accent" type="submit">Modify Payment Info</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

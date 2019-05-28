@@ -1,13 +1,14 @@
-<div class="acknowledgement-container" >
+<div class="auth-popup-container" >
   <div>
-    <div class="hd-close-btn" (click)="closeDialog()">
+    <div class="auth-close-btn" (click)="closeDialog()">
       <mat-icon>close</mat-icon>
     </div>
     <h1 mat-dialog-title>Check Your Email</h1>
   </div>
   <mat-dialog-content>
-    <p class="hd-note" >We have sent a secure link to {{ dialogTitle }} to reset your password.
+    <p class="auth-note" >We have sent a secure link to {{ dialogTitle }} to reset your password.
       For security reasons, this link will only remain active for the next hour</p>
     <button mat-raised-button color="accent" (click)="closeDialog()" >Close</button>
   </mat-dialog-content>
 </div>
+

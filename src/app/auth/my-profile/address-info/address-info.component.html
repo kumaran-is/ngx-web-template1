@@ -1,0 +1,71 @@
+<div class="auth-profile-section-container">
+  <form novalidate [formGroup]="addressInfoForm" (ngSubmit)="doModifyAddressInfo()" >
+    <mat-card>
+      <mat-card-content>
+        <span class="error" *ngIf="addressInfoErrorMsg">
+          <mat-icon class="icon">error</mat-icon>
+          {{ addressInfoErrorMsg }}
+        </span>
+        <span class="success" *ngIf="addressInfoSuccessMsg">
+          <mat-icon class="icon">done_filled</mat-icon>
+          {{ addressInfoSuccessMsg }}
+        </span>
+        <mat-form-field appearance="outline" >
+          <mat-label>Address1</mat-label>
+          <textarea matInput formControlName="address1"
+          placeholder="Address1">{{ "address?.address1 || '' " }}</textarea>
+          <mat-icon matSuffix>mode_edit</mat-icon>
+          <mat-error *ngIf="address1.invalid">{{ getAddress1ControlErrorMessage() }}</mat-error>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline" >
+            <mat-label>Address2</mat-label>
+            <textarea matInput formControlName="address1"
+            placeholder="Address2">{{ "address?.address2 || '' " }}</textarea>
+            <mat-icon matSuffix>mode_edit</mat-icon>
+          </mat-form-field><br>
+        <mat-form-field appearance="outline" >
+          <mat-label>Land Mark</mat-label>
+          <input type="text" matInput formControlName="landmark"
+          [value]="address?.landmark || '' "  placeholder="Landmark">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field><br>
+        <mat-form-field appearance="outline" >
+          <mat-label>Area</mat-label>
+          <input type="text" matInput formControlName="area"
+          [value]="address?.area || '' "  placeholder="Area">
+          <mat-icon matSuffix>mode_edit</mat-icon>
+        </mat-form-field><br>
+        <table cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field>
+                <input type="text" matInput formControlName="city"
+                [value]="address?.city || '' "  placeholder="City">
+                <mat-error *ngIf="city.invalid">{{ getCityControlErrorMessage() }}</mat-error>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field>
+                <input type="text" matInput  formControlName="state"
+                [value]="address?.state || '' "  placeholder="State">
+                <mat-error *ngIf="state.invalid">{{ getStateControlErrorMessage() }}</mat-error>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field>
+                <input type="text" matInput #pincode  formControlName="pincode"
+                [value]="address?.pincode || '' "   placeholder="Pin Code">
+                <mat-hint align="end">{{ pincode.value.length }} / 6</mat-hint>
+                <mat-error *ngIf="pincode.invalid">{{ getPincodeControlErrorMessage() }}</mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <br>
+      </mat-card-content>
+      <mat-card-actions class="button">
+        <button mat-raised-button color="accent" type="submit">Modify Address Info</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

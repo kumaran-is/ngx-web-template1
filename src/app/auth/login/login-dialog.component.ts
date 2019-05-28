@@ -9,19 +9,19 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthConstants } from '@app/auth/auth.constants';
 import { Credential } from '@app/auth/models/credential.model';
+import { IDialog } from '@app/auth/models/dialog.interface';
 import { AuthService } from '@app/auth/services/auth.service';
-import { IDialog } from '@app/auth/services/dialog.interface';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-login-dialog',
   templateUrl: './login-dialog.component.html',
   styleUrls: ['./login-dialog.component.scss']
 })
 export class LoginDialogComponent implements OnInit {
-  public signinForm: FormGroup;
+  public loginForm: FormGroup;
   public hide = true;
   public dialogTitle: string;
-  public signinError: any;
+  public loginError: any;
   // @HostBinding('@moveInLeft')
   // someBaseClass = '';
 
@@ -48,7 +48,7 @@ export class LoginDialogComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.signinForm = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       email: [
         '',
         [
@@ -62,11 +62,11 @@ export class LoginDialogComponent implements OnInit {
 
   // convenience getter for easy access to form fields
   public get email() {
-    return this.signinForm.get('email');
+    return this.loginForm.get('email');
   }
 
   public get password() {
-    return this.signinForm.get('password');
+    return this.loginForm.get('password');
   }
 
   public getEmailControlErrorMessage() {
@@ -81,40 +81,40 @@ export class LoginDialogComponent implements OnInit {
     return this.password.hasError('required') ? 'Enter your Password' : '';
   }
 
-  public doSigninWithEmail() {
+  public doLoginWithEmail() {
     // stop here, don't allow to submit the form  if form is invalid
-    if (this.signinForm.invalid) {
+    if (this.loginForm.invalid) {
       return;
     } else {
       const credential: Credential = new Credential();
       credential.email = this.email.value;
       credential.password = this.password.value;
       this.authService
-        .signInWithEmail(credential)
+        .loginWithEmail(credential)
         .then(response => {
           console.log('successfull login', response);
           this.dialogRef.close();
           this.authService.navigateToRedirectUrlAfterAuth();
         })
         .catch(error => {
-          this.signinError = error.message;
-          console.error('Error while signin with Email', error);
+          this.loginError = error.message;
+          console.error('Error while login with Email', error);
         });
     }
   }
 
-  public doSigninWithOAuthProvider(oAuthProvider: string) {
+  public doLoginWithOAuthProvider(oAuthProvider: string) {
     this.authService
-      .signInWithOAuthProvider(oAuthProvider)
+      .loginWithOAuthProvider(oAuthProvider)
       .then(response => {
         console.log(`successfull login using $oAuthProvider `, response);
-        this.dialogRef.close(this.signinForm.value);
+        this.dialogRef.close(this.loginForm.value);
         this.authService.navigateToRedirectUrlAfterAuth();
       })
       .catch(error => {
-        this.signinError = error.message;
+        this.loginError = error.message;
         console.error(
-          `Error while signin using oAuthProvider Gmail $oAuthProvider`,
+          `Error while login using oAuthProvider Gmail $oAuthProvider`,
           error
         );
       });

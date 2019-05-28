@@ -1,20 +1,38 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { APP_INITIALIZER, NgModule, Optional, SkipSelf } from '@angular/core';
 import { APIServicesModule } from '@app/api-services/api-services.module';
+import { DialogService } from '@app/auth/services/dialog.service';
 import { ErrorHandlerModule } from '@app/error-handler/error-handler.module';
 import { LoggerModule } from '@app/logger/logger.module';
+import { RootStoreModule } from '@app/root-store';
+import {
+  AppInitStoreFacade,
+  initApplication
+} from '@app/root-store/app-init/app-init-store.facade';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
+    RootStoreModule,
     APIServicesModule,
     ErrorHandlerModule,
     LoggerModule
   ],
   exports: [HttpClientModule],
-  providers: []
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initApplication,
+      deps: [AppInitStoreFacade],
+      multi: true
+    },
+    {
+      provide: 'IDialog',
+      useClass: DialogService
+    }
+  ]
 })
 export class CoreModule {
   /* make sure CoreModule is imported only by one NgModule i.e the AppModule

@@ -1,0 +1,20 @@
+.auth-profile-container {
+  padding: 80px;
+}
+
+.auth-profile-section-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.auth-myprofile {
+  width: 1200px;
+}
+
+.auth-myprofile .mat-expansion-panel-header-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  background:#FFF;
+}
+

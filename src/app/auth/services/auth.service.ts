@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { StopSubscribe } from '@api/stop-subscribe';
 import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
-import { StopSubscribe } from '@app/api-services/stop-subscribe';
 import { Credential } from '@app/auth/models/credential.model';
 import { User } from '@app/auth/models/user.model';
 import * as firebase from 'firebase/app';
@@ -47,7 +47,7 @@ export class AuthService extends StopSubscribe {
       });
   }
 
-  public signInWithEmail(
+  public loginWithEmail(
     credential: Credential
   ): Promise<firebase.auth.UserCredential> {
     return this.angularFireAuth.auth.signInWithEmailAndPassword(
@@ -56,9 +56,9 @@ export class AuthService extends StopSubscribe {
     );
   }
 
-  public signInWithOAuthProvider(oAuthProvider: string): Promise<any> {
+  public loginWithOAuthProvider(oAuthProvider: string): Promise<any> {
     let userData: firebase.auth.UserCredential;
-    return this.signInWithPopup(this.getOAuthProvider(oAuthProvider))
+    return this.loginWithPopup(this.getOAuthProvider(oAuthProvider))
       .then((userCredential: firebase.auth.UserCredential) => {
         userData = userCredential;
         return userData;
@@ -197,7 +197,7 @@ export class AuthService extends StopSubscribe {
     }
   }
 
-  private signInWithPopup(provider: firebase.auth.AuthProvider): Promise<any> {
+  private loginWithPopup(provider: firebase.auth.AuthProvider): Promise<any> {
     return this.angularFireAuth.auth.signInWithPopup(provider).catch(error => {
       console.error(
         `ERROR while Signin with OAuth Service Provider ${provider.providerId}`
@@ -206,7 +206,7 @@ export class AuthService extends StopSubscribe {
     });
   }
 
-  private signInWithRedirect(
+  private loginWithRedirect(
     provider: firebase.auth.AuthProvider
   ): Promise<any> {
     return this.angularFireAuth.auth

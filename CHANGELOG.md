@@ -1,9 +1,29 @@
 # Changelog
 
+<a name="v0.0.11"></a>
+## 0.0.11 (2019-05-24)
+
+#### Bug Fixes
+
+* NA
+
+#### Features
+
+* Implement Authentication using Firebase Authentication service [[PR 11](https://github.com/kumaran-is/ngx-web-starter/pull/11)]
+
+* Upgraded to Angular 8 RC version 8.0.0-rc.5 [[PR 11](https://github.com/kumaran-is/ngx-web-starter/pull/11)]
+
+* Added skeleton pages for checkout, payment and order confirmation [[PR 11](https://github.com/kumaran-is/ngx-web-starter/pull/11)]
+
+#### Breaking Changes
+
+* NA
+
 <a name="v0.0.10"></a>
 ## 0.0.10 (2019-05-01)
 
 #### Bug Fixes
+
 * Added Angular Ivy, since it throws error while building due to Angular flexlayout we disabled it temporarily [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
 #### Features
@@ -22,28 +42,36 @@
 
 * Unsubscribing RXJS during Page Refresh, Tab Close, Browser Close, Navigation Away From Page by annotating `ngDestroy` using `HostListener` [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
 
+* Updated files and folder to align with Angular 8 RC version 8.0.0-rc.4 [[PR 10](https://github.com/kumaran-is/ngx-web-starter/pull/10)]
+
 #### Breaking Changes
+
 * NA
 
 <a name="v0.0.9"></a>
 ## 0.0.9 (2019-05-01)
 
 #### Bug Fixes
+
 * NA
 
 #### Features
+
 * Upgraded to Angular 8 RC version 8.0.0-rc.2 [[PR 9](https://github.com/kumaran-is/ngx-web-starter/pull/9)]
 
 #### Breaking Changes
+
 * NA
 
 <a name="v0.0.8"></a>
 ## 0.0.8 (2019-04-17)
 
 #### Bug Fixes
+
 * NA
 
 #### Features
+
 * Implemented OAuth providers (Google and Facebook) login/signup flow using firebase authentication services [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
 * Implemented authentication using Sign-up and sign-in with email accounts (email/password and email link) using firebase authentication services [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
 * Implemented change password, forgot password, manage user profile etc using firebase authentication services [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
@@ -53,15 +81,18 @@
 * Ability to upgrade anonymous users through sign-in/sign-up [[PR 8](https://github.com/kumaran-is/ngx-web-starter/pull/8)]
 
 #### Breaking Changes
+
 * NA
 
 <a name="v0.0.7"></a>
 ## 0.0.7 (2019-04-11)
 
 #### Bug Fixes
+
 * NA
 
 #### Features
+
 * Integrated basic firstore settings, services and  authentication feature [[PR 7](https://github.com/kumaran-is/ngx-web-starter/pull/7)]
 
 #### Breaking Changes
@@ -71,33 +102,41 @@
 ## 0.0.6 (2019-04-10)
 
 #### Bug Fixes
+
 * NA
 
 #### Features
+
 * Improved and optimized application loader indicator [[PR 6](https://github.com/kumaran-is/ngx-web-starter/pull/6)]
 
 #### Breaking Changes
+
 * NA
 
 <a name="v0.0.5"></a>
 ## 0.0.5 (2019-04-10)
 
 #### Bug Fixes
+
 * NA
 
 #### Features
+
 * Renamed project name and repo to `ngx-web-starter` [[PR 5](https://github.com/kumaran-is/ngx-web-starter/pull/5)]
 
 #### Breaking Changes
+
 * NA
 
 <a name="v0.0.4"></a>
 ## 0.0.4 (2019-03-07)
 
 #### Bug Fixes
+
 * NA
 
 #### Features
+
 * Organized an optimized and scalable folder structure and implemented best practices [[PR 4](https://github.com/kumaran-is/ngx-web-starter/pull/4)]
 * Added code for custom themes [[PR 4](https://github.com/kumaran-is/ngx-web-starter/pull/4)]
 * Added custom palette colors [[PR 4](https://github.com/kumaran-is/ngx-web-starter/pull/4)]
@@ -113,27 +152,33 @@
 * Added application loading indicator [[PR 4](https://github.com/kumaran-is/ngx-web-starter/pull/4)]
 
 #### Breaking Changes
+
 * NA
 
 <a name="v0.0.3"></a>
 ## 0.0.3 (2019-03-04)
 
 #### Bug Fixes
+
 * NA
 
 #### Features
+
 * Published angular application to github page using [angular-cli-ghpages](https://github.com/angular-schule/angular-cli-ghpages) [[PR 3](https://github.com/kumaran-is/ngx-web-starter/pull/3)]
 
 #### Breaking Changes
+
 * NA
 
 <a name="v0.0.2"></a>
 ## 0.0.2 (2019-02-22)
 
 #### Bug Fixes
+
 * NA
 
 #### Features
+
 Added following basic features[[PR 2](https://github.com/kumaran-is/ngx-web-starter/pull/2)] :
 
 * Added 3 row layout (header, main and footer) using [Angular Flex-Layout](https://github.com/angular/flex-layout) and [Angular Material](https://material.angular.io/)
@@ -143,6 +188,7 @@ Added following basic features[[PR 2](https://github.com/kumaran-is/ngx-web-star
 * Added all needed build and tool to npm scripts
 
 #### Breaking Changes
+
 * NA
 
 
@@ -150,10 +196,13 @@ Added following basic features[[PR 2](https://github.com/kumaran-is/ngx-web-star
 ## 0.0.1 (2019-02-22)
 
 #### Bug Fixes
+
 * NA
 
 #### Features
+
 * Initial project structure generated  with  [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1 [[PR 1](https://github.com/kumaran-is/ngx-web-starter/pull/1)]
 
 #### Breaking Changes
+
 * NA

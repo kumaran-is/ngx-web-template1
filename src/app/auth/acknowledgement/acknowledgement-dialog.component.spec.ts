@@ -1,14 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { AcknowledgementDialogComponent } from './acknowledgement-dialog.component';
 
-describe('AcknowledgementComponent', () => {
+describe('AcknowledgementDialogComponent', () => {
   let component: AcknowledgementDialogComponent;
   let fixture: ComponentFixture<AcknowledgementDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AcknowledgementDialogComponent]
-    }).compileComponents();
+      declarations: [ AcknowledgementDialogComponent ]
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
