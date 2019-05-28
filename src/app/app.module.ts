@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
 import { AppRoutingModule } from '@app/app-routing.module';
 import { AppComponent } from '@app/app.component';
-import { AuthModule } from '@app/auth/auth.module';
 import { DialogService } from '@app/auth/services/dialog.service';
 import { HomeModule } from '@app/home/home.module';
 import { RootStoreModule } from '@app/root-store';
@@ -24,7 +23,6 @@ import { SharedModule } from '@shared/shared.module';
     CoreModule,
     SharedModule,
     RootStoreModule,
-    AuthModule,
     LayoutModule,
     HomeModule,
     AppRoutingModule
