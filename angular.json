@@ -51,44 +51,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "baseline": "700kb",
-                  "maximumWarning": "50kb",
-                  "maximumError": "100kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "runtime",
-                  "baseline": "2kb",
-                  "maximumWarning": "0.5kb",
-                  "maximumError": "1kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "main",
-                  "baseline": "30kb",
-                  "maximumWarning": " 10kb",
-                  "maximumError": "15kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "polyfills",
-                  "baseline": "40kb",
-                  "maximumWarning": "5kb",
-                  "maximumError": "10kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "styles",
-                  "baseline": "60kb",
-                  "maximumWarning": "5kb",
-                  "maximumError": "10kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "vendor",
-                  "baseline": "500kb",
-                  "maximumWarning": "50kb",
-                  "maximumError": "100kb"
+                  "maximumWarning": "7mb",
+                  "maximumError": "8mb"
                 }
               ],
               "serviceWorker": true
@@ -112,44 +76,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "baseline": "700kb",
-                  "maximumWarning": "50kb",
-                  "maximumError": "100kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "runtime",
-                  "baseline": "2kb",
-                  "maximumWarning": "0.5kb",
-                  "maximumError": "1kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "main",
-                  "baseline": "30kb",
-                  "maximumWarning": " 10kb",
-                  "maximumError": "15kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "polyfills",
-                  "baseline": "40kb",
-                  "maximumWarning": "5kb",
-                  "maximumError": "10kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "styles",
-                  "baseline": "60kb",
-                  "maximumWarning": "5kb",
-                  "maximumError": "10kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "vendor",
-                  "baseline": "500kb",
-                  "maximumWarning": "50kb",
-                  "maximumError": "100kb"
+                  "maximumWarning": "7mb",
+                  "maximumError": "8mb"
                 }
               ],
               "serviceWorker": true
@@ -173,44 +101,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "baseline": "700kb",
-                  "maximumWarning": "50kb",
-                  "maximumError": "100kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "runtime",
-                  "baseline": "2kb",
-                  "maximumWarning": "0.5kb",
-                  "maximumError": "1kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "main",
-                  "baseline": "30kb",
-                  "maximumWarning": " 10kb",
-                  "maximumError": "15kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "polyfills",
-                  "baseline": "40kb",
-                  "maximumWarning": "5kb",
-                  "maximumError": "10kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "styles",
-                  "baseline": "60kb",
-                  "maximumWarning": "5kb",
-                  "maximumError": "10kb"
-                },
-                {
-                  "type": "bundle",
-                  "name": "vendor",
-                  "baseline": "500kb",
-                  "maximumWarning": "50kb",
-                  "maximumError": "100kb"
+                  "maximumWarning": "7mb",
+                  "maximumError": "8mb"
                 }
               ],
               "serviceWorker": true
