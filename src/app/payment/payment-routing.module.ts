@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     canActivate: [AuthenticationGuard],
-    component: PaymentComponent
+    component: PaymentComponent,
+    data: { pageTitle: 'My Payment' }
   }
 ];
 

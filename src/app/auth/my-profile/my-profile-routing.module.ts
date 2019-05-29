@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: 'my-profile',
     canActivate: [AuthenticationGuard],
-    component: MyProfileComponent
+    component: MyProfileComponent,
+    data: { pageTitle: 'My Profile' }
   }
 ];
 

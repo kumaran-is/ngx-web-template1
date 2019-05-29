@@ -14,7 +14,7 @@ const routes: Routes = [
         path: 'home',
         component: HomeComponent,
         // TODO: Get proper page name & keys from SEO specialist and update pageTitle
-        data: { pageTitle: 'Home' }
+        data: { pageTitle: 'My Home' }
       },
       {
         path: 'auth',

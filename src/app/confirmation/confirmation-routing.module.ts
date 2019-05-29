@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     canActivate: [AuthenticationGuard],
-    component: ConfirmationComponent
+    component: ConfirmationComponent,
+    data: { pageTitle: 'My Order Confirmation' }
   }
 ];
 
