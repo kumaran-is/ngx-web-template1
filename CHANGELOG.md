@@ -10,7 +10,7 @@
 
 #### Features
 
-* Upgraded Angular to final version 8.0.0 [[PR 13](https://github.com/kumaran-is/ngx-web-starter/pull/13)]
+* Upgraded Angular to final release version 8.0.0 [[PR 13](https://github.com/kumaran-is/ngx-web-starter/pull/13)]
 
 #### Breaking Changes
 
