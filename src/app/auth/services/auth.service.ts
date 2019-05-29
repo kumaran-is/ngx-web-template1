@@ -7,7 +7,7 @@ import { Credential } from '@app/auth/models/credential.model';
 import { User } from '@app/auth/models/user.model';
 import * as firebase from 'firebase/app';
 import { Observable, of } from 'rxjs';
-import { first, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,7 @@ import { first, map } from 'rxjs/operators';
 export class AuthService extends StopSubscribe {
   private loginURL: '/signin';
   private user: firebase.User;
+  // store the URL so we can redirect after successful login/signup
   private redirectUrl: string;
 
   constructor(
@@ -178,11 +179,7 @@ export class AuthService extends StopSubscribe {
     userCredential: firebase.auth.UserCredential
   ): Promise<boolean> {
     return this.firestoreAPIService
-      .doc$(`/users/${userCredential.user.uid}/`)
-      .pipe(
-        first(),
-        map(Boolean)
-      )
+      .recordExists$(`/users/${userCredential.user.uid}/`)
       .toPromise();
   }
 

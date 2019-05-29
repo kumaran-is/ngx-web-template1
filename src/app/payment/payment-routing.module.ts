@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PaymentComponent } from '@app/payment/payment.component';
+import { AuthenticationGuard } from '@auth/guards/authentication.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: PaymentComponent
+    canActivate: [AuthenticationGuard],
+    component: PaymentComponent,
+    data: { pageTitle: 'My Payment' }
   }
 ];
 

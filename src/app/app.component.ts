@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AuthService } from '@app/auth/services/auth.service';
+import { TitleService } from '@app/seo/title.service';
 import { DocumentService } from '@core/util/document.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class AppComponent implements OnInit {
     private authService: AuthService,
     private documentService: DocumentService,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private titleService: TitleService
   ) {
     matIconRegistry.addSvgIcon(
       'facebook-box',
@@ -45,6 +47,7 @@ export class AppComponent implements OnInit {
   public ngOnInit() {
     this.authService.initAuthListener();
     this.documentService.setGoToTopButtonPosition('go-top');
+    this.titleService.init();
   }
 
   public goToTop() {

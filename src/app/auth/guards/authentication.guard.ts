@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
@@ -9,6 +9,7 @@ import {
   UrlSegment,
   UrlTree
 } from '@angular/router';
+import { IDialog } from '@app/auth/models/dialog.interface';
 import { AuthService } from '@app/auth/services/auth.service';
 import { Observable } from 'rxjs';
 
@@ -17,7 +18,11 @@ import { Observable } from 'rxjs';
 })
 export class AuthenticationGuard
   implements CanActivate, CanActivateChild, CanLoad {
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    // service is injected via interface to overcome cyclic dependency
+    @Inject('IDialog') private dialogService: IDialog
+  ) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -51,14 +56,15 @@ export class AuthenticationGuard
 
   private isUserLoggedIn(url: string): Promise<boolean> {
     return new Promise(resolve => {
-      if (1 === 1) {
+      if (this.authService.isUserAuthenticated()) {
+        console.log('>>>> User is already authenticated <<<<<');
         resolve(true);
       } else {
         // Retain the attempted URL for redirection after successful login
-        // this.authService.setRedirectUrl(url);
-        // redirect to login page
-        // this.dialogService.popupDialog('signin');
-        resolve(false);
+        this.authService.setRedirectUrl(url);
+        console.log('>>>> Redirect URL <<<<< ', url);
+        // show login dialog
+        return this.dialogService.popupDialog('login');
       }
     });
   }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class FirestoreAPIService {
@@ -77,6 +77,16 @@ export class FirestoreAPIService {
           console.log('API service response  ', doc);
           return doc;
         })
+      );
+  }
+
+  public recordExists$(path: string): Observable<boolean> {
+    return this.angularFirestore
+      .doc<any>(path)
+      .valueChanges()
+      .pipe(
+        first(),
+        map(Boolean)
       );
   }
 
