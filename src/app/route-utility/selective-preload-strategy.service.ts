@@ -9,7 +9,7 @@ import { mergeMap } from 'rxjs/operators';
 export class SelectivePreloadStrategyService implements PreloadingStrategy {
   constructor() {}
 
-  preload(route: Route, load: Function): Observable<any> {
+  preload(route: Route, load: () => Observable<any>): Observable<any> {
     if (route.data && route.data['preload']) {
       console.log('Preload Path: ' + route.path);
       if (route.data['delay']) {
