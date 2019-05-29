@@ -1,0 +1,54 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:hoek:20180212':
+    - '@angular/fire > firebase-tools > universal-analytics > request > hawk > cryptiles > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > request > hawk > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > request > hawk > sntp > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > request > hawk > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > universal-analytics > request > hawk > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > request > hawk > sntp > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > universal-analytics > request > hawk > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > request > hawk > cryptiles > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > google-auth-library > request > hawk > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > universal-analytics > request > hawk > sntp > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > request > hawk > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > google-auth-library > request > hawk > sntp > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > request > hawk > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > gcp-metadata > retry-request > request > hawk > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > google-auth-library > gtoken > request > hawk > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > request > hawk > cryptiles > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > google-auth-library > request > hawk > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > google-auth-library > request > hawk > cryptiles > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > google-auth-library > gtoken > request > hawk > sntp > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > gcp-metadata > retry-request > request > hawk > sntp > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > gcp-metadata > retry-request > request > hawk > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > google-auth-library > gtoken > request > hawk > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > google-auth-library > gtoken > request > hawk > cryptiles > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'
+    - '@angular/fire > firebase-tools > google-auto-auth > gcp-metadata > retry-request > request > hawk > cryptiles > boom > hoek':
+        patched: '2019-05-29T21:05:51.785Z'

@@ -39,7 +39,9 @@
     "conventional-changelog": "conventional-changelog",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "git-publish": "npm run prod-build && npx angular-cli-ghpages --dir=dist/ngx-web-starter --branch=gh-pages",
-    "audit": "npm audit"
+    "audit": "npm audit",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "private": true,
   "dependencies": {
@@ -66,7 +68,8 @@
     "lodash": "~4.17.0",
     "rxjs": "~6.5.0",
     "tslib": "~1.9.0",
-    "zone.js": "~0.9.0"
+    "zone.js": "~0.9.0",
+    "snyk": "^1.169.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.0",
@@ -125,5 +128,6 @@
       "pre-commit": "npm run analyze",
       "pre-push": "npm run analyze"
     }
-  }
+  },
+  "snyk": true
 }
