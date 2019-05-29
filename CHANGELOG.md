@@ -1,5 +1,21 @@
 # Changelog
 
+<a name="v0.0.13"></a>
+
+## 0.0.13 (2019-05-29)
+
+#### Bug Fixes
+
+* NA
+
+#### Features
+
+* Upgraded Angular to final version 8.0.0 [[PR 13](https://github.com/kumaran-is/ngx-web-starter/pull/13)]
+
+#### Breaking Changes
+
+* NA
+
 <a name="v0.0.12"></a>
 
 ## 0.0.12 (2019-05-28)
