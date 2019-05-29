@@ -15,7 +15,7 @@ import { first, map } from 'rxjs/operators';
 export class AuthService extends StopSubscribe {
   private loginURL: '/signin';
   private user: firebase.User;
-  // preserve route state to redirect user after successful login/signup
+  // store the URL so we can redirect after successful login/signup
   private redirectUrl: string;
 
   constructor(

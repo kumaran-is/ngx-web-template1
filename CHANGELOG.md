@@ -10,7 +10,9 @@
 
 #### Features
 
-* Implement Guard for Authentication [[PR 12](https://github.com/kumaran-is/ngx-web-starter/pull/12)]
+* Implemented Guard for Authentication [[PR 12](https://github.com/kumaran-is/ngx-web-starter/pull/12)]
+* Implemented SelectivePreloadStrategyService to lazy load modules [[PR 12](https://github.com/kumaran-is/ngx-web-starter/pull/12)]
+* Implemented Title Service to dynamically update the `<title>` tag for SEO [[PR 12](https://github.com/kumaran-is/ngx-web-starter/pull/12)] 
 
 #### Breaking Changes
 
