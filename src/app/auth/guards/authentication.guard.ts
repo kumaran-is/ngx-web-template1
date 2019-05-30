@@ -56,8 +56,8 @@ export class AuthenticationGuard
 
   private isUserLoggedIn(url: string): Promise<boolean> {
     return new Promise(resolve => {
-      if (this.authService.isUserAuthenticated()) {
-        console.log('>>>> User is already authenticated <<<<<');
+      if (this.authService.isLoggedIn()) {
+        console.log('>>>> User is already isLoggedIn <<<<<');
         resolve(true);
       } else {
         // Retain the attempted URL for redirection after successful login

@@ -1,7 +1,7 @@
-<a mat-button *ngIf="!authService.isUserAuthenticated(); else show" (click)="doOpenLoginDialog()" >
+<a mat-button *ngIf="!authService.isLoggedIn(); else isLoggedIn" (click)="doOpenLoginDialog()" >
   <span>Login / Sign Up</span>
 </a>
-<ng-template #show>
+<ng-template #isLoggedIn>
   <button mat-button #accountMenuTrigger="matMenuTrigger"
   (mouseenter)="accountMenuTrigger.openMenu()" [matMenuTriggerFor]="accountMenu" >
     <mat-icon class="icon">account_circle</mat-icon>
