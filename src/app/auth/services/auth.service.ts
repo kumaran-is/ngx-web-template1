@@ -234,6 +234,7 @@ export class AuthService extends StopSubscribe {
     user.email = userData.email;
     user.phoneNumber = userData.phoneNumber;
     user.photoURL = userData.photoURL;
+    user.isActive = true;
     if (userData.metadata) {
       user.createdAt = userData.metadata.creationTime;
     }
