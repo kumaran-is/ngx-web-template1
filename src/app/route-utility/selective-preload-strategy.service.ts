@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PreloadingStrategy, Route } from '@angular/router';
-import { Observable, of, timer } from 'rxjs';
+import { EMPTY, Observable, timer } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 
 @Injectable({
@@ -19,7 +19,7 @@ export class SelectivePreloadStrategyService implements PreloadingStrategy {
         return load();
       }
     } else {
-      return of(null);
+      return EMPTY;
     }
   }
 }
