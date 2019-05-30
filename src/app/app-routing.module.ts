@@ -20,7 +20,7 @@ const routes: Routes = [
         path: 'auth',
         canLoad: [AuthenticationGuard],
         loadChildren: () =>
-          import('@app/auth/my-profile/my-profile.module').then(
+          import('@auth/my-profile/my-profile.module').then(
             m => m.MyProfileModule
           )
       },

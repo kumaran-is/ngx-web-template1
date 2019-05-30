@@ -7,7 +7,7 @@ import {
   Output
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthValidatorsService } from '@app/auth/services/auth-validators.service';
+import { AuthValidatorsService } from '@auth/services/auth-validators.service';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

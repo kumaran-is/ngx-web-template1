@@ -9,8 +9,8 @@ import {
   UrlSegment,
   UrlTree
 } from '@angular/router';
-import { IDialog } from '@app/auth/models/dialog.interface';
-import { AuthService } from '@app/auth/services/auth.service';
+import { IDialog } from '@auth/models/dialog.interface';
+import { AuthService } from '@auth/services/auth.service';
 import { Observable } from 'rxjs';
 
 @Injectable({

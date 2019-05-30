@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { IDialog } from '@app/auth/models/dialog.interface';
+import { IDialog } from '@auth/models/dialog.interface';
 
 @Component({
   selector: 'app-acknowledgement-dialog',

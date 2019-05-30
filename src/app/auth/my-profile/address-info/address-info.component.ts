@@ -7,8 +7,8 @@ import {
   Output
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthConstants } from '@app/auth/auth.constants';
-import { Address } from '@app/auth/models/address.model';
+import { AuthConstants } from '@auth/auth.constants';
+import { Address } from '@auth/models/address.model';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

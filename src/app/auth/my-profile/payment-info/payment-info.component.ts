@@ -7,7 +7,7 @@ import {
   Output
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Payment } from '@app/auth/models/payment.model';
+import { Payment } from '@auth/models/payment.model';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

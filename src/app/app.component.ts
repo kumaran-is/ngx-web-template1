@@ -1,8 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { AuthService } from '@app/auth/services/auth.service';
 import { TitleService } from '@app/seo/title.service';
+import { AuthService } from '@auth/services/auth.service';
 import { DocumentService } from '@core/util/document.service';
 
 @Component({

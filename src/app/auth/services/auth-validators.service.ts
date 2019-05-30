@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl, FormGroup } from '@angular/forms';
 import { StopSubscribe } from '@app/api-services/stop-subscribe';
-import { AuthConstants } from '@app/auth/auth.constants';
-import { AuthService } from '@app/auth/services/auth.service';
+import { AuthConstants } from '@auth/auth.constants';
+import { AuthService } from '@auth/services/auth.service';
 import { Observable } from 'rxjs';
 import {
   debounceTime,

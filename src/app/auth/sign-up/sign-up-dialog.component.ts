@@ -6,11 +6,11 @@ import {
   MAT_DIALOG_DATA
 } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { AuthConstants } from '@app/auth/auth.constants';
-import { Credential } from '@app/auth/models/credential.model';
-import { IDialog } from '@app/auth/models/dialog.interface';
-import { AuthValidatorsService } from '@app/auth/services/auth-validators.service';
-import { AuthService } from '@app/auth/services/auth.service';
+import { AuthConstants } from '@auth/auth.constants';
+import { Credential } from '@auth/models/credential.model';
+import { IDialog } from '@auth/models/dialog.interface';
+import { AuthValidatorsService } from '@auth/services/auth-validators.service';
+import { AuthService } from '@auth/services/auth.service';
 
 @Component({
   selector: 'app-sign-up-dialog',
