@@ -8,6 +8,10 @@
 
 * Fix Auth guard issue [[PR 16](https://github.com/kumaran-is/ngx-web-starter/pull/16)]
 
+* Updated route configuration for `page not found` component [[PR 16](https://github.com/kumaran-is/ngx-web-starter/pull/16)]
+
+* Updated auth guard to use `angularFireAuth.user` API to check whether user is authenticated or not [[PR 16](https://github.com/kumaran-is/ngx-web-starter/pull/16)]
+
 #### Features
 
 * NA
