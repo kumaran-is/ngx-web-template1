@@ -1,5 +1,25 @@
 # Changelog
 
+<a name="v0.0.15"></a>
+
+## 0.0.15 (2019-06-01)
+
+#### Bug Fixes
+
+* Fix Auth guard issue [[PR 16](https://github.com/kumaran-is/ngx-web-starter/pull/16)]
+
+* Updated route configuration for `page not found` component [[PR 16](https://github.com/kumaran-is/ngx-web-starter/pull/16)]
+
+* Updated auth guard to use `angularFireAuth.user` API to check whether user is authenticated or not [[PR 16](https://github.com/kumaran-is/ngx-web-starter/pull/16)]
+
+#### Features
+
+* NA
+
+#### Breaking Changes
+
+* NA
+
 <a name="v0.0.14"></a>
 
 ## 0.0.14 (2019-05-29)

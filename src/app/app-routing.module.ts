@@ -19,7 +19,6 @@ const routes: Routes = [
       {
         path: 'auth',
         canLoad: [AuthenticationGuard],
-        canActivate: [AuthenticationGuard],
         loadChildren: () =>
           import('@auth/my-profile/my-profile.module').then(
             m => m.MyProfileModule
@@ -34,21 +33,18 @@ const routes: Routes = [
       {
         path: 'checkout',
         canLoad: [AuthenticationGuard],
-        canActivate: [AuthenticationGuard],
         loadChildren: () =>
           import('@app/checkout/checkout.module').then(m => m.CheckoutModule)
       },
       {
         path: 'payment',
         canLoad: [AuthenticationGuard],
-        canActivate: [AuthenticationGuard],
         loadChildren: () =>
           import('@app/payment/payment.module').then(m => m.PaymentModule)
       },
       {
         path: 'confirmation',
         canLoad: [AuthenticationGuard],
-        canActivate: [AuthenticationGuard],
         loadChildren: () =>
           import('@app/confirmation/confirmation.module').then(
             m => m.ConfirmationModule
@@ -61,15 +57,17 @@ const routes: Routes = [
             m => m.UnderMaintenanceModule
           )
       },
-      { path: '', pathMatch: 'full', redirectTo: 'home' }
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
+
+      {
+        /* wildcard route using ** as a path should be last in the order */
+        path: '**',
+        loadChildren: () =>
+          import('@app/page-not-found/page-not-found.module').then(
+            m => m.PageNotFoundModule
+          )
+      }
     ]
-  },
-  {
-    path: '**',
-    loadChildren: () =>
-      import('@app/page-not-found/page-not-found.module').then(
-        m => m.PageNotFoundModule
-      )
   }
 ];
 

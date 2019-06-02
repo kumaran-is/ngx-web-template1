@@ -12,6 +12,7 @@ import {
 import { IDialog } from '@auth/models/dialog.interface';
 import { AuthService } from '@auth/services/auth.service';
 import { Observable } from 'rxjs';
+import { map, take, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -54,18 +55,20 @@ export class AuthenticationGuard
     return this.isUserLoggedIn(route.path);
   }
 
-  private isUserLoggedIn(url: string): Promise<boolean> {
-    return new Promise(resolve => {
-      if (this.authService.isLoggedIn()) {
-        console.log('>>>> User is already isLoggedIn <<<<<');
-        resolve(true);
-      } else {
-        // Retain the attempted URL for redirection after successful login
-        this.authService.setRedirectUrl(url);
-        console.log('>>>> Redirect URL <<<<< ', url);
-        // show login dialog
-        return this.dialogService.popupDialog('login');
-      }
-    });
+  private isUserLoggedIn(url: string): Observable<boolean> {
+    return this.authService.currentUser$.pipe(
+      take(1),
+      map(user => !!user),
+      tap((loggedIn: boolean) => {
+        if (loggedIn) {
+          return true;
+        } else {
+          // Retain the attempted URL for redirection after successful login
+          this.authService.setRedirectUrl(url);
+          // show login dialog
+          return this.dialogService.popupDialog('login');
+        }
+      })
+    );
   }
 }
