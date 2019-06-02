@@ -1,5 +1,21 @@
 # Changelog
 
+<a name="v0.0.15"></a>
+
+## 0.0.15 (2019-06-01)
+
+#### Bug Fixes
+
+* Fix Auth guard issue [[PR 16](https://github.com/kumaran-is/ngx-web-starter/pull/16)]
+
+#### Features
+
+* NA
+
+#### Breaking Changes
+
+* NA
+
 <a name="v0.0.14"></a>
 
 ## 0.0.14 (2019-05-29)
