@@ -6,7 +6,7 @@ import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
 import { Credential } from '@auth/models/credential.model';
 import { User } from '@auth/models/user.model';
 import * as firebase from 'firebase/app';
-import { Observable, of } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -102,7 +102,7 @@ export class AuthService extends StopSubscribe {
 
   public getUserProfile(): Observable<User> {
     if (!this.user) {
-      return of(null);
+      return EMPTY;
     }
     return this.firestoreAPIService.docWithMetaData$(
       `/users/${this.user.uid}/`
