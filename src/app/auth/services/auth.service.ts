@@ -165,6 +165,10 @@ export class AuthService extends StopSubscribe {
       .pipe(map(response => response.length !== 0));
   }
 
+  public get currentUser$(): Observable<firebase.User | null> {
+    return this.angularFireAuth.user;
+  }
+
   private reAuthenticate(
     oldPassword: string
   ): Promise<firebase.auth.UserCredential> {
