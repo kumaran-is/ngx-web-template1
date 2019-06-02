@@ -109,10 +109,6 @@ export class AuthService extends StopSubscribe {
     );
   }
 
-  public isLoggedIn(): boolean {
-    return !!this.user;
-  }
-
   public getUserId(): string {
     return this.user.uid;
   }
