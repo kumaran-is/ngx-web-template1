@@ -10,7 +10,8 @@
 
 #### Features
 
-* Cleanup [[PR 14](https://github.com/kumaran-is/ngx-web-starter/pull/13)]
+* Auth guard cleanup [[PR 15](https://github.com/kumaran-is/ngx-web-starter/pull/15)]
+* Upgraded @angular/fire to 5.2.1 [[PR 15](https://github.com/kumaran-is/ngx-web-starter/pull/15)]
 
 #### Breaking Changes
 
