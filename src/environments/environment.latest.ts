@@ -6,7 +6,7 @@ export const environment = {
   production: true,
   webAPIUrl: 'http://localhost:8000/api/v1',
   // version is automatically updated during build from package.json
-  version: '0.0.15',
+  version: '0.0.16',
   configFilePath: 'assets/config/latest.config.json',
   envName: 'latest',
   firestore: {
