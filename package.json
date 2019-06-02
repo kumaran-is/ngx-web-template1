@@ -1,6 +1,6 @@
 {
   "name": "ngx-web-starter",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -80,7 +80,7 @@
     "@types/jasminewd2": "~2.0.0",
     "@types/node": "~12.0.0",
     "angular-cli-ghpages": "~0.5.0",
-    "codelyzer": "~5.0.1",
+    "codelyzer": "~5.1.0",
     "conventional-changelog-cli": "~2.0.10",
     "htmlhint": "~0.11.0",
     "husky": "~2.3.0",
@@ -100,7 +100,7 @@
     "replace-in-file": "~4.1.0",
     "rxjs-tslint-rules": "~4.23.0",
     "rxjs-watcher": "~1.1.0",
-    "source-map-explorer": "~1.8.0",
+    "source-map-explorer": "~2.0.0",
     "stylelint": "~10.0.0",
     "stylelint-config-prettier": "~5.2.0",
     "stylelint-config-primer": "~7.0.0",

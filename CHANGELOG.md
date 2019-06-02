@@ -1,5 +1,21 @@
 # Changelog
 
+<a name="v0.0.16"></a>
+
+## 0.0.16 (2019-06-02)
+
+#### Bug Fixes
+
+* NA
+
+#### Features
+
+* Implemented `network aware` pre-load strategy, it uses the browser's [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection) to detect the connection and speed. If the speed qualifies as good, then it preloads the bundles. If not, it leaves them alone [[PR 17](https://github.com/kumaran-is/ngx-web-starter/pull/17)]
+
+#### Breaking Changes
+
+* NA
+
 <a name="v0.0.15"></a>
 
 ## 0.0.15 (2019-06-01)
