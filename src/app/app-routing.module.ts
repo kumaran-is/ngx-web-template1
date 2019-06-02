@@ -61,15 +61,17 @@ const routes: Routes = [
             m => m.UnderMaintenanceModule
           )
       },
-      { path: '', pathMatch: 'full', redirectTo: 'home' }
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
+
+      {
+        /* wildcard route using ** as a path should be last in the order */
+        path: '**',
+        loadChildren: () =>
+          import('@app/page-not-found/page-not-found.module').then(
+            m => m.PageNotFoundModule
+          )
+      }
     ]
-  },
-  {
-    path: '**',
-    loadChildren: () =>
-      import('@app/page-not-found/page-not-found.module').then(
-        m => m.PageNotFoundModule
-      )
   }
 ];
 
