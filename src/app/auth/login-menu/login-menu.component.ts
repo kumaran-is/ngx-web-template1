@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { IDialog } from '@app/auth/models/dialog.interface';
-import { AuthService } from '@app/auth/services/auth.service';
+import { IDialog } from '@auth/models/dialog.interface';
+import { AuthService } from '@auth/services/auth.service';
 
 @Component({
   selector: 'app-login-menu',

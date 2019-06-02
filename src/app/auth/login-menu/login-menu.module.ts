@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AcknowledgementDialogComponent } from '@app/auth/acknowledgement/acknowledgement-dialog.component';
-import { ForgotPasswordDialogComponent } from '@app/auth/forgot-password/forgot-password-dialog.component';
-import { LoginMenuComponent } from '@app/auth/login-menu/login-menu.component';
-import { LoginDialogComponent } from '@app/auth/login/login-dialog.component';
-import { SignUpDialogComponent } from '@app/auth/sign-up/sign-up-dialog.component';
+import { AcknowledgementDialogComponent } from '@auth/acknowledgement/acknowledgement-dialog.component';
+import { ForgotPasswordDialogComponent } from '@auth/forgot-password/forgot-password-dialog.component';
+import { LoginMenuComponent } from '@auth/login-menu/login-menu.component';
+import { LoginDialogComponent } from '@auth/login/login-dialog.component';
+import { SignUpDialogComponent } from '@auth/sign-up/sign-up-dialog.component';
 import { SharedModule } from '@shared/shared.module';
 
 @NgModule({

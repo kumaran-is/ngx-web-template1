@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthenticationGuard } from '@auth/guards/authentication.guard';
 import { AddressInfoComponent } from './address-info/address-info.component';
 import { MyProfileComponent } from './my-profile.component';
 import { PaymentInfoComponent } from './payment-info/payment-info.component';
@@ -10,7 +9,6 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
 const routes: Routes = [
   {
     path: 'my-profile',
-    canActivate: [AuthenticationGuard],
     component: MyProfileComponent,
     data: { pageTitle: 'My Profile' }
   }

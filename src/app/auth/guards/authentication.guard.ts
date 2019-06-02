@@ -9,8 +9,8 @@ import {
   UrlSegment,
   UrlTree
 } from '@angular/router';
-import { IDialog } from '@app/auth/models/dialog.interface';
-import { AuthService } from '@app/auth/services/auth.service';
+import { IDialog } from '@auth/models/dialog.interface';
+import { AuthService } from '@auth/services/auth.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -56,8 +56,8 @@ export class AuthenticationGuard
 
   private isUserLoggedIn(url: string): Promise<boolean> {
     return new Promise(resolve => {
-      if (this.authService.isUserAuthenticated()) {
-        console.log('>>>> User is already authenticated <<<<<');
+      if (this.authService.isLoggedIn()) {
+        console.log('>>>> User is already isLoggedIn <<<<<');
         resolve(true);
       } else {
         // Retain the attempted URL for redirection after successful login

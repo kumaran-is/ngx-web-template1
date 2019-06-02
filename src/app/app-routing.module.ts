@@ -19,8 +19,9 @@ const routes: Routes = [
       {
         path: 'auth',
         canLoad: [AuthenticationGuard],
+        canActivate: [AuthenticationGuard],
         loadChildren: () =>
-          import('@app/auth/my-profile/my-profile.module').then(
+          import('@auth/my-profile/my-profile.module').then(
             m => m.MyProfileModule
           )
       },
@@ -33,18 +34,21 @@ const routes: Routes = [
       {
         path: 'checkout',
         canLoad: [AuthenticationGuard],
+        canActivate: [AuthenticationGuard],
         loadChildren: () =>
           import('@app/checkout/checkout.module').then(m => m.CheckoutModule)
       },
       {
         path: 'payment',
         canLoad: [AuthenticationGuard],
+        canActivate: [AuthenticationGuard],
         loadChildren: () =>
           import('@app/payment/payment.module').then(m => m.PaymentModule)
       },
       {
         path: 'confirmation',
         canLoad: [AuthenticationGuard],
+        canActivate: [AuthenticationGuard],
         loadChildren: () =>
           import('@app/confirmation/confirmation.module').then(
             m => m.ConfirmationModule

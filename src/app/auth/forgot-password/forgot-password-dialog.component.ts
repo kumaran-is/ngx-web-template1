@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { IDialog } from '@app/auth/models/dialog.interface';
-import { AuthService } from '@app/auth/services/auth.service';
+import { IDialog } from '@auth/models/dialog.interface';
+import { AuthService } from '@auth/services/auth.service';
 
 @Component({
   selector: 'app-forgot-password-dialog',

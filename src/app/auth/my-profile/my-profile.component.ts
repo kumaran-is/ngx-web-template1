@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Address } from '@app/auth/models/address.model';
-import { Payment } from '@app/auth/models/payment.model';
-import { User } from '@app/auth/models/user.model';
-import { AuthService } from '@app/auth/services/auth.service';
+import { Address } from '@auth/models/address.model';
+import { Payment } from '@auth/models/payment.model';
+import { User } from '@auth/models/user.model';
+import { AuthService } from '@auth/services/auth.service';
 import { Observable } from 'rxjs';
 
 @Component({

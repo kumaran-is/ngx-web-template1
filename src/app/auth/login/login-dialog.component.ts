@@ -7,10 +7,10 @@ import {
 } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { AuthConstants } from '@app/auth/auth.constants';
-import { Credential } from '@app/auth/models/credential.model';
-import { IDialog } from '@app/auth/models/dialog.interface';
-import { AuthService } from '@app/auth/services/auth.service';
+import { AuthConstants } from '@auth/auth.constants';
+import { Credential } from '@auth/models/credential.model';
+import { IDialog } from '@auth/models/dialog.interface';
+import { AuthService } from '@auth/services/auth.service';
 
 @Component({
   selector: 'app-login-dialog',

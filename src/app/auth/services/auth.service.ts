@@ -3,8 +3,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { StopSubscribe } from '@api/stop-subscribe';
 import { FirestoreAPIService } from '@app/api-services/firestore-api.service';
-import { Credential } from '@app/auth/models/credential.model';
-import { User } from '@app/auth/models/user.model';
+import { Credential } from '@auth/models/credential.model';
+import { User } from '@auth/models/user.model';
 import * as firebase from 'firebase/app';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -109,7 +109,7 @@ export class AuthService extends StopSubscribe {
     );
   }
 
-  public isUserAuthenticated(): boolean {
+  public isLoggedIn(): boolean {
     return !!this.user;
   }
 
@@ -234,6 +234,7 @@ export class AuthService extends StopSubscribe {
     user.email = userData.email;
     user.phoneNumber = userData.phoneNumber;
     user.photoURL = userData.photoURL;
+    user.isActive = true;
     if (userData.metadata) {
       user.createdAt = userData.metadata.creationTime;
     }

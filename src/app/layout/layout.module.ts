@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { LoginMenuModule } from '@app/auth/login-menu/login-menu.module';
+import { LoginMenuModule } from '@auth/login-menu/login-menu.module';
 import { AppShellComponent } from '@layout/app-shell/app-shell.component';
 import { FooterComponent } from '@layout/footer/footer.component';
 import { HeaderComponent } from '@layout/header/header.component';

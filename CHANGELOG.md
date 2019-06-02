@@ -1,5 +1,22 @@
 # Changelog
 
+<a name="v0.0.14"></a>
+
+## 0.0.14 (2019-05-29)
+
+#### Bug Fixes
+
+* NA
+
+#### Features
+
+* Auth guard cleanup [[PR 15](https://github.com/kumaran-is/ngx-web-starter/pull/15)]
+* Upgraded @angular/fire to 5.2.1 [[PR 15](https://github.com/kumaran-is/ngx-web-starter/pull/15)]
+
+#### Breaking Changes
+
+* NA
+
 <a name="v0.0.13"></a>
 
 ## 0.0.13 (2019-05-29)
