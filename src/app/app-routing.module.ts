@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from '@app/home/home.component';
-import { SelectivePreloadStrategyService } from '@app/route-utility/selective-preload-strategy.service';
+import { NetworkAwarePreloadStrategyService } from '@app/route-utility/network-aware-preload-strategy.service';
 import { AuthenticationGuard } from '@auth/guards/authentication.guard';
 import { AppShellComponent } from '@layout/app-shell/app-shell.component';
+// import { QuicklinkStrategy } from 'ngx-quicklink';
 
 const routes: Routes = [
   {
@@ -57,11 +58,17 @@ const routes: Routes = [
             m => m.UnderMaintenanceModule
           )
       },
+      {
+        path: 'aboutus',
+        loadChildren: () =>
+          import('@app/aboutus/aboutus.module').then(m => m.AboutusModule)
+      },
       { path: '', pathMatch: 'full', redirectTo: 'home' },
 
       {
         /* wildcard route using ** as a path should be last in the order */
         path: '**',
+        pathMatch: 'full',
         loadChildren: () =>
           import('@app/page-not-found/page-not-found.module').then(
             m => m.PageNotFoundModule
@@ -75,7 +82,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       enableTracing: true, // <-- debugging purposes only
-      preloadingStrategy: SelectivePreloadStrategyService,
+      preloadingStrategy: NetworkAwarePreloadStrategyService,
+      // preloadingStrategy: QuicklinkStrategy,
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled'
     })

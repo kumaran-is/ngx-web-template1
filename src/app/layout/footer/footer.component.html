@@ -1,9 +1,7 @@
 <div class="footer">
   <div class="row" fxlayout="row wrap" fxLayoutAlign="center center"  >
     <div class="links">
-      <a href="https://github.com/kumaran-is/ngx-web-starter" target="_blank">
-        <span>About Us</span>
-      </a>
+        <a [routerLink]="['/aboutus']" [routerLinkActive]="['menu-active']" [routerLinkActiveOptions]="{exact:true}" >About Us</a>
     </div>
     <div class="links" >
       <a href="https://github.com/kumaran-is/ngx-web-starter" target="_blank">

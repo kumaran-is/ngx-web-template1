@@ -1,5 +1,25 @@
 # Changelog
 
+<a name="v0.0.16"></a>
+
+## 0.0.16 (2019-06-02)
+
+#### Bug Fixes
+
+* NA
+
+#### Features
+
+* Implemented `network aware` pre-load strategy, it uses the browser's [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/connection) to detect the connection and speed. If the speed qualifies as good, then it preloads the bundles. If not, it leaves them alone [[PR 17](https://github.com/kumaran-is/ngx-web-starter/pull/17)]
+
+* The `on demand` strategy preloads one or more routes when a user performs a specific action. For more detail refer [here](https://dev.to/azure/predictive-preloading-strategy-for-your-angular-bundles-4bgl) [[PR 17](https://github.com/kumaran-is/ngx-web-starter/pull/17)]
+
+* Implemented preloading strategy that automatically downloads the lazy-loaded modules associated with all the visible links using [ngx-quicklink](https://www.npmjs.com/package/ngx-quicklink) [[PR 17](https://github.com/kumaran-is/ngx-web-starter/pull/17)]
+
+#### Breaking Changes
+
+* NA
+
 <a name="v0.0.15"></a>
 
 ## 0.0.15 (2019-06-01)
