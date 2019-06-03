@@ -4,6 +4,7 @@ import { HomeComponent } from '@app/home/home.component';
 import { NetworkAwarePreloadStrategyService } from '@app/route-utility/network-aware-preload-strategy.service';
 import { AuthenticationGuard } from '@auth/guards/authentication.guard';
 import { AppShellComponent } from '@layout/app-shell/app-shell.component';
+// import { QuicklinkStrategy } from 'ngx-quicklink';
 
 const routes: Routes = [
   {
@@ -57,6 +58,11 @@ const routes: Routes = [
             m => m.UnderMaintenanceModule
           )
       },
+      {
+        path: 'aboutus',
+        loadChildren: () =>
+          import('@app/aboutus/aboutus.module').then(m => m.AboutusModule)
+      },
       { path: '', pathMatch: 'full', redirectTo: 'home' },
 
       {
@@ -77,6 +83,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       enableTracing: true, // <-- debugging purposes only
       preloadingStrategy: NetworkAwarePreloadStrategyService,
+      // preloadingStrategy: QuicklinkStrategy,
       scrollPositionRestoration: 'enabled',
       anchorScrolling: 'enabled'
     })

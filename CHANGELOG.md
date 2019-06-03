@@ -14,6 +14,8 @@
 
 * The `on demand` strategy preloads one or more routes when a user performs a specific action. For more detail refer [here](https://dev.to/azure/predictive-preloading-strategy-for-your-angular-bundles-4bgl) [[PR 17](https://github.com/kumaran-is/ngx-web-starter/pull/17)]
 
+* Implemented preloading strategy that automatically downloads the lazy-loaded modules associated with all the visible links using [ngx-quicklink](https://www.npmjs.com/package/ngx-quicklink) [[PR 17](https://github.com/kumaran-is/ngx-web-starter/pull/17)]
+
 #### Breaking Changes
 
 * NA

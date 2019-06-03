@@ -5,17 +5,19 @@ import { HoverDirective } from '@shared/directives/hover.directive';
 import { OneTimeDirective } from '@shared/directives/one-time.directive';
 import { MaterialModule } from '@shared/material/material.module';
 import { TruncatePipe } from '@shared/pipes/truncate.pipe';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [HoverDirective, OneTimeDirective, TruncatePipe],
-  imports: [CommonModule, ReactiveFormsModule, MaterialModule],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule, QuicklinkModule],
   exports: [
     CommonModule,
     ReactiveFormsModule,
     MaterialModule,
     HoverDirective,
     OneTimeDirective,
-    TruncatePipe
+    TruncatePipe,
+    QuicklinkModule
   ]
 })
 export class SharedModule {}
