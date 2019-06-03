@@ -1,5 +1,21 @@
 # Changelog
 
+<a name="v0.0.17"></a>
+
+## 0.0.17 (2019-06-02)
+
+#### Bug Fixes
+
+* NA
+
+#### Features
+
+* Route cleanup [[PR 18](https://github.com/kumaran-is/ngx-web-starter/pull/18)]
+
+#### Breaking Changes
+
+* NA
+
 <a name="v0.0.16"></a>
 
 ## 0.0.16 (2019-06-02)
