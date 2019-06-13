@@ -61,13 +61,10 @@ MIT
 MIT
 
 @angular/fire/auth
-MIT
 
 @angular/fire/firestore
-MIT
 
 @angular/fire/storage
-MIT
 
 @angular/flex-layout
 MIT
@@ -388,6 +385,9 @@ firebase/auth
 firebase/firestore
 
 firebase/storage
+
+ngx-quicklink
+MIT
 
 rxjs
 Apache-2.0
