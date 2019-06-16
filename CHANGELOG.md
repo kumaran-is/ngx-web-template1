@@ -10,7 +10,7 @@
 
 ### Features
 
-* Add route path to login/registration dialog box [[PR 19](https://github.com/kumaran-is/ngx-web-starter/pull/19)]
+* Added route path to login/registration dialog box [[PR 19](https://github.com/kumaran-is/ngx-web-starter/pull/19)]
 
 ### Breaking Changes
 
