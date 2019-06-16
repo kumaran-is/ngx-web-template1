@@ -6,6 +6,7 @@ import {
 } from '@app/route-utility/on-demand-preload.service';
 import { EMPTY, Observable } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
+/* Refer doc: https://dev.to/angular/predictive-preloading-strategy-for-your-angular-bundles-4bgl */
 
 @Injectable({
   providedIn: 'root',

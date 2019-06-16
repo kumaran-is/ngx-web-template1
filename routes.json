@@ -1,0 +1,26 @@
+{
+  "/": {
+    "/home": 80,
+    "/cart": 20
+  },
+  "home": {
+    "/cart": 70,
+    "/my-profile": 20,
+    "/help": 10
+  },
+  "/cart": {
+    "/checkout": 100,
+    "/home": 0
+  },
+  "/checkout": {
+    "/confirmation": 90,
+    "/my-profile": 10
+  },
+  "/confirmation": {
+    "/home": 100
+  },
+  "/my-profile": {
+    "/home": 90,
+    "/help": 10
+  }
+}
