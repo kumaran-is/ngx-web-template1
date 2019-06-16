@@ -12,6 +12,7 @@
 
 * Route cleanup [[PR 18](https://github.com/kumaran-is/ngx-web-starter/pull/18)]
 * Upgraded NGRX to v8.0.0 [[PR 18](https://github.com/kumaran-is/ngx-web-starter/pull/18)]
+* Implemented pre-load strategy using guess.js (but not working) [[PR 18](https://github.com/kumaran-is/ngx-web-starter/pull/18)]
 
 #### Breaking Changes
 
