@@ -1,11 +1,5 @@
 # Angular Ngx Web Application Starter Project
-```mermaid
-flowchart LR
-    A[Hard] -->|Text| B(Round)
-    B --> C{Decision}
-    C -->|One| D[Result 1]
-    C -->|Two| E[Result 2]
-```
+
 [![Known Vulnerabilities](https://snyk.io/test/github/kumaran-is/ngx-web-starter/badge.svg)](https://snyk.io/test/github/kumaran-is/ngx-web-starter)
 
 This is a bare bone 3 row layout Angular website using Angular, Angular material, NgRx, Angular Flex-Layout, RxJS.
