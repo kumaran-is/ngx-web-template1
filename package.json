@@ -86,7 +86,7 @@
     "codelyzer": "~5.1.0",
     "conventional-changelog-cli": "~2.0.10",
     "guess-parser": "~0.3.5",
-    "guess-webpack": "~0.3.5",
+    "guess-webpack": "~0.4.22",
     "htmlhint": "~0.11.0",
     "http-server": "~0.11.1",
     "husky": "~2.4.0",
