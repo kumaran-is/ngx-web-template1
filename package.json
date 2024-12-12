@@ -61,7 +61,7 @@
     "@ngrx/router-store": "~8.0.0",
     "@ngrx/store": "8.0.0",
     "@ngrx/store-devtools": "~8.0.0",
-    "angular-in-memory-web-api": "~0.8.0",
+    "angular-in-memory-web-api": "~0.11.0",
     "firebase": "~6.2.0",
     "hammerjs": "~2.0.8",
     "lodash": "~4.17.0",
